@@ -1,0 +1,75 @@
+/**
+ * @author RainSilver
+ * @email ppstream123@126.com
+ * @create date 2019-03-18 20:58:35
+ * @modify date 2019-03-18 20:58:35
+ * @desc 登陆页样式
+ */
+/*主体*/
+body {
+    background: url('../../res/img/bg0.jpg') no-repeat;
+    background-size: 100%;
+}
+
+/*登陆框*/
+#loginBox {
+    position: relative;
+    padding: 10px;
+    height: 300px;
+    width: 500px;
+    margin: 300px auto;
+    background: white;
+}
+
+.inputBlock {
+    width: 300px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 1.2em;
+    border-bottom: 2px solid black;
+    background: transparent;
+
+}
+
+.inputBlock span {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}
+
+.inputBlock input {
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    border: 0;
+    color: black;
+    outline: medium;
+
+}
+
+/* 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 60px white inset;
+    -webkit-text-fill-color: white;
+} */
+
+
+#loginButton {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    left: 200px;
+    bottom: 30px;
+    border: 0;
+    background: #FF9900;
+
+}
+
+#loginButton:hover {
+    background: gray;
+    color: white;
+
+}
