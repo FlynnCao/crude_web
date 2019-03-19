@@ -1,0 +1,172 @@
+/**
+ * @author RainSilver
+ * @email ppstream123@126.com
+ * @create date 2019-03-19 07:44:21
+ * @modify date 2019-03-19 07:44:21
+ * @desc 管理系统主要页面布局
+ */
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+/*新增发车*/
+#addBatchConcole {
+    display: none;
+}
+
+/*左侧栏目*/
+#col_left {
+    float: left;
+    width: 15%;
+    height: 100%;
+    background: url('../../res/img/bg0.jpg');
+}
+
+#col_left>ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 300px auto;
+    width: 150px;
+    height: 200px;
+    background: transparent;
+
+}
+
+#col_left li {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #F3F6Fa;
+}
+
+#col_left li:hover {
+    background: white;
+    cursor: pointer;
+}
+
+/*左侧-导航栏*/
+
+/*右侧栏目*/
+#col_right {
+    float: left;
+    width: 85%;
+    height: 100%;
+    background: lightblue;
+}
+
+/*右侧-顶部*/
+#col_right_top {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: white;
+}
+
+/*右侧-搜索栏*/
+#col_right_top_search {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    background: #eeeeee;
+
+}
+
+#col_right_top_search>span {
+    display: inline-block;
+
+
+
+}
+
+#col_right_top_search>input {
+    display: inline-block;
+    font-size: 1.3em;
+    width: 550px;
+    height: 1.5em;
+    margin-left: 10px;
+    border: 0;
+
+    background: transparent;
+}
+
+
+/*右侧-个人信息栏*/
+#col_right_top_profile {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 60px;
+    background: transparent;
+}
+
+#col_right_top_profile>ul {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    margin: 0;
+    background: transparent;
+
+}
+
+#col_right_top_profile>ul li {
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+#col_right_top_profile>ul li:nth-child(1) {
+    font-weight: bold;
+}
+
+#col_right_top_profile>ul li:nth-child(2) {}
+
+
+#col_right_top_profile>img {
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+
+}
+
+/*右侧-主要内容*/
+.crude_page {
+    display: none;
+}
+
+/*右侧-发车-功能区*/
+#col_right_page1_func {
+    background: lightgreen;
+}

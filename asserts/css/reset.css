@@ -9,4 +9,14 @@
     padding: 0;
     margin: 0;
     font-family: '微软雅黑', 'consola'
+
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style: none;
 }
