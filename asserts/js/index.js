@@ -6,6 +6,8 @@
  * @desc 主要页面的相关逻辑
  */
 /*默认调用区 */
+//givenListHeight();
+
 /*系统变量区 */
 //存储当前页和所有页
 var allPages = new Array(1, 2, 3, );
@@ -15,7 +17,8 @@ var firstIntoPage = true;
 if (firstIntoPage) {
     switchPages(0);
     switchSentBatches(0);
-    firstIntoPage = false;
+
+
 }
 //当前或者历史批次
 var currentBatch = 0;
@@ -29,7 +32,7 @@ function switchPages(pageNum) {
     for (let index = 0; index < blocks.length; index++) {
         if (index == currentPage) {
             pages[index].style.display = "block";
-            blocks[index].style.color = "#38f"
+            blocks[index].style.color = "#465DD2"
         } else {
             pages[index].style.display = "none";
             blocks[index].style.color = "black";
@@ -48,11 +51,39 @@ function switchSentBatches(batchNum) {
     for (let index = 0; index < blocks.length; index++) {
         if (index == currentBatch) {
             batches[index].style.display = "block";
-            blocks[index].style.color = "#38f";
+            blocks[index].style.color = "#465DD2";
         } else {
             batches[index].style.display = "none";
             blocks[index].style.color = "black";
         }
     }
+}
+
+// function givenListHeight() {
+//     var high = document.querySelector("#col_right").style.height;
+//     console.log(high);
+//     var top = document.querySelector("#col_right_top").style.height;
+//     console.log(high);
+//     var func = document.querySelector("#col_right_page1_func").style.height;
+//     console.log(func);
+//     var stat = document.querySelector("#col_right_page1_stat").style.height;
+//     console.log(stat);
+
+// }
+
+//新增发出批次
+//确认发车按钮
+function showAddBatchConsole(flag) {
+    if (flag == true) {
+        document.querySelector("#addBatchConsole").style.display = "none";
+        document.querySelector("#addBatchConsoleLayer").style.display = "none";
+
+
+    } else {
+        document.querySelector("#addBatchConsole").style.display = "block";
+        document.querySelector("#addBatchConsoleLayer").style.display = "block";
+    }
 
 }
+
+document.querySelector("#addBatch_ok").addEventListener('click', showAddBatchConsole(true));

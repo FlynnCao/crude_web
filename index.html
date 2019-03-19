@@ -16,23 +16,28 @@
     <!-- <img src="res/ico/car_blue_32.png"/> -->
     <div id="app">
         <!--浮层区-->
-        <div id="addBatchConcole">
+        <div id="addBatchConsoleLayer">
+        </div>
+        <div id="addBatchConsole">
             <form>
-                <input type="text" placeholder="发出批号">
-                <input type="text" placeholder="发出日期">
-                <input type="text" placeholder="总油量">
-                <input type="text" placeholder="水分">
-                <input type="text" placeholder="密度">
-                <input type="text" placeholder="车辆总数">
-                <input type="submit" value="确定">
-                <input type="reset" value="重置">
+                &nbsp;&nbsp;<h3 class="glyphicon glyphicon-file">编辑发车信息</h3>
+                <br>
+                <br>
+                <input type="text" placeholder="发出批号"><br>
+                <input type="text" placeholder="发出日期"><br>
+                <input type="text" placeholder="总油量"><br>
+                <input type="text" placeholder="水分"><br>
+                <input type="text" placeholder="密度"><br>
+                <input type="text" placeholder="车辆总数"><br>
+                <input type="submit" value="确定" id="addBatch_ok"><br>
+                <input type="reset" value="重置"><br>
             </form>
         </div>
         <!--地面区-->
         <div id="col_left">
             <ul>
                 <li onclick="switchPages(0)">
-                    <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;<span>发车</span>
+                    <span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span>发车</span>
                 </li>
                 <li onclick="switchPages(1)">
                     <span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;<span>
@@ -68,45 +73,574 @@
                         <li onclick="switchSentBatches(1)">
                             历史
                         </li>
-                        <button id="addSendCarBatch">新增批次</button>
+                        <button id="addSendCarBatch" onclick="showAddBatchConsole(false)" class="glyphicon glyphicon-plus">新增批次</button>
                     </ul>
+
                 </div>
+
                 <div id="col_right_page1_current" class="crude_sent_batch">
                     <div id="col_right_page1_stat">
                         <ul>
-                            <li>车数：5</li>
-                            <li>油量：300</li>
-                            <li>水分：0.10</li>
-                            <li>密度：0.85</li>
+                            <li class="glyphicon glyphicon-ok"><span>车数</span><span id="current_batch_num">9</span></li>
+                            <li class="glyphicon glyphicon-adjust"><span>油量</span><span id="current_batch_oil">99</span></li>
+                            <li class="glyphicon glyphicon-tint"><span>水分</span><span id="current_batch_water">999</span></li>
+                            <li class="glyphicon glyphicon-fire"><span>密度</span><span id="current_batch_density">9999</span></li>
                         </ul>
                     </div>
                     <hr />
                     <div id="col_right_page1_list">
-                        <ul>
-                            <li>第一条记录</li>
-                            <li>第二条记录</li>
-                            <li>第三条记录</li>
-                            <li>第四条记录</li>
-                            <li>第五条记录</li>
-                        </ul>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>发出油量批号</th>
+                                    <th>车号</th>
+                                    <th>发出时间</th>
+                                </tr>
+
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>201903089500</td>
+                                    <td>60503001</td>
+                                    <td>2019/3/8 9:59:21</td>
+                                </tr>
+
+                            </tbody>
+
+
+                        </table>
                     </div>
                 </div>
                 <div id="col_right_page1_history">
                     <div id="col_right_page1_list2" class="crude_sent_batch">
-                        历史列表
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>发出油量批号</th>
+                                    <th>总油量</th>
+                                    <th>水分</th>
+                                    <th>密度</th>
+                                    <th>发出时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div id="col_right_page2" class="crude_page">
-                <h3>车辆列表</h3>
+                <h3>&nbsp;&nbsp;&nbsp;可用车辆列表</h3>
+                <div id="available_car_list">
 
-                <ul>
-                    <li>第一辆车</li>
-                    <li>第二辆车</li>
-                    <li>第三辆车</li>
-                    <li>第四辆车</li>
-                    <li>第五辆车</li>
-                </ul>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>车号</th>
+                                <th>在途车</th>
+                                <th>车型</th>
+                                <th>评级</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th></th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th></th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <th>60503001</th>
+                                <th>√</th>
+                                <th>G50</th>
+                                <th>A</th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </div>
+
             </div>
             <div id="col_right_page3" class="crude_page">统计数据</div>
         </div>
