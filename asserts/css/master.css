@@ -1,0 +1,131 @@
+/**
+ * @author RainSilver
+ * @email ppstream123@126.com
+ * @create date 2019-03-20 08:24:56
+ * @modify date 2019-03-20 08:24:56
+ * @desc 用于多角色登陆下页面的统一样式
+ */
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+/*左侧栏目*/
+#col_left {
+    float: left;
+    width: 15%;
+    height: 100%;
+    background: url('../../res/img/bg0.jpg');
+}
+
+/*右侧栏目*/
+#col_right {
+    float: left;
+    width: 84%;
+    height: 100%;
+    background: white;
+}
+
+/*右侧-顶部*/
+#col_right_top {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background: white;
+}
+
+/*右侧-搜索栏*/
+#col_right_top_search {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 60px;
+
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 1.5em;
+    background: #eeeeee;
+
+}
+
+#col_right_top_search>span {
+    display: inline-block;
+
+
+
+}
+
+#col_right_top_search>input {
+    display: inline-block;
+    font-size: 1.3em;
+    width: 550px;
+    height: 1.5em;
+    margin-left: 10px;
+    border: 0;
+
+    background: transparent;
+}
+
+
+/*右侧-个人信息栏*/
+#col_right_top_profile {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 60px;
+    /* border: 1px solid gray; */
+    margin-right: 20px;
+    background: transparent;
+}
+
+#col_right_top_profile>ul {
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    margin: 0;
+    background: transparent;
+
+}
+
+#col_right_top_profile>ul li {
+    line-height: 30px;
+    font-size: 1.2em;
+}
+
+#col_right_top_profile>ul li:nth-child(1) {
+    font-weight: bold;
+}
+
+#col_right_top_profile>ul li:nth-child(2) {}
+
+
+#col_right_top_profile>img {
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+
+
+}
