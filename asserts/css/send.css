@@ -2,8 +2,8 @@
  * @author RainSilver
  * @email ppstream123@126.com
  * @create date 2019-03-19 07:44:21
- * @modify date 2019-03-19 07:44:21
- * @desc 管理系统主要页面布局
+ * @modify date 2019-03-20 19:52:48
+ * @desc 发出页面的样式
  */
 html {
     width: 100%;
@@ -66,7 +66,7 @@ body {
     background: url('../../res/img/bg0.jpg');
 }
 
-#col_left>ul {
+/* #col_left>ul {
     display: flex;
     display: -webkit-flex;
     flex-direction: column;
@@ -88,12 +88,12 @@ body {
     font-size: 1.2em;
     font-weight: bold;
     background: #F3F6Fa;
-}
+} */
 
-#col_left li:hover {
+/* #col_left li:hover {
     background: white;
     cursor: pointer;
-}
+} */
 
 /*左侧-导航栏*/
 

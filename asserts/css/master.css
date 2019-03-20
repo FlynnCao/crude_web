@@ -29,6 +29,37 @@ body {
     background: url('../../res/img/bg0.jpg');
 }
 
+/*左侧-导航*/
+#col_left>ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 300px auto;
+    width: 150px;
+    height: 0px;
+    background: transparent;
+
+
+}
+
+#col_left li {
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: #F3F6Fa;
+}
+
+#col_left li:hover {
+    background: white;
+    cursor: pointer;
+}
+
 /*右侧栏目*/
 #col_right {
     float: left;
@@ -58,7 +89,6 @@ body {
     align-items: center;
     width: 600px;
     height: 60px;
-
     border-radius: 10px;
     margin-left: 20px;
     font-size: 1.5em;
