@@ -18,7 +18,6 @@ var selectedCarId = "0"; // WPF车辆对应的Id值
 
 //绑定列表块点击事件(仅允许单选) WPF
 function car_list_handleSimpleClick() {
-
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
     for (let index = 0; index < rows.length; index++) {
         rows[index].onclick = function () {

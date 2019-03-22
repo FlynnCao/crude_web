@@ -48,3 +48,7 @@ glyphicon glyphicon-tint 水滴（水分）
 glyphicon glyphicon-adjust 调整（油量）
 
 glyphicon glyphicon-equalizer 均衡（密度）
+
+glyphicon glyphicon-time 钟表（时间）
+
+glyphicon glyphicon-pencil 铅笔

@@ -6,6 +6,7 @@
  * @desc [轨道衡相关逻辑]
  */
 car_list_handleSimpleClick(); //绑定列表块点击事件
+//showOverBalanceConsole(false);
 
 
 //绑定列表块点击事件(仅允许单选)

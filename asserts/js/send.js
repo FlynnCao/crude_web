@@ -7,11 +7,11 @@
  */
 /*默认调用区 */
 //givenListHeight();
-bindingAddBatchConfirm();
+//bindingAddBatchConfirm();
 //refreshBatchInfo();
 /*系统变量区 */
 //存储当前页和所有页
-var allPages = new Array(1, 2, 3, );
+var allPages = new Array(1, 2, 3 );
 var currentPage = 0;
 var firstIntoPage = true;
 //第一次启动时，载入发车页-今日批次
@@ -21,6 +21,7 @@ if (firstIntoPage) {
 
 
 }
+
 //当前或者历史批次
 var currentBatch = 0;
 /*功能函数区 */
@@ -65,29 +66,40 @@ function showAddBatchConsole(flag) {
         document.querySelector("#addBatchConsole").style.display = "none";
         document.querySelector("#addBatchConsoleLayer").style.display = "none";
 
-
     } else {
         document.querySelector("#addBatchConsole").style.display = "block";
         document.querySelector("#addBatchConsoleLayer").style.display = "block";
+        createBatchNumAndDate();
+
     }
+}
+//新增批次-显示车辆选择列表
+function showSelectCarList(){
+    document.querySelector("#addBatchConsole_carMenuBack").style.display = "none";
+    document.querySelector("#addBatchConsole_carMenu").style.display = "block";
+
+}
+//新增批次-保存选择的车辆列表
+function saveSelectedCarList(){
 
 }
 
-function bindingAddBatchConfirm() {
-    //绑定新增批次确认按钮
-    document.querySelector("#addBatch_ok").onclick = function () {
-        //       addBatchSubmit();
+// function bindingAddBatchConfirm() {
+//     //绑定新增批次确认按钮
+//     document.querySelector("#addBatch_ok").onclick = function () {
+//         //       addBatchSubmit();
 
-       // batchUpdateJSON();
-     //   refreshBatchInfo();
+//        // batchUpdateJSON();
+//      //   refreshBatchInfo();
 
-    }
-    document.querySelector("#addBatch_refresh").onclick = function () {
-        //       addBatchSubmit();
+//     }
+//     document.querySelector("#addBatch_refresh").onclick = function () {
+//         //       addBatchSubmit();
 
-        batchUpdateJSON();
-    }
-}
+//        // batchUpdateJSON();
+//     }
+// }
+
 // //新增批次-确认操作
 // function batchUpdateJSON() {
 //     // var num = document.querySelector("#addBatchConsole>form input");

@@ -21,21 +21,109 @@
         <!--浮层区-->
         <div id="addBatchConsoleLayer">
         </div>
+
         <div id="addBatchConsole">
             <form>
-                &nbsp;&nbsp;<h3 class="glyphicon glyphicon-file">编辑发车信息</h3>
-                <br>
-                <br>
-                <input type="text" placeholder="发出批号"  ><br>
-                <input type="text" placeholder="发出日期"><br>
-                <input type="text" placeholder="总油量"><br>
-                <input type="text" placeholder="水分"><br>
-                <input type="text" placeholder="密度"><br>
-                <input type="text" placeholder="车辆总数" id="abc_num"><br>
-                <input type="button" value="更新" id="addBatch_refresh">
-                <input type="submit" value="确定" id="addBatch_ok" ><br>
-                <input type="reset" value="重置"><br>
+                <h3>新增批次</h3>
+
+                <p><span class="glyphicon glyphicon-pencil"></span><span>&nbsp;发出批号</span><br>
+                    <input type="text" name="batch" placeholder="" >
+                </p>
+
+                <p><span class="glyphicon glyphicon-time"></span><span>&nbsp;发出时间</span><br>
+                    <input type="text" name="date" placeholder="" ><br>
+                </p>
+                <p><span class="glyphicon glyphicon-adjust"></span><span>&nbsp;总油量</span><br>
+                    <input type="text" name="oil" placeholder=""><br>
+                </p>
+                <p><span class="glyphicon glyphicon-tint"></span><span>&nbsp;水分</span><br>
+                    <input type="text" name="oil" placeholder="精度为2"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-equalizer"></span><span>&nbsp;密度</span><br>
+                    <input type="text" name="oil" placeholder="精度为4"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-send"></span><span>&nbsp;车辆</span><br>
+                    <input type="text" name="density" value="" placeholder="">
+                </p>
+                <div>
+                    <input type="submit" name="confirm" value="确认" onclick="showAddBatchConsole(true)">
+                    <input type="button" name="cancel" value="取消" onclick="showAddBatchConsole(true)">
+                </div>
             </form>
+            <div id="addBatchConsole_carMenuBack">
+
+            </div>
+            <div id="addBatchConsole_carMenu">
+                <h3>选择车辆</h3>
+                <div id="table_wrapper">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>车号</th>
+                                <th>车型</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>7003001</th>
+                                <th>G70</th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>7003002</th>
+                                <th>G70</th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>6003001</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <th>6003002</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <th>6003003</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <th>6003004</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <th>6003005</th>
+                                <th>G70</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button onclick="saveSelectedCarList()">添加</button>
+
+
+            </div>
+
         </div>
         <!--地面区-->
         <div id="col_left">
@@ -47,10 +135,10 @@
                     <span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;<span>
                         车辆</span>
                 </li>
-                <li onclick="switchPages(2)">
+                <!-- <li onclick="switchPages(2)">
                     <span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;<span>
                         统计</span>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div id="col_right">
@@ -77,7 +165,8 @@
                         <li onclick="switchSentBatches(1)">
                             历史批
                         </li>
-                        <button id="addSendCarBatch" onclick="showAddBatchConsole(false)" class="glyphicon glyphicon-plus">新增批次</button>
+                        <button id="addSendCarBatch" onclick="showAddBatchConsole(false)"
+                            class="glyphicon glyphicon-plus">新增批次</button>
                     </ul>
 
                 </div>
@@ -86,9 +175,12 @@
                     <div id="col_right_page1_stat">
                         <ul>
                             <li class="glyphicon glyphicon-ok"><span>车数</span><span id="current_batch_num">9</span></li>
-                            <li class="glyphicon glyphicon-adjust"><span>油量</span><span id="current_batch_oil">99</span></li>
-                            <li class="glyphicon glyphicon-tint"><span>水分</span><span id="current_batch_water">999</span></li>
-                            <li class="glyphicon glyphicon-equalizer "><span>密度</span><span id="current_batch_density">9999</span></li>
+                            <li class="glyphicon glyphicon-adjust"><span>油量</span><span id="current_batch_oil">99</span>
+                            </li>
+                            <li class="glyphicon glyphicon-tint"><span>水分</span><span
+                                    id="current_batch_water">999</span></li>
+                            <li class="glyphicon glyphicon-equalizer "><span>密度</span><span
+                                    id="current_batch_density">9999</span></li>
                         </ul>
                     </div>
                     <hr />
@@ -649,6 +741,7 @@
     </div>
     <script type="text/javascript" src="asserts/js/master_css.js"> </script>
     <script src="asserts/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="asserts/js/master_css.js" type="text/javascript"></script>
 
     <script src="asserts/js/send.js" type="text/javascript">
     </script>
