@@ -22,6 +22,7 @@ body {
 
 /*新增发车*/
 #addBatchConsoleLayer {
+    display: none;
     z-index: 99;
     position: absolute;
     left: 0;

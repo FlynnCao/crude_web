@@ -1,0 +1,180 @@
+/**
+ * @author RainSilver
+ * @email [ppstream123@126.com]
+ * @create date 2019-03-22 09:59:53
+ * @modify date 2019-03-22 09:59:53
+ * @desc [化验页面专属样式]
+ */
+/*功能区按钮自定义样式*/
+
+#col_right_func>div button:first-child {
+    background: #465DD2;
+}
+
+#col_right_func>div button:first-child:hover {
+    background: #38f;
+}
+
+#col_right_func>div button:nth-child(2) {
+    background: #27941D;
+}
+
+#col_right_func>div button:nth-child(2):hover {
+    background: #99CC33;
+}
+
+#col_right_func>div button:nth-child(3) {
+    background: gray;
+}
+
+#col_right_func>div button:nth-child(3):hover {
+    background: #aaaaaa;
+}
+
+/*左侧-功能区-车数选择*/
+#col_right_func>p {
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    margin-right: 50px;
+    line-height: 70px;
+    font-size: 2em;
+    text-align: center;
+    background: transparent;
+
+}
+
+#col_right_func>p span:first-child {
+    font-weight: bold;
+
+    color: #465DD2;
+}
+
+#col_right_func>p span:nth-child(2) {
+    font-weight: bold;
+
+    color: gray;
+
+}
+
+/*右侧-列表*/
+#col_right_list {
+    width: 100%;
+    height: 700px;
+    overflow: auto;
+    background: transparent;
+}
+
+#col_right_list>table>tbody tr:hover {
+    cursor: pointer;
+}
+
+#assay_car_console_layer {
+    display: none;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    background: rgba(0, 0, 0, 0.7);
+    filter: blur(15px);
+}
+
+#assay_car_console {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    height: 50%;
+    padding: 10px;
+    background: white;
+
+}
+
+#assay_car_console>form {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3em;
+    width: 100%;
+    height: 80%;
+    background: transparent;
+
+}
+
+/*输入行样式*/
+#assay_car_console>form p {
+    text-align: left;
+    width: 70%;
+        background: transparent;
+
+}
+
+#assay_car_console>form p span {
+    /* font-size: 1.5em; */
+    display: inline-block;
+    margin-bottom: 10px;
+    color: gray;
+}
+
+#assay_car_console>form p input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border:0;
+    border-radius: 20px;
+    background: #eeeeee;
+
+}
+#assay_car_console>form p input:focus{
+    outline: 0; 
+}
+
+/*按钮行样式*/
+#assay_car_console>form>div {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 50px;
+    background: transparent;
+
+
+}
+
+#assay_car_console>form>div input {
+    display: inline-block;
+    width: 130px;
+    height: 100%;
+    border:0;
+    border-radius: 10px;
+    color: white;
+}
+
+#assay_car_console>form>div input:first-child {
+    background: #465DD2;
+
+}
+
+#assay_car_console>form>div input:first-child:hover {
+    background: #38f;
+
+}
+
+#assay_car_console>form>div input:nth-child(2) {
+    background: gray;
+
+}
+
+#assay_car_console>form>div input:nth-child(2):hover {
+    background: #aaaaaa;
+
+}

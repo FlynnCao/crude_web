@@ -2,16 +2,199 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统-西安</title>
+    <title>原油计量系统-轨道衡</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asserts/css/reset.css" rel="stylesheet" />
     <link href="asserts/css/master.css" rel="stylesheet" />
+    <link href="asserts/css/rwb.css" rel="stylesheet" />
+
 
 </head>
 
 <body>
+    <div id="app">
+          <!--浮层区-->
+          <div id="overBalanceConsoleLayer">
+            </div>
+            <div id="overBalanceConsole">
+                <form>
+                    &nbsp;&nbsp;<h3 class="glyphicon glyphicon-file">过衡信息</h3>
+                    <br>
+                    <br>
+                    <input type="text" placeholder="车牌号"  ><br>
+                    <input type="text" placeholder="重车重量"><br>
+                    <input type="text" placeholder="轻车重量"><br>
+
+                    <input type="submit" value="确定" id="overBalanceOK" onclick="showOverBalanceConsole(true)" ><br>
+                    <input type="reset" value="重置"><br>
+                </form>
+            </div>
+            <!--地面区-->
+        <div id="col_left">
+            <ul>
+                <li>
+                    <span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;<span>轨道衡</span>
+                </li>
+
+            </ul>
+        </div>
+
+        <div id="col_right">
+            <div id="col_right_top">
+                <div id="col_right_top_search">
+                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
+                <div id="col_right_top_profile">
+                    <ul>
+                        <li>小李</li>
+                        <li>轨道衡人员</li>
+                    </ul>
+                    <img src="res/img/avatar0.jpg" />
+                </div>
+            </div>
+            <div id="col_right_func">
+                <div>
+                    <button id="rwb_over_balance" onclick="showOverBalanceConsole(false)" class="glyphicon glyphicon-file">过衡</button>
+                    <button id="rwb_change_number" onclick="car_list_select_clear()"
+                        class="glyphicon glyphicon-ban-circle">变更车号</button>
+                    <button id="rwb_func_cancel" onclick="car_list_select_clear()"
+                        class="glyphicon glyphicon-ban-circle">取消</button>
+                </div>
+
+            </div>
+            <div id="col_right_list">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>进厂批号</th>
+                            <th>油车号</th>
+                            <th>发出时间</th>
+                            <th>进厂时间</th>
+                            <th>重车</th>
+                            <th>空车</th>
+                            <th>水分</th>
+                            <th>密度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                        <tr>
+                                <th>1</th>
+                                <th>20190308001</th>
+                                <th>60031001</th>
+                                <th>2019/3/8 12:22:35</th>
+                                <th>2019/3/15 18:30:22</th>
+                                <th>97</th>
+                                <th>25</th>
+                                <th>0.10</th>
+                                <th>0.80</th>
+                        </tr>
+                       
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="asserts/js/master_css.js"></script>
+    <script type="text/javascript" src="asserts/js/rwb.js"></script>
+
 
 </body>
 

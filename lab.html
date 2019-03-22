@@ -8,10 +8,124 @@
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asserts/css/reset.css" rel="stylesheet" />
     <link href="asserts/css/master.css" rel="stylesheet" />
+    <link href="asserts/css/lab.css" rel="stylesheet" />
 
 </head>
 
 <body>
+    <!--浮层区-->
+    <div id="assay_car_console_layer">
+    </div>
+    <div id="assay_car_console">
+           &nbsp;&nbsp; <h2>化验</h2>
+
+        <form>
+
+            <p><span class="glyphicon glyphicon-tint"></span><span>&nbsp;水分</span><br>
+                <input type="text" name="water" value="" placeholder="精度为2">
+            </p>
+            <p><span class="glyphicon glyphicon-equalizer"></span><span>&nbsp;密度</span><br>
+                <input type="text" name="density" value="" placeholder="精度为4">
+            </p>
+
+            <div>
+                <input type="submit" name="confirm" value="确认" onclick="showLayerAndConsole(false)">
+                <input type="button" name="cancel" value="取消" onclick="showLayerAndConsole(false)">
+            </div>
+
+
+        </form>
+    </div>
+    <!--地面区-->
+    <div id="col_left">
+        <ul>
+            <li>
+                <span class="glyphicon glyphicon-leaf"></span>&nbsp;&nbsp;<span>化验</span>
+            </li>
+
+        </ul>
+    </div>
+
+    <div id="col_right">
+
+        <div id="col_right_top">
+            <div id="col_right_top_search">
+                <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
+            <div id="col_right_top_profile">
+                <ul>
+                    <li>小周</li>
+                    <li>化验人员</li>
+                </ul>
+                <img src="res/img/avatar0.jpg" />
+            </div>
+        </div>
+        <div id="col_right_func">
+            <div>
+                <button id="rwb_over_balance" onclick="showLayerAndConsole(true)"
+                    class="glyphicon glyphicon-file">化验</button>
+                <!-- <button id="rwb_change_number" class="glyphicon glyphicon-check"
+                    onclick="car_list_select(true)">全选</button> -->
+                <button id="rwb_func_cancel" onclick="car_list_select_clear()"
+                    class="glyphicon glyphicon-ban-circle">取消</button>
+            </div>
+            <!-- <p>
+                已选中&nbsp;<span id="car_selected_num">0</span>/<span id="car_list_total_num">99</span>
+            </p> -->
+
+        </div>
+        <div id="col_right_list">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>发出油量批号</th>
+                        <th>油车号</th>
+                        <th>发出时间</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <th>20190308003</th>
+                        <th>6003001</th>
+                        <th>2019/03/08 15:22:35</th>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <th>20190308003</th>
+                        <th>6003001</th>
+                        <th>2019/03/08 15:22:35</th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <th>20190308003</th>
+                        <th>6003001</th>
+                        <th>2019/03/08 15:22:35</th>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <th>20190308003</th>
+                        <th>6003001</th>
+                        <th>2019/03/08 15:22:35</th>
+                    </tr>
+                    <tr>
+                        <th>５</th>
+                        <th>20190308003</th>
+                        <th>6003001</th>
+                        <th>2019/03/08 15:22:35</th>
+                    </tr>
+                </tbody>
+
+
+
+            </table>
+
+        </div>
+    </div>
+
+    <script type="text/javascript" src="asserts/js/master_css.js"></script>
+    <script type="text/javascript" src="asserts/js/lab.js"></script>
 
 </body>
 

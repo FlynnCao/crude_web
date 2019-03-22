@@ -6,7 +6,7 @@
  * @desc 兰州页面的样式
  */
 /*右侧-功能区*/
-#col_right_func {
+/* #col_right_func {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -30,7 +30,7 @@
     height: 100%;
     margin-left: 10px;
     background: transparent;
-}
+} */
 
 #col_right_func>div button {
     margin-left: 10px;
@@ -45,7 +45,7 @@
 #col_right_func>div button:first-child {
     background: #465DD2;
 }
-
+    
 #col_right_func>div button:first-child:hover {
     background: #38f;
 }
