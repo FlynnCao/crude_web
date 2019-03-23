@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>原油计量系统</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="asserts/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asserts/css/reset.css" rel="stylesheet">
+    <link href="asserts/css/master.css" rel="stylesheet">
+    <link href="asserts/css/report.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="col_left">
+            <ul>
+                <li onclick="refreshWebPage()">
+                    <span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;<span>报表</span>
+                </li>
+
+            </ul>
+        </div>
+        <div id="col_right">
+            <div id="col_right_top">
+                <div id="col_right_top_search">
+                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
+                <div id="col_right_top_profile">
+                    <ul>
+                        <li>小郑</li>
+                        <li>报表人员</li>
+                    </ul>
+                    <img src="res/img/avatar0.jpg" />
+                </div>
+            </div>
+            <div id="col_right_date">
+                <ul>
+                    <li onclick="switchReportDate(0)">
+                        日报
+                    </li>
+                    <li onclick="switchReportDate(1)">
+                        月报
+                    </li>
+                    <li onclick="switchReportDate(2)">
+                        年报
+                    </li>
+
+                </ul>
+
+            </div>
+            <div id="col_right_chart">
+                <ul>
+                    <li class="glyphicon glyphicon-th"><span>数据表</span></li>
+                    <li class="glyphicon glyphicon-stats"><span>柱状图</span></li>
+                    <li class="glyphicon glyphicon-cd"><span>饼状图</span></li>
+                    <li class="glyphicon glyphicon-share-alt"><span>折线图</span></li>
+                </ul>
+            </div>
+            <div id="col_right_list">
+                <div id="col_right_list_day" class="report_list">
+                    <div id="col_right_list_day_table">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>日期</th>
+                                    <th>发出油量</th>
+                                    <th>发出车数</th>
+                                    <th>进厂油量</th>
+                                    <th>进厂车数</th>
+                                    <th>在途车</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                        <th>1</th>
+                                        <th>01</th>
+                                        <th>1500</th>
+                                        <th>35</th>
+                                        <th>1495</th>
+                                        <th>35</th>
+                                        <th>0</th>
+                                </tr>
+                                <tr>
+                                        <th>2</th>
+                                        <th>02</th>
+                                        <th>1500</th>
+                                        <th>35</th>
+                                        <th>1495</th>
+                                        <th>35</th>
+                                        <th>0</th>
+                                </tr>
+                                <tr>
+                                        <th>1</th>
+                                        <th>03</th>
+                                        <th>1500</th>
+                                        <th>35</th>
+                                        <th>1495</th>
+                                        <th>35</th>
+                                        <th>0</th>
+                                </tr>
+                                <tr>
+                                        <th>1</th>
+                                        <th>04</th>
+                                        <th>1500</th>
+                                        <th>35</th>
+                                        <th>1495</th>
+                                        <th>35</th>
+                                        <th>0</th>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="col_right_list_day_bar">
+                        日柱状图
+                    </div>
+                    <div id="col_right_list_day_pie">
+                        日饼状图
+                    </div>
+                    <div id="col_right_list_day_line">
+                        日折线图
+                    </div>
+    
+                </div>
+                <div id="col_right_list_mouth" class="report_list">
+                    <div id="col_right_list_mouth_table" class="report_list_chart">
+                            <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>编号</th>
+                                            <th>月份</th>
+                                            <th>发出油量</th>
+                                            <th>发出车数</th>
+                                            <th>进厂油量</th>
+                                            <th>进厂车数</th>
+                                            <th>在途车</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>01</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>2</th>
+                                                <th>02</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>03</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>04</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                    </div>
+                    <div id="col_right_list_mouth_bar" class="report_list_chart">
+                        月柱状图
+                    </div>
+                    <div id="col_right_list_mouth_pie" class="report_list_chart">
+                        月饼状图
+                    </div>
+                    <div id="col_right_list_mouth_line" class="report_list_chart">
+                        月折线图
+                    </div>
+    
+                </div>
+                <div id="col_right_list_year" class="report_list">
+                    <div id="col_right_list_year_table" class="report_list_chart">
+                            <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>编号</th>
+                                            <th>年份</th>
+                                            <th>发出油量</th>
+                                            <th>发出车数</th>
+                                            <th>进厂油量</th>
+                                            <th>进厂车数</th>
+                                            <th>在途车</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>2013</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>2</th>
+                                                <th>2014</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>2015</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                        <tr>
+                                                <th>1</th>
+                                                <th>2016</th>
+                                                <th>1500</th>
+                                                <th>35</th>
+                                                <th>1495</th>
+                                                <th>35</th>
+                                                <th>0</th>
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                    </div>
+                    <div id="col_right_list_year_bar" class="report_list_chart">
+                        年柱状图
+                    </div>
+                    <div id="col_right_list_year_pie" class="report_list_chart">
+                        年饼状图
+                    </div>
+                    <div id="col_right_list_year_line" class="report_list_chart">
+                        年折线图
+                    </div>
+    
+                </div>  
+            </div>
+         
+        </div>
+    </div>
+    <script type="text/javascript" src="asserts/js/master.js"></script>
+    <script type="text/javascript" src="asserts/js/master_css.js"></script>
+    <script type="text/javascript" src="asserts/js/report.js"></script>
+
+</body>
+
+</html>

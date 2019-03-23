@@ -1,0 +1,40 @@
+/**
+ * @author RainSilver
+ * @email [ppstream123@126.com]
+ * @create date 2019-03-23 09:23:30
+ * @modify date 2019-03-23 09:23:30
+ * @desc [存储页面相关的动画]
+ */
+/*二级窗口-新增批次-3d淡出缩放*/
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        /* transform: translateX(-300px); */
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+
+    }
+}

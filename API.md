@@ -52,3 +52,19 @@ glyphicon glyphicon-equalizer 均衡（密度）
 glyphicon glyphicon-time 钟表（时间）
 
 glyphicon glyphicon-pencil 铅笔
+
+glyphicon glyphicon-ok 对号
+
+glyphicon glyphicon-remove 错号
+
+glyphicon glyphicon-circle-arrow-left 左向箭头
+
+glyphicon glyphicon-road 道路/桥梁
+
+glyphicon glyphicon-record 记录/圈点 
+
+glyphicon glyphicon-calendar 日历
+
+glyphicon glyphicon-th 表
+
+glyphicon glyphicon-cd 光碟

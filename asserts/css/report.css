@@ -1,0 +1,94 @@
+/**
+ * @author RainSilver
+ * @email [ppstream123@126.com]
+ * @create date 2019-03-23 11:01:03
+ * @modify date 2019-03-23 11:01:03
+ * @desc [报表页面的样式]
+ */
+/*报表-展示的日期*/
+#col_right_date {
+
+    width: 100%;
+    height: 70px;
+    background: transparent;
+
+}
+
+#col_right_date>ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 300px;
+    height: 100%;
+    background: transparent;
+}
+
+#col_right_date>ul li {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#col_right_date>ul li:hover {
+    cursor: pointer;
+}
+
+/*报表-图表功能区*/
+#col_right_chart {
+    width: 100%;
+    height: 100px;
+    border-top: 1px dotted gray;
+    border-bottom: 1px dotted gray;
+    background: transparent;
+}
+
+#col_right_chart>ul {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 800px;
+    margin-left: 20px;
+    background: transparent;
+}
+
+#col_right_chart>ul li {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 180px;
+    height: 70px;
+    border-radius: 15px;
+    font-size: 1.7em;
+    color: white;
+    background: #bdc3cc;
+}
+
+#col_right_chart>ul li:hover {
+    cursor: pointer;
+}
+
+/*报表-列表*/
+/*报表-列表盒子*/
+#col_right_list{
+    width: 100%;
+    height:600px;
+    background: transparent;
+}   
+.report_list{
+    display: none;
+    background: transparent;
+}
+.report_list div{
+    display: none;
+    /*默认隐藏所有图标*/
+}
+.report_list div:first-child{
+    display: block;
+      /*默认只显示数据表*/
+}

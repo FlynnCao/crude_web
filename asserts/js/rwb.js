@@ -2,11 +2,10 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-21 15:11:04
- * @modify date 2019-03-21 15:11:04
+ * @modify date 2019-03-23 09:17:00
  * @desc [轨道衡相关逻辑]
  */
 car_list_handleSimpleClick(); //绑定列表块点击事件
-//showOverBalanceConsole(false);
 
 
 //绑定列表块点击事件(仅允许单选)
@@ -46,9 +45,6 @@ function showOverBalanceConsole(flag) {
     }
 
 }
- 
-
-
 
 
 

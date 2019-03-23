@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统-轨道衡</title>
+    <title>原油计量系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
@@ -15,27 +15,34 @@
 
 <body>
     <div id="app">
-          <!--浮层区-->
-          <div id="overBalanceConsoleLayer">
-            </div>
-            <div id="overBalanceConsole">
-                <h3 >过衡信息</h3>
-                <form>
-                    <br>
-                    <br>
-                    <input type="text" placeholder="车牌号"  ><br>
-                    <input type="text" placeholder="重车重量"><br>
-                    <input type="text" placeholder="轻车重量"><br>
+        <!--浮层区-->
+        <div id="overBalanceConsoleLayer">
+        </div>
+        <div id="overBalanceConsole">
+            <h2>过衡</h2>
+            <form>
+                <p> <span class="glyphicon glyphicon-pencil"></span><span>&nbsp;油车号</span><br><input type="text" placeholder="">
+                </p>
+                <p> <span class="glyphicon glyphicon-adjust"></span><span>&nbsp;重车重量</span><br><input type="text" placeholder="">
+                </p>
+                <p><span class="glyphicon glyphicon-record"></span> <span>&nbsp;轻车重量</span><br><input type="text" placeholder="">
+                </p>
+                <div>
+                    <input type="submit" value="确定" id="overBalanceOK" onclick="showOverBalanceConsole(true);">
+                    <input type="button" value="取消"  onclick="showOverBalanceConsole(true);">
+                </div>
 
-                    <input type="submit" value="确定" id="overBalanceOK" onclick="showOverBalanceConsole(true)" ><br>
-                    <input type="reset" value="重置"><br>
-                </form>
-            </div>
-            <!--地面区-->
+
+
+
+
+            </form>
+        </div>
+        <!--地面区-->
         <div id="col_left">
             <ul>
-                <li>
-                    <span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;<span>轨道衡</span>
+                <li onclick="refreshWebPage()">
+                    <span class="glyphicon glyphicon-road"></span>&nbsp;&nbsp;<span>轨道衡</span>
                 </li>
 
             </ul>
@@ -55,8 +62,9 @@
             </div>
             <div id="col_right_func">
                 <div>
-                    <button id="rwb_over_balance" onclick="showOverBalanceConsole(false)" class="glyphicon glyphicon-file">过衡</button>
-                    <button id="rwb_change_number" onclick="car_list_select_clear()"
+                    <button id="rwb_over_balance" onclick="showOverBalanceConsole(false)"
+                        class="glyphicon glyphicon-file">过衡</button>
+                    <button id="rwb_change_number" onclick="showOverBalanceConsole(false)"
                         class="glyphicon glyphicon-ban-circle">变更车号</button>
                     <button id="rwb_func_cancel" onclick="car_list_select_clear()"
                         class="glyphicon glyphicon-ban-circle">取消</button>
@@ -80,118 +88,119 @@
                     </thead>
                     <tbody>
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
+
                         <tr>
-                                <th>1</th>
-                                <th>20190308001</th>
-                                <th>60031001</th>
-                                <th>2019/3/8 12:22:35</th>
-                                <th>2019/3/15 18:30:22</th>
-                                <th>97</th>
-                                <th>25</th>
-                                <th>0.10</th>
-                                <th>0.80</th>
+                            <th>1</th>
+                            <th>20190308001</th>
+                            <th>60031001</th>
+                            <th>2019/3/8 12:22:35</th>
+                            <th>2019/3/15 18:30:22</th>
+                            <th>97</th>
+                            <th>25</th>
+                            <th>0.10</th>
+                            <th>0.80</th>
                         </tr>
-                       
-                       
+
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="asserts/js/master.js"></script>
     <script type="text/javascript" src="asserts/js/master_css.js"></script>
     <script type="text/javascript" src="asserts/js/rwb.js"></script>
 

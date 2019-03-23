@@ -34,6 +34,7 @@ body {
 }
 
 #addBatchConsole {
+    animation: zoomIn 0.5s;
     display: none;
     clear: both;
     z-index: 100;
@@ -47,6 +48,14 @@ body {
     /*水平偏移 垂直偏移 模糊 大小 颜色*/
 
 }
+
+#addBatchConsole input {
+    display: inline-block;
+    width: 30%;
+    font-size: 1.1em;
+}
+
+
 
 /*发出批-提交的表单*/
 #addBatchConsole>form {
@@ -62,12 +71,14 @@ body {
     background: white;
 
 }
-#addBatchConsole>form>h3{
+
+#addBatchConsole>form>h3 {
     display: block;
     width: 100%;
-    padding-left:10px;
+    padding-left: 10px;
     background: transparent;
 }
+
 /*发出批-提交的表单-输入行样式*/
 #addBatchConsole>form p {
     text-align: left;
@@ -87,14 +98,16 @@ body {
     width: 100%;
     height: 40px;
     padding: 10px;
-    border:0;
+    border: 0;
     border-radius: 20px;
     background: #eeeeee;
 
 }
-#addBatchConsole>form p input:focus{
-    outline: 0; 
+
+#addBatchConsole>form p input:focus {
+    outline: 0;
 }
+
 /*按钮行样式*/
 #addBatchConsole>form>div {
     display: flex;
@@ -111,7 +124,7 @@ body {
     display: inline-block;
     width: 130px;
     height: 100%;
-    border:0;
+    border: 0;
     border-radius: 10px;
     color: white;
 }
@@ -136,49 +149,80 @@ body {
 
 }
 
-
-
-
-
-
-
-
 /*发出批-选择车辆菜单*/
-#addBatchConsole div {
+
+#addBatchConsole_carMenu {
+    animation: moveRight 0.7s;
     float: right;
     width: 50%;
     height: 100%;
+    display: none;
+    /* display: -webkit-flex; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #465DD2;
+    box-shadow: 0px 0px 30px 1px black;
+
+
 }
 
-#addBatchConsole>#addBatchConsole_carMenuBack {
-    display: block;
+/*发出批-选择车辆-背景*/
 
+#addBatchConsole_carMenuBack {
+    animation: fadeOut 0.3s;
+    float: right;
+    width: 50%;
+    height: 100%;
+    display: block;
     background: url("../../res/img/bg0.jpg");
     background-position: center;
 }
 
-#addBatchConsole>#addBatchConsole_carMenu {
-    display: none;
-    background: lightgreen;
-}
-
-/*包裹车辆列表的盒子*/
-#addBatchConsole>div>div {
+#addBatchConsole_carMenu h3 {
+    display: block;
     width: 100%;
-    height: 300px;
-    padding: 0 10px;
-    background: #cccccc;
+    text-align: left;
+    color:white;
+    margin-left: 20px;
+    background: transparent;
+}
+
+/*发出批-选择车辆-车辆列表BOX*/
+#addBatchConsole>div>div {
     overflow: auto;
+    width: 100%;
+    height: 500px;
+    padding: 0 10px;
+    color:white;
+    /* border:1px solid transparent; */
+    background: transparent;
 }
 
-
-#addBatchConsole input {
+#addBatchConsole>div>div>table>tbody tr:hover{
+   background: #aaaaaa;
+   cursor: pointer;
+}
+/*发出批-选择车辆-按钮*/
+#addBatchConsole_carMenu button {
     display: inline-block;
-    width: 30%;
-    font-size: 1.3em;
-
-
+    width: 130px;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: white;
+    background: #27941D;
 }
+
+#addBatchConsole_carMenu button:hover {
+    background: #99CC33;
+}
+/*新增批次车辆选重*/
+.batch_car_list_checked{
+    background: gray;
+}
+
 
 
 
@@ -382,8 +426,6 @@ body {
     height: 100px;
     border-top: 1px dotted gray;
     border-bottom: 1px dotted gray;
-
-
     background: transparent;
 
 }

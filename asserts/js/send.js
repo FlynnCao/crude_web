@@ -14,6 +14,8 @@
 var allPages = new Array(1, 2, 3 );
 var currentPage = 0;
 var firstIntoPage = true;
+var cars = new Array(); //存储车辆列表
+var cars_i = 0; //存储车辆列表的下标
 //第一次启动时，载入发车页-今日批次
 if (firstIntoPage) {
     switchPages(0);
@@ -21,7 +23,7 @@ if (firstIntoPage) {
 
 
 }
-
+ //showAddBatchConsole(false);
 //当前或者历史批次
 var currentBatch = 0;
 /*功能函数区 */
@@ -69,20 +71,63 @@ function showAddBatchConsole(flag) {
     } else {
         document.querySelector("#addBatchConsole").style.display = "block";
         document.querySelector("#addBatchConsoleLayer").style.display = "block";
-        createBatchNumAndDate();
+        addBatch_handleCarListClick(); //新增批次选车列表点击
 
     }
 }
 //新增批次-显示车辆选择列表
-function showSelectCarList(){
-    document.querySelector("#addBatchConsole_carMenuBack").style.display = "none";
-    document.querySelector("#addBatchConsole_carMenu").style.display = "block";
+function showSelectCarList(flag){
+    if(flag == true){
+        document.querySelector("#addBatchConsole_carMenuBack").style.display = "none";
+        document.querySelector("#addBatchConsole_carMenu").style.display = "flex";
+    }else{
+        document.querySelector("#addBatchConsole_carMenuBack").style.display = "block";
+        document.querySelector("#addBatchConsole_carMenu").style.display = "none";
+    }
+  
 
+}
+//新增批次-控制车辆点击选择添加
+function addBatch_handleCarListClick(){
+    let flag = false;
+    var rows = document.querySelectorAll("#addBatchConsole>div>div>table>tbody tr");
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].onclick = function (){
+            this.className = "batch_car_list_checked";
+            let carNum = this.children[1].innerHTML;
+            //查重
+            cars.forEach(element => {
+                if(element == carNum){
+                    flag = true;
+                }
+            });
+            if(flag == false){
+                cars[cars_i++] = carNum;
+            }
+            flag = false;
+            // console.log(this.children[1].innerHTML);
+        }
+        
+    }
 }
 //新增批次-保存选择的车辆列表
 function saveSelectedCarList(){
-
+    var carsStr = "";
+    // cars.forEach(element => {
+    //     console.log(element);
+    // });
+    for (let index = 0; index < cars.length; index++) {
+        carsStr += cars[index] + ";";
+    }
+    document.querySelector("#addBatch_form_car").value = carsStr;
+    showSelectCarList(false);
+    console.log(carsStr);
 }
+// //动画：新增批次完成后，倒序播放动画
+// function playSecondAnimationReverse(){
+//     var block = document.querySelector("#addBatchConsole");
+//     block.style.animation = "hideSecondFloorConsole_addBatch 0.5s";
+// }
 
 // function bindingAddBatchConfirm() {
 //     //绑定新增批次确认按钮
