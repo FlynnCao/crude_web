@@ -306,7 +306,7 @@ body {
 
 #col_right_top_search>span {
     display: inline-block;
-
+    cursor: pointer;
 
 
 }
