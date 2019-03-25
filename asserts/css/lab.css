@@ -46,7 +46,6 @@
 
 #col_right_func>p span:first-child {
     font-weight: bold;
-
     color: #465DD2;
 }
 
@@ -82,6 +81,7 @@
   }
 
 #assay_car_console {
+    animation: zoomIn 0.7s;
     display: none;
     z-index: 100;
     position: absolute;
