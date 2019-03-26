@@ -9,9 +9,7 @@
     <!--Attach to every pages.-->
     <link href="asserts/css/master.css" rel="stylesheet" />
     <link href="asserts/css/animation.css" rel="stylesheet" />
-
     <link href="asserts/css/send.css" rel="stylesheet" />
-
     <!-- <script src="asserts/js/vue.min.js" type="text/javascript"></script> -->
     <script src="asserts/js/vue.js" type="text/javascript"></script>
 </head>
@@ -19,6 +17,9 @@
 <body>
     <!-- <img src="res/ico/car_blue_32.png"/> -->
     <div id="app">
+        <p style="display: none" id="crude_setting">
+            <span class="crude_setting_carListMutiSelct">0</span>
+        </p>
         <!--浮层区-->
         <div id="addBatchConsoleLayer">
         </div>
@@ -44,7 +45,8 @@
                     <input type="text" name="oil" placeholder="精度为4"><br>
                 </p>
                 <p><span class="glyphicon glyphicon-send"></span><span>&nbsp;车辆</span><br>
-                    <input type="text" name="density" value="" placeholder="" id="addBatch_form_car" onclick="showSelectCarList(true)">
+                    <input type="text" name="density" value="" placeholder="" id="addBatch_form_car"
+                        onclick="showSelectCarList(true)">
                 </p>
                 <div>
                     <input type="submit" name="confirm" value="确认" onclick="howAddBatchConsole(true);">
@@ -120,7 +122,7 @@
                         </tbody>
                     </table>
                 </div>
-                <button onclick="saveSelectedCarList()"  class="glyphicon glyphicon-circle-arrow-left" >添加</button>
+                <button onclick="saveSelectedCarList()" class="glyphicon glyphicon-circle-arrow-left">添加</button>
                 <!-- <div> 
                 </div> -->
 
@@ -130,7 +132,9 @@
         </div>
         <!--地面区-->
         <div id="col_left">
-        
+            <div>
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油管理系统</span>
+            </div>
             <ul>
                 <li onclick="switchPages(0)">
                     <span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;<span>发车</span>
@@ -149,13 +153,17 @@
 
             <div id="col_right_top">
                 <div id="col_right_top_search">
-                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="输入批号或者日期进行检索" /></div>
+                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="输入批号或者日期进行检索" />
+                </div>
                 <div id="col_right_top_profile">
                     <ul>
                         <li>小陈</li>
-                        <li>发车管理员</li>
+                        <li>管理员滴滴滴滴</li>
                     </ul>
+                    &nbsp;&nbsp;&nbsp;
                     <img src="res/img/avatar0.jpg" />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+
                 </div>
             </div>
             <div id="col_right_page1" class="crude_page">
@@ -233,7 +241,7 @@
                                     <td>60503001</td>
                                     <td>2019/3/8 9:59:21</td>
                                 </tr>
-                               
+
 
                             </tbody>
 
@@ -295,7 +303,7 @@
                                     <td>0.8012</td>
                                     <td>2019/03/14 22:36:11</td>
                                 </tr>
-               
+
 
                             </tbody>
                         </table>
@@ -352,12 +360,10 @@
                                 <th>G50</th>
                                 <th>A</th>
                             </tr>
-             
+
 
                         </tbody>
                     </table>
-
-
                 </div>
 
             </div>

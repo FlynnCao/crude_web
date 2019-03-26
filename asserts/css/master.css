@@ -35,7 +35,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 300px auto;
+    margin: 230px auto;
     width: 150px;
     height: 0px; /*请查看master_css.js*/
     background: transparent;
@@ -58,7 +58,30 @@ body {
     background: white;
     cursor: pointer;
 }
+/*左侧-标题*/
 
+#col_left>div {
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+    margin: 0px auto;
+    border-radius: 0;
+    line-height: 80px;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    background: #cccccc;
+    background: rgba(125, 125, 125, 0.3);
+    
+
+ 
+
+}
+#col_left>div:hover{
+    transition-duration: 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 3px white;
+}
 /*右侧栏目*/
 #col_right {
     float: left;
@@ -75,8 +98,9 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 80px;
-    background: white;
+    height: 79px;
+    border-bottom: 1px dotted transparent;
+    background:transparent;
 }
 
 /*右侧-搜索栏*/
@@ -130,7 +154,7 @@ body {
 
 #col_right_top_profile>ul {
     display: inline-block;
-    width: 100px;
+    width: auto;
     height: 60px;
     margin: 0;
     background: transparent;
@@ -157,7 +181,17 @@ body {
 
 
 }
+/*个人信息-退出按钮*/
+#col_right_top_profile>span{
+    font-size: 1.5em;
+    
+}
+#col_right_top_profile>span:hover{
+    transition-duration: 0.3s;
+    cursor: pointer;
+    color:red;
 
+}
 /*右侧-功能区外层-除发车外可用*/
 #col_right_func {
     display: flex;
@@ -193,6 +227,30 @@ body {
     border-radius: 15px;
     color: white;
 }
+/*左侧-功能区-车数选择*/
+#col_right_func>p {
+    width: 200px;
+    height: 100%;
+    margin: 0;
+    margin-right: 50px;
+    line-height: 70px;
+    font-size: 2em;
+    text-align: center;
+    background: transparent;
+
+}
+#col_right_func>p span:first-child {
+    font-weight: bold;
+
+    color: #465DD2;
+}
+#col_right_func>p span:nth-child(2) {
+    font-weight: bold;
+
+    color: gray;
+
+}
+
 /*右侧-列表*/
 #col_right_list{
     margin-left:15px;

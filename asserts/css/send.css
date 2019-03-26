@@ -183,7 +183,7 @@ body {
     display: block;
     width: 100%;
     text-align: left;
-    color:white;
+    color: white;
     margin-left: 20px;
     background: transparent;
 }
@@ -194,15 +194,16 @@ body {
     width: 100%;
     height: 500px;
     padding: 0 10px;
-    color:white;
+    color: white;
     /* border:1px solid transparent; */
     background: transparent;
 }
 
-#addBatchConsole>div>div>table>tbody tr:hover{
-   background: #aaaaaa;
-   cursor: pointer;
+#addBatchConsole>div>div>table>tbody tr:hover {
+    background: #aaaaaa;
+    cursor: pointer;
 }
+
 /*发出批-选择车辆-按钮*/
 #addBatchConsole_carMenu button {
     display: inline-block;
@@ -218,10 +219,12 @@ body {
 #addBatchConsole_carMenu button:hover {
     background: #99CC33;
 }
+
 /*新增批次车辆选重*/
-.batch_car_list_checked{
+.batch_car_list_checked {
     background: gray;
 }
+
 /*左侧栏目*/
 #col_left {
     float: left;
@@ -229,10 +232,7 @@ body {
     height: 100%;
     background: url('../../res/img/bg0.jpg');
 }
-#col_left>div{
-    margin:50px auto;
-    color:black;
-}   
+
 
 /* #col_left>ul {
     display: flex;
@@ -263,7 +263,7 @@ body {
     cursor: pointer;
 } */
 
-/*左侧-导航栏*/
+/* 左侧-导航栏
 
 /*右侧栏目*/
 #col_right {
@@ -286,7 +286,7 @@ body {
 }
 
 /*右侧-搜索栏*/
-#col_right_top_search {
+/* #col_right_top_search {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -318,11 +318,11 @@ body {
     border: 0;
 
     background: transparent;
-}
+} */
 
 
 /*右侧-个人信息栏*/
-#col_right_top_profile {
+/* #col_right_top_profile {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -362,7 +362,7 @@ body {
     border-radius: 50%;
 
 
-}
+}  */
 
 /*右侧-主要内容*/
 .crude_page {

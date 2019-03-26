@@ -8,7 +8,7 @@
 car_list_handleSimpleClick(); //绑定列表块点击事件
 var selectedCarNum = ""; //被选中的车辆号码
 var selectedCarIndex = 0; //被选中的车辆行索引
-
+var selectedBatchNum = ""; //被选中的批次号
 //绑定列表块点击事件(仅允许单选)
 function car_list_handleSimpleClick() {
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
@@ -17,12 +17,12 @@ function car_list_handleSimpleClick() {
             car_list_select_clear();
             this.className = "car_list_checked";
             selectedCarNum = this.children[2].innerHTML;
+            selectedBatchNum = this.children[1].innerHTML;
             selectedCarIndex = index;
         }
     }
 }
 //绑定列表块点击事件
-
 function car_list_select_clear() {
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
     //console.log(rows.length);
@@ -32,9 +32,9 @@ function car_list_select_clear() {
     }
 }
 //控制过衡窗口的显隐 @param:true(显示)，false(隐藏)
-function showOverBalanceConsole(flag) {
-    if (flag == true) {
-        overBalancePreLoading();
+function showOverBalanceConsole(isShow, commandNum) {
+    if (isShow == true) {
+        overBalancePreLoading(commandNum);
         document.querySelector("#overBalanceConsoleLayer").style.display = "block";
         document.querySelector("#overBalanceConsole").style.display = "block";
     } else {
@@ -44,14 +44,36 @@ function showOverBalanceConsole(flag) {
     }
 
 }
-function overBalancePreLoading(flag){
-    document.querySelector("#overBalanceConsole>form input:first-child").value = selectedCarNum; //将油车号装填到Input中
-    var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
-    //查看重车状态
-    var fatWeight = rows[selectedCarIndex].children[5].innerHTML;
-    if(fatWeight == ""){
-        document.querySelector("#obc_emptyCar").disabled = "disabled";
-        document.querySelector("#obc_emptyCar").style.background = "gray";
+
+function overBalancePreLoading(commandNum) {
+    //获取当前单车的批号和车牌号并赋值入框内
+    document.querySelector("#obc_carNum").value = selectedCarNum;
+    document.querySelector("#obc_batchNum").value = selectedBatchNum;
+    var inputs = document.querySelectorAll("#overBalanceConsole>form p input");
+    for (let index = 0; index < inputs.length; index++) {
+        inputs[index].style.background = "#ccc";
+        inputs[index].disabled = true;
+
+    }
+    // console.log(inputs.length);
+    //参数-1 变更车重量-2变更车号
+    switch (commandNum) {
+        case 1:
+            var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
+            var fatWeight = rows[selectedCarIndex].children[5].innerHTML;
+            if (fatWeight == "") {
+                document.querySelector("#obc_fullCar").disabled = false;
+                document.querySelector("#obc_fullCar").style.background = "#eeeeee";
+            } else {
+                document.querySelector("#obc_emptyCar").disabled = false;
+                document.querySelector("#obc_emptyCar").style.background = "#eeeeee";
+            }
+            break;
+        case 2:
+            document.querySelector("#obc_carNum").disabled = false;
+            document.querySelector("#obc_carNum").style.background = "#eeeeee";
+        default:
+            break;
     }
 
 }

@@ -6,18 +6,28 @@
  * @desc [进厂页面专属样式]
  */
  /*右侧-功能区-按钮自定义样式*/
+
  #col_right_func>div button:first-child {
     background: #465DD2;
 }
-
+    
 #col_right_func>div button:first-child:hover {
     background: #38f;
 }
+
 #col_right_func>div button:nth-child(2) {
-    background: gray;
+    background: #27941D;
 }
 
 #col_right_func>div button:nth-child(2):hover {
+    background: #99CC33;
+}
+
+#col_right_func>div button:nth-child(3) {
+    background: gray;
+}
+
+#col_right_func>div button:nth-child(3):hover {
     background: #aaaaaa;
 }
 /*右侧-列表*/
@@ -27,11 +37,3 @@
     margin-left: 10px;
     overflow: auto;
 }
-/* .car_list_unchecked {
-    background: white;
-}
-
-.car_list_checked {
-    background: #f0f1f4;
-
-} */

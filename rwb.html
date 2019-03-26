@@ -17,22 +17,30 @@
 
 <body>
     <div id="app">
+            <p style="display: none" id="crude_setting">
+                    <span class="crude_setting_carListMutiSelct">0</span>
+                </p>
         <!--浮层区-->
         <div id="overBalanceConsoleLayer">
         </div>
         <div id="overBalanceConsole">
             <h2>过衡</h2>
             <form>
-                <input  name="action" value="updateweightandnum" type="hidden">
-                <p> <span class="glyphicon glyphicon-pencil"></span><span>&nbsp;油车号</span><br><input type="text" placeholder="">
+                    <p> <span class="glyphicon glyphicon-pencil"></span><span>&nbsp;批号</span><br><input type="text"
+                        placeholder="" id="obc_batchNum" >
                 </p>
-                <p> <span class="glyphicon glyphicon-adjust"></span><span>&nbsp;重车重量</span><br><input type="text"  id="obc_fullCar" placeholder="">
+                <p> <span class="glyphicon glyphicon-pencil"></span><span>&nbsp;油车号</span><br><input type="text"
+                        placeholder="" id="obc_carNum" >
                 </p>
-                <p><span class="glyphicon glyphicon-record"></span> <span>&nbsp;轻车重量</span><br><input type="text" id="obc_emptyCar" placeholder="">
+                <p> <span class="glyphicon glyphicon-adjust"></span><span>&nbsp;重车重量</span><br><input type="text"
+                        id="obc_fullCar" placeholder="">
+                </p>
+                <p><span class="glyphicon glyphicon-record"></span> <span>&nbsp;轻车重量</span><br><input type="text"
+                        id="obc_emptyCar" placeholder="">
                 </p>
                 <div>
-                    <input type="submit" value="确定" id="overBalanceOK" onclick="showOverBalanceConsole(true);">
-                    <input type="button" value="取消"  onclick="showOverBalanceConsole(false);">
+                    <input type="submit" value="确定" id="overBalanceOK" onclick="showOverBalanceConsole(false);">
+                    <input type="button" value="取消" onclick="showOverBalanceConsole(false);">
                 </div>
 
 
@@ -43,6 +51,9 @@
         </div>
         <!--地面区-->
         <div id="col_left">
+            <div>
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
+            </div>
             <ul>
                 <li onclick="refreshWebPage()">
                     <span class="glyphicon glyphicon-road"></span>&nbsp;&nbsp;<span>轨道衡</span>
@@ -55,19 +66,22 @@
             <div id="col_right_top">
                 <div id="col_right_top_search">
                     <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
-                <div id="col_right_top_profile">
-                    <ul>
-                        <li>小李</li>
-                        <li>轨道衡人员</li>
-                    </ul>
-                    <img src="res/img/avatar0.jpg" />
-                </div>
+                    <div id="col_right_top_profile">
+                            <ul>
+                                <li>小陈</li>
+                                <li>管理员滴滴滴滴</li>
+                            </ul>
+                            &nbsp;&nbsp;&nbsp;
+                            <img src="res/img/avatar0.jpg" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+        
+                        </div>
             </div>
             <div id="col_right_func">
                 <div>
-                    <button id="rwb_over_balance" onclick="showOverBalanceConsole(true)"
+                    <button id="rwb_over_balance" onclick="showOverBalanceConsole(true ,1)"
                         class="glyphicon glyphicon-file">过衡</button>
-                    <button id="rwb_change_number" onclick="showOverBalanceConsole(true)"
+                    <button id="rwb_change_number" onclick="showOverBalanceConsole(true, 2)"
                         class="glyphicon glyphicon-ban-circle">变更车号</button>
                     <button id="rwb_func_cancel" onclick="car_list_select_clear()"
                         class="glyphicon glyphicon-ban-circle">取消</button>

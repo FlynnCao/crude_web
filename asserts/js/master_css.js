@@ -8,8 +8,12 @@
 /*自动启动的函数列表*/
 adjustLeftNav(); //导航栏调整
 adjustFuncButton(); //功能区调整
+adjustTitleName(); //网站标题调整
 
-
+//网站标题调整
+function adjustTitleName(){
+    document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "Crude";
+}
 
 //导航栏调整
 /*描述：根据内部包含块的个数，动态调整外围的大小 */

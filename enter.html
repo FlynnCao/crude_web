@@ -8,186 +8,199 @@
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asserts/css/reset.css" rel="stylesheet" />
     <link href="asserts/css/master.css" rel="stylesheet" />
-    <link rel="stylesheet"  href="asserts/css/enter.css">
+    <link rel="stylesheet" href="asserts/css/enter.css">
 </head>
 
 <body>
     <div id="app">
-            <div id="col_left">
-                    <ul>
-                        <li onclick="refreshWebPage()">
-                            <span class="glyphicon glyphicon-random" ></span>&nbsp;&nbsp;<span>进厂</span>
-                        </li>
-            
-                    </ul>
-                </div>
-                <div id="col_right">
-                    <div id="col_right_top">
-                        <div id="col_right_top_search">
-                            <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
-                        <div id="col_right_top_profile">
-                            <ul>
-                                <li>小赵</li>
-                                <li>进厂调度员</li>
-                            </ul>
-                            <img src="res/img/avatar0.jpg" />
-            
-            
-                        </div>
-            
-                    </div>
-                    <div id="col_right_func">
-                        <div>
-                            <button id="send_func_group" onclick="alert('已经进厂！')" class="glyphicon glyphicon-file">编组进厂</button>
-                            <button id="send_func_group2" onclick="car_list_select_clear()" class="glyphicon glyphicon-ban-circle">取消</button>
+        <p style="display: none" id="crude_setting">
+            <span class="crude_setting_carListMutiSelct">1</span>
+        </p>
+        <div id="col_left">
+            <div>
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
+            </div>
+            <ul>
+                <li onclick="refreshWebPage()">
+                    <span class="glyphicon glyphicon-random"></span>&nbsp;&nbsp;<span>进厂</span>
+                </li>
 
-                        </div>  
-                    
-                    </div>
-                    <div id="col_right_list">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>发出编号</th>
-                                    <th>车牌号</th>
-                                    <th>发出时间</th>
-            
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-            
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>201903052255</td>
-                                    <td>6003001</td>
-                                    <td>2019/03/05 15:33</td>
-                                </tr>
-                            </tbody>
-            
-                        </table>
-                    </div>
+            </ul>
+        </div>
+        <div id="col_right">
+            <div id="col_right_top">
+                <div id="col_right_top_search">
+                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
+                    <div id="col_right_top_profile">
+                            <ul>
+                                <li>小陈</li>
+                                <li>管理员滴滴滴滴</li>
+                            </ul>
+                            &nbsp;&nbsp;&nbsp;
+                            <img src="res/img/avatar0.jpg" />
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+        
+                        </div>
+
+            </div>
+            <div id="col_right_func">
+                <div>
+                    <button id="send_func_group" onclick="enterFactory()" class="glyphicon glyphicon-file">编组进厂</button>
+                    <button id="send_func_select_all" onclick="car_list_select(true)"
+                        class="glyphicon glyphicon-check">全选</button>
+                    <button id="send_func_cancel" onclick="car_list_select(false)"
+                        class="glyphicon glyphicon-ban-circle">取消</button>
+
                 </div>
+                <p>
+                    已选中&nbsp;<span id="car_selected_num">0</span>/<span id="car_list_total_num">99</span>
+                </p>
+
+            </div>
+            <div id="col_right_list">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>发出编号</th>
+                            <th>车牌号</th>
+                            <th>发出时间</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>2019/03/05 15:33</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="asserts/js/master.js"> </script>
     <script type="text/javascript" src="asserts/js/master_css.js"> </script>
