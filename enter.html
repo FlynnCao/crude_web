@@ -16,8 +16,20 @@
         <p style="display: none" id="crude_setting">
             <span class="crude_setting_carListMutiSelct">1</span>
         </p>
+        <form action="">
+            <input type="action" value="updateentergroup" name="">
+            <input type="text" value="" id="lz_form_id" name="id">
+            <input type="text" value="" id="lz_form_status" name="status">
+            <input type="text" value="" id="lz_form_batch" name="sendbatch">
+            <input type="text" value="" id="lz_form_date" name="sendate">
+            <input type="text" value="" id="lz_form_car" name="car">
+            <input type="text" value="" id="lz_form_enterBatch" name="jinchang_batch">
+            <input type="text" value="" id="lz_form_enterDate" name="jinchang_date">
+            <input type="submit" id="lz_form_submit">
+        </form>
+    
         <div id="col_left">
-            <div>
+            <div onclick="hiddenBackStage()">
                 <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
             </div>
             <ul>
@@ -38,14 +50,13 @@
                             </ul>
                             &nbsp;&nbsp;&nbsp;
                             <img src="res/img/avatar0.jpg" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
-        
+                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>        
                         </div>
 
             </div>
             <div id="col_right_func">
                 <div>
-                    <button id="send_func_group" onclick="enterFactory()" class="glyphicon glyphicon-file">编组进厂</button>
+                    <button id="send_func_group" onclick="groupSelectedCar()" class="glyphicon glyphicon-file">编组进厂</button>
                     <button id="send_func_select_all" onclick="car_list_select(true)"
                         class="glyphicon glyphicon-check">全选</button>
                     <button id="send_func_cancel" onclick="car_list_select(false)"
@@ -61,10 +72,12 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>编号</th>
+                            <th>序号</th>
                             <th>发出编号</th>
                             <th>车牌号</th>
                             <th>发出时间</th>
+                            <th>id</th>
+                            <th>状态</th>
 
                         </tr>
                     </thead>
@@ -74,127 +87,54 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>2019/03/05 15:33</td>
+                            <td>30</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <td>1</td>
+                            <td>2</td>
                             <td>201903052255</td>
-                            <td>6003001</td>
+                            <td>6003002</td>
                             <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
-                        </tr>
+                            <td>31</td>
 
-                        <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
+                            <td>5</td>
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
+                            <td>3</td>
+                            <td>201507083322</td>
+                            <td>6003003</td>
+                            <td>2015/07/08 05:15</td>
+                            <td>32</td>
+                            <td>6</td>
+
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
+                            <td>4</td>
+                            <td>201507083322</td>
+                            <td>7003001</td>
+                            <td>2015/07/08 05:15</td>
+                            <td>33</td>
+                            <td>5</td>
+
                         </tr>
                         <tr>
-                            <td>1</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>2019/03/05 15:33</td>
+                            <td>5</td>
+                            <td>201507083322</td>
+                            <td>7002001</td>
+                            <td>2015/07/08 05:15</td>
+                            <td>34</td>
+                            <td>6</td>
+
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>201507083322    </td>
+                            <td>7003005</td>
+                            <td>2015/07/08 05:15</td>
+                            <td>35</td>
+
+                            <td>6</td>
+
                         </tr>
                     </tbody>
 

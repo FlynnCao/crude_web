@@ -31,10 +31,15 @@ body {
     height: 100%;
     background: black;
     background: rgba(0, 0, 0, 0.7);
+
+
+
+
 }
 
 #addBatchConsole {
     animation: zoomIn 0.5s;
+    -webkit-animation: zoomIn 0.5s;
     display: none;
     clear: both;
     z-index: 100;
@@ -224,6 +229,25 @@ body {
 .batch_car_list_checked {
     background: gray;
 }
+
+/*批次详情*/
+#BatchDetailConsole{
+    display: block;
+    animation: zoomIn 0.5s;
+    -webkit-animation: zoomIn 0.5s;
+    display: none;
+    clear: both;
+    z-index: 100;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 80%;
+    background: white;
+    box-shadow: 0px 0px 30px 1px black;
+    /*水平偏移 垂直偏移 模糊 大小 颜色*/
+}
+
 
 /*左侧栏目*/
 #col_left {
@@ -481,6 +505,11 @@ body {
     font-size: 1.1em;
     overflow: auto;
 }
+
+#col_right_page1_list2:hover {
+    cursor: pointer;
+}   
+
 
 /*车辆*/
 

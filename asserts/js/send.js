@@ -16,12 +16,15 @@ var currentPage = 0;
 var firstIntoPage = true;
 var cars = new Array(); //存储车辆列表
 var cars_i = 0; //存储车辆列表的下标
+/*自动启动的函数区 */
+car_list_handleSimpleClick();
+
 //第一次启动时，载入发车页-今日批次
 if (firstIntoPage) {
     switchPages(0);
     switchSentBatches(1);
-
-
+    setCarListIndex();
+    
 }
 /*默认自动启动的函数 */
 //1.search_pairngString
@@ -123,37 +126,78 @@ function saveSelectedCarList() {
     }
     document.querySelector("#addBatch_form_car").value = carsStr;
     showSelectCarList(false);
-    console.log(carsStr);
+   // console.log(carsStr);
 }
-//右侧-搜索按钮绑定事件-历史批
-(function handleSearchButton() {
-    document.querySelector("#col_right_top_search>span").onclick = function () {
-        var info = document.querySelector("#col_right_top_search>input").value;
-        // console.log(info);
-        var historyList = document.querySelector("#col_right_page1_list2");
-        //undefined 空的变量 null 空的对象
-        if (historyList != null) {
-            // console.log("list exist!");
-            // var batchNums = document.querySelectorAll("#col_right_page1_list2>table>tbody tr>td:nth-child(2)");
-            var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
-            for (let index = 0; index < rows.length; index++) {
-                var num = rows[index].children[1].innerHTML; //获取每一行行对应的发出批号
-                var date = rows[index].children[5].innerHTML; //获取每一行行对应的日期
-                if(search_pairngString(info, num) || search_pairngString(info, date)){
-                   rows[index].style.display = "table-row";
-                }else{
-                    rows[index].style.display = "none";
+// //右侧-搜索按钮绑定事件-历史批
+// (function handleSearchButton() {
+//     document.querySelector("#col_right_top_search>span").onclick = function () {
+//         var info = document.querySelector("#col_right_top_search>input").value;
+//         // console.log(info);
+//         var historyList = document.querySelector("#col_right_page1_list2");
+//         //undefined 空的变量 null 空的对象
+//         if (historyList != null) {
+//             // console.log("list exist!");
+//             // var batchNums = document.querySelectorAll("#col_right_page1_list2>table>tbody tr>td:nth-child(2)");
+//             var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+//             for (let index = 0; index < rows.length; index++) {
+//                 var num = rows[index].children[1].innerHTML; //获取每一行行对应的发出批号
+//                 var date = rows[index].children[5].innerHTML; //获取每一行行对应的日期
+//                 if(search_pairngString(info, num) || search_pairngString(info, date)){
+//                    rows[index].style.display = "table-row";
+//                 }else{
+//                     rows[index].style.display = "none";
 
-                }
-            }
+//                 }
+//             }
+//         }
+//     }
+// })();
+// //搜索-字符串匹配
+// function search_pairngString(obj, str) {
+//     if (str.indexOf(obj) >= 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+//绑定列表块点击事件(仅允许单选)
+function car_list_handleSimpleClick() {
+    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+  //  console.log(rows[1].nodeName);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].onclick = function () {
+           car_list_select_clear();
+           this.className = "car_list_checked";
+            // selectedCarNum = this.children[2].innerHTML;
+            // selectedBatchNum = this.children[1].innerHTML;
+            //selectedCarIndex = index;
+
         }
     }
-})();
-//搜索-字符串匹配
-function search_pairngString(obj, str) {
-    if (str.indexOf(obj) >= 0) {
-        return true;
-    } else {
-        return false;
+}
+//绑定列表块批量清除事件
+function car_list_select_clear() {
+    //console.log("clear");
+    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+    //console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].className = "car_list_unchecked";
+
     }
 }
+
+//设置列表序号
+function setCarListIndex(){
+    var rows = document.querySelectorAll("#col_right_page1_list>table>tbody tr");
+   // console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].children[0].innerHTML = index + 1;
+    }  
+    //col_right_page1_list2
+    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+   // console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].children[0].innerHTML = index + 0;
+    }  
+
+}         

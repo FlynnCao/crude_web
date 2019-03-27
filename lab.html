@@ -4,7 +4,7 @@
 <head>
     <title>原油计量系统</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asserts/css/reset.css" rel="stylesheet" />
     <link href="asserts/css/master.css" rel="stylesheet" />
@@ -25,7 +25,11 @@
         <div id="assay_car_console">
             &nbsp;&nbsp; <h2>化验</h2>
             <form>
-                <input name="action" value="updatewaterdensity" type="hidden">
+                <menu>
+                    <input name="action" value="updatewaterdensity" type="">
+                    <input name="id" id="acc_id" value="updatewaterdensity" type="">
+                    <input name="status" id="acc_status" value="updatewaterdensity" type="">
+                </menu>
                 <p><span class="glyphicon glyphicon-tint"></span><span>&nbsp;水分</span><br>
                     <input type="text" name="water" value="" placeholder="精度为2">
                 </p>
@@ -43,7 +47,7 @@
         </div>
         <!--地面区-->
         <div id="col_left">
-            <div>
+            <div onclick="hiddenBackStage()">
                 <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
             </div>
             <ul>
@@ -85,8 +89,6 @@
 
             </div>
             <div id="col_right_list">
-
-
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -94,39 +96,54 @@
                             <th>发出油量批号</th>
                             <th>油车号</th>
                             <th>发出时间</th>
+                            <th>id</th>
+                            <th>状态</th>
+
                         </tr>
 
                     </thead>
                     <tbody>
                         <tr>
-                            <th>1</th>
-                            <th>20190308003</th>
-                            <th>6003001</th>
-                            <th>2019/03/08 15:22:35</th>
+                            <td>1</td>
+                            <td>20190308003</td>
+                            <td>6003001</td>
+                            <td>2019/03/08 15:22:35</td>
+                            <td>30</td>
+                            <td>5</td>
+
                         </tr>
                         <tr>
-                            <th>2</th>
-                            <th>20190308003</th>
-                            <th>6003003</th>
-                            <th>2019/03/08 15:22:35</th>
+                            <td>2</td>
+                            <td>20190308003</td>
+                            <td>6003003</td>
+                            <td>2019/03/08 15:22:35</td>
+                            <td>31</td>
+                            <td>5</td>
+
                         </tr>
                         <tr>
-                            <th>3</th>
-                            <th>20190308003</th>
-                            <th>6003005</th>
-                            <th>2019/03/08 15:22:35</th>
+                            <td>3</td>
+                            <td>20190308003</td>
+                            <td>6003005</td>
+                            <td>2019/03/08 15:22:35</td>
+                            <td>32</td>
+                            <td>5</td>
                         </tr>
                         <tr>
-                            <th>4</th>
-                            <th>20190308003</th>
-                            <th>7003010</th>
-                            <th>2019/03/08 15:22:35</th>
+                            <td>4</td>
+                            <td>20190308003</td>
+                            <td>7003010</td>
+                            <td>2019/03/08 15:22:35</td>
+                            <td>33</td>
+                            <td>6</td>
                         </tr>
                         <tr>
-                            <th>５</th>
-                            <th>20190308003</th>
-                            <th>6003001</th>
-                            <th>2019/03/08 15:22:35</th>
+                            <td>５</td>
+                            <td>20190308003</td>
+                            <td>6003001</td>
+                            <td>2019/03/08 15:22:35</td>
+                            <td>34</td>
+                            <td>6</td>
                         </tr>
                     </tbody>
                 </table>
