@@ -21,10 +21,110 @@
             <span class="crude_setting_carListMutiSelct">0</span>
         </p>
         <!--浮层区-->
-        <div id="addBatchConsoleLayer">
+        <div id="SecondConsoleLayer">
         </div>
         <div id="BatchDetailConsole">
-            
+            <form>
+                <h3>查看批次</h3>
+                <p><span class="glyphicon glyphicon-pencil"></span><span>&nbsp;发出批号</span><br>
+                    <input type="text" name="batch" placeholder="" class="bdc_input">
+                </p>
+
+                <p><span class="glyphicon glyphicon-time" ></span><span>&nbsp;发出时间</span><br>
+                    <input type="text" name="date" placeholder="" class="bdc_input"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-adjust"></span><span>&nbsp;总油量</span><br>
+                    <input type="text" name="oil" placeholder="" class="bdc_input"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-tint"></span><span>&nbsp;水分</span><br>
+                    <input type="text" name="oil" placeholder="" class="bdc_input"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-equalizer"></span><span>&nbsp;密度</span><br>
+                    <input type="text" name="oil" placeholder="" class="bdc_input"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-send"></span><span>&nbsp;车辆</span><br>
+                    <input type="text" name="density" value="5" placeholder="" class="bdc_input"
+                     >
+                </p>
+                <div>
+                    <input type="button" name="button" value="收起" onclick="showBatchDetailConsole(false);">
+                </div>
+            </form>
+      
+            <div id="BatchDetailConsole_carMenu">
+                <br>
+                <h3>车辆列表</h3>
+                <div class="table_wrapper">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>车号</th>
+                                <th>车型</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th>1</th>
+                                <th>7003001</th>
+                                <th>G70</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <th>7003002</th>
+                                <th>G70</th>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <th>6003001</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <th>6003002</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>5</th>
+                                <th>6003003</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <th>6003004</th>
+                                <th>G60</th>
+                            </tr>
+                            <tr>
+                                <th>7</th>
+                                <th>6003005</th>
+                                <th>G70</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <th>5003001</th>
+                                <th>G50</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <div> 
+                </div> -->
+
+
+            </div>
+
         </div>
         <div id="addBatchConsole">
             <form>
@@ -51,8 +151,8 @@
                         onclick="showSelectCarList(true)">
                 </p>
                 <div>
-                    <input type="submit" name="confirm" value="确认" onclick="howAddBatchConsole(true);">
-                    <input type="button" name="cancel" value="取消" onclick="showAddBatchConsole(true)">
+                    <input type="submit" name="confirm" value="确认" onclick="showAddBatchConsole(false);">
+                    <input type="button" name="cancel" value="取消" onclick="showAddBatchConsole(false)">
                 </div>
             </form>
             <div id="addBatchConsole_carMenuBack">
@@ -178,7 +278,7 @@
                         <li onclick="switchSentBatches(1)">
                             历史批
                         </li>
-                        <button id="addSendCarBatch" onclick="showAddBatchConsole(false)"
+                        <button id="addSendCarBatch" onclick="showAddBatchConsole(true)"
                             class="glyphicon glyphicon-plus">新增批次</button>
                     </ul>
 
@@ -217,7 +317,7 @@
                                     <td>日寇</td>
                                 </tr>
                                 <tr>
-                                    <td>1</td>
+                                    <td>2</td>
                                     <td>201903089500</td>
                                     <td>60503001</td>
                                     <td>2019/3/8 9:59:21</td>
@@ -268,7 +368,7 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>200807053001</td>
+                                    <td>201501038884</td>
                                     <td>540</td>
                                     <td>0.11</td>
                                     <td>0.8012</td>
@@ -276,7 +376,7 @@
                                 </tr>
                                 <tr>
                                     <td>2</td>
-                                    <td>201203047855</td>
+                                    <td>20081554512</td>
                                     <td>540</td>
                                     <td>0.11</td>
                                     <td>0.8012</td>

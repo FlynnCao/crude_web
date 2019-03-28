@@ -38,3 +38,12 @@
 
     }
 }
+
+@keyframes report_bar_stretch{
+    from{
+        height:100%;
+    }to{
+        height:0%;
+    }
+
+}

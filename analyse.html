@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统-分析</title>
+    <title>原油计量系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
@@ -12,7 +12,42 @@
 </head>
 
 <body>
+    <div id="app">
+        <p style="display: none" id="crude_setting">
+            <span class="crude_setting_carListMutiSelct">0</span>
+        </p>
+        <div id="col_left">
+            <div onclick="hiddenBackStage()">
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class=""">原油计量管理系统</span>
+                </div>
+                <ul>
+                    <li onclick=" refreshWebPage()">
+                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span>分析</span>
+                    </li>
 
+                    </ul>
+            </div>
+            <div id="col_right">
+                <div id="col_right_top">
+                    <div id="col_right_top_search">
+                        <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " />
+                    </div>
+                    <div id="col_right_top_profile">
+                        <ul>
+                            <li>小马</li>
+                            <li>分析员</li>
+                        </ul>
+                        &nbsp;&nbsp;&nbsp;
+                        <img src="res/img/avatar0.jpg" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
 </body>
 
 </html>

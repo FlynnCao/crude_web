@@ -159,4 +159,11 @@
     overflow: auto;
     background: transparent;
     
+}/*右侧-列表-隐藏每列最后两个*/
+#col_right_list>table tr>td:last-child,th:last-child,td:nth-last-child(2),th:nth-last-child(2){
+    /*display:table-cell;*/
+      display: none; 
+} 
+#overBalanceConsole>form>menu{
+    display: none;
 }

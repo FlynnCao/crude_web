@@ -21,7 +21,7 @@ body {
 }
 
 /*新增发车*/
-#addBatchConsoleLayer {
+#SecondConsoleLayer {
     display: none;
     z-index: 99;
     position: absolute;
@@ -31,9 +31,6 @@ body {
     height: 100%;
     background: black;
     background: rgba(0, 0, 0, 0.7);
-
-
-
 
 }
 
@@ -232,10 +229,9 @@ body {
 
 /*批次详情*/
 #BatchDetailConsole{
-    display: block;
+    display: none;
     animation: zoomIn 0.5s;
     -webkit-animation: zoomIn 0.5s;
-    display: none;
     clear: both;
     z-index: 100;
     position: absolute;
@@ -247,7 +243,150 @@ body {
     box-shadow: 0px 0px 30px 1px black;
     /*水平偏移 垂直偏移 模糊 大小 颜色*/
 }
+#BatchDetailConsole input {
+    display: inline-block;
+    width: 30%;
+    font-size: 1.1em;
+    
+}
+#BatchDetailConsole input:not([type="button"]) {
+    opacity:0.5;
+    pointer-events:none;
+}
 
+
+
+/*历史批-表单*/
+#BatchDetailConsole>form {
+    float: left;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    font-size: 1.2em;
+    background: white;
+
+}
+
+#BatchDetailConsole>form>h3 {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    background: transparent;
+}
+
+/*历史批-提交的表单-输入行样式*/
+#BatchDetailConsole>form p {
+    text-align: left;
+    width: 70%;
+    background: transparent;
+
+}
+
+#BatchDetailConsole>form p span {
+    /* font-size: 1.5em; */
+    display: inline-block;
+    margin-bottom: 5px;
+    color: gray;
+}
+
+#BatchDetailConsole>form p input {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 0;
+    border-radius: 20px;
+    background: #eeeeee;
+
+}
+
+#BatchDetailConsole>form p input:focus {
+    outline: 0;
+}
+
+/*历史批-按钮行样式*/
+#BatchDetailConsole>form>div {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 50px;
+    background: transparent;
+}
+
+#BatchDetailConsole>form>div input {
+    display: inline-block;
+    width: 130px;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    color: white;
+}
+
+#BatchDetailConsole>form>div input:first-child {
+    background: #465DD2;
+
+}
+
+#BatchDetailConsole>form>div input:first-child:hover {
+    background: #38f;
+
+}
+/*发出批-选择车辆菜单*/
+
+#BatchDetailConsole_carMenu {
+    animation: fadeOut 1.5s;
+    float: right;
+    width: 50%;
+    height: 100%;
+    display: block;
+    /* display: -webkit-flex; */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    box-shadow: 0px 0px 30px 1px black;
+
+
+}
+#BatchDetailConsole_carMenu>h3{
+    margin-left:20px;
+}
+
+/*发出批-选择车辆-车辆列表BOX*/
+#BatchDetailConsole>div>div {
+    overflow: auto;
+    width: 100%;
+    height: 500px;
+    padding: 0 10px;
+    color: black;
+    /* border:1px solid transparent; */
+    background: transparent;
+}
+
+#BatchDetailConsole>div>div>table>tbody tr:hover {
+}
+
+/*发出批-选择车辆-按钮*/
+#BatchDetailConsole_carMenu button {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2em;
+    color: white;
+    background: #27941D;
+}
+
+#BatchDetailConsole_carMenu button:hover {
+    background: #99CC33;
+}
 
 /*左侧栏目*/
 #col_left {
@@ -297,96 +436,7 @@ body {
     background: white;
 }
 
-/*右侧-顶部*/
-#col_right_top {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    background: white;
-}
 
-/*右侧-搜索栏*/
-/* #col_right_top_search {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
-    height: 60px;
-
-    border-radius: 10px;
-    margin-left: 20px;
-    font-size: 1.5em;
-    background: #eeeeee;
-
-}
-
-#col_right_top_search>span {
-    display: inline-block;
-    cursor: pointer;
-
-
-}
-
-#col_right_top_search>input {
-    display: inline-block;
-    font-size: 1.3em;
-    width: 550px;
-    height: 1.5em;
-    margin-left: 10px;
-    border: 0;
-
-    background: transparent;
-} */
-
-
-/*右侧-个人信息栏*/
-/* #col_right_top_profile {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 60px;
-    /* border: 1px solid gray; */
-    margin-right: 20px;
-    background: transparent;
-}
-
-#col_right_top_profile>ul {
-    display: inline-block;
-    width: 100px;
-    height: 60px;
-    margin: 0;
-    background: transparent;
-
-}
-
-#col_right_top_profile>ul li {
-    line-height: 30px;
-    font-size: 1.2em;
-}
-
-#col_right_top_profile>ul li:nth-child(1) {
-    font-weight: bold;
-}
-
-
-#col_right_top_profile>img {
-    display: inline-block;
-
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-
-
-}  */
 
 /*右侧-主要内容*/
 .crude_page {

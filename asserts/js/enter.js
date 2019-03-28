@@ -67,33 +67,18 @@ function setSelectedCarInfo() {
   for (let index = 0; index < rows.length; index++) {
     if (rows[index].className == "car_list_checked") {
       //从已选中的车辆行重获取信息(其他信息)
-      seletedSendBatchStr += rows[index].children[1].innerHTML += ";";
-      selctedCarNumStr += rows[index].children[2].innerHTML += ";";
-      seletedSendDateStr += rows[index].children[3].innerHTML += ";";
+      seletedSendBatchStr += rows[index].children[1].innerHTML = ";";
+      selctedCarNumStr += rows[index].children[2].innerHTML = ";";
+      seletedSendDateStr += rows[index].children[3].innerHTML = ";";
       //从已选中的车辆行重获取信息(id和状态)
       selctedStatusStr += rows[index].lastElementChild.innerHTML + ";";
       selctedIdStr += rows[index].lastElementChild.previousElementSibling.innerHTML + ";";
-
 
     }
   }
 
 }
-//设置进厂批号和进厂日期
-(function setEnterDateAndBatch(){
-    var date = new Date();
-    
 
-
-
-
-
-
-
-
-    
-
-})();
 
 // //绑定列表块点击事件(仅允许单选)
 // function car_list_handleSimpleClick() {

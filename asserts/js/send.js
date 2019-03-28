@@ -16,6 +16,15 @@ var currentPage = 0;
 var firstIntoPage = true;
 var cars = new Array(); //存储车辆列表
 var cars_i = 0; //存储车辆列表的下标
+var seletedBatchNum = ""; //选中批次的批号
+var seletedBatchDate = ""; //选中批次的发出日期
+var seletedBatchOil = ""; //选中批次的发出日期
+var seletedBatchWater = ""; //选中批次的水分
+var seletedBatchDensity = ""; //选中批次的密度
+var seletedBatchCar = ""; //选中批次的车数
+
+
+
 /*自动启动的函数区 */
 car_list_handleSimpleClick();
 
@@ -24,11 +33,12 @@ if (firstIntoPage) {
     switchPages(0);
     switchSentBatches(1);
     setCarListIndex();
-    
+
 }
 /*默认自动启动的函数 */
-//1.search_pairngString
-//2.handleSearchButton
+
+
+
 //当前或者历史批次
 var currentBatch = 0;
 /*功能函数区 */
@@ -67,16 +77,31 @@ function switchSentBatches(batchNum) {
         }
     }
 }
+//控制新增批次的显隐 @param:true(显示)，false(隐藏)
+function showBatchDetailConsole(flag) {
+    if (flag == true) {
+        document.querySelector("#BatchDetailConsole").style.display = "block";
+        document.querySelector("#SecondConsoleLayer").style.display = "block";
+
+
+
+    } else {
+
+        document.querySelector("#BatchDetailConsole").style.display = "none";
+        document.querySelector("#SecondConsoleLayer").style.display = "none";
+    }
+}
 //控制新增批次的显隐 @param:true(隐藏)，false(显示)
 function showAddBatchConsole(flag) {
     if (flag == true) {
-        document.querySelector("#addBatchConsole").style.display = "none";
-        document.querySelector("#addBatchConsoleLayer").style.display = "none";
+        document.querySelector("#addBatchConsole").style.display = "block";
+        document.querySelector("#SecondConsoleLayer").style.display = "block";
+        addBatch_handleCarListClick(); //新增批次选车列表点击
+
 
     } else {
-        document.querySelector("#addBatchConsole").style.display = "block";
-        document.querySelector("#addBatchConsoleLayer").style.display = "block";
-        addBatch_handleCarListClick(); //新增批次选车列表点击
+        document.querySelector("#addBatchConsole").style.display = "none";
+        document.querySelector("#SecondConsoleLayer").style.display = "none";
 
     }
 }
@@ -126,8 +151,62 @@ function saveSelectedCarList() {
     }
     document.querySelector("#addBatch_form_car").value = carsStr;
     showSelectCarList(false);
-   // console.log(carsStr);
+    // console.log(carsStr);
 }
+//绑定列表块点击事件(仅允许单选)
+function car_list_handleSimpleClick() {
+    let rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].onclick = function () {
+            car_list_select_clear();
+            this.className = "car_list_checked";
+            seletedBatchNum = this.children[1].innerHTML;
+            seletedBatchOil = this.children[2].innerHTML;
+            seletedBatchWater = this.children[3].innerHTML;
+            seletedBatchDensity = this.children[4].innerHTML;
+            seletedBatchDate = this.children[5].innerHTML;
+            let cars = document.querySelectorAll("#BatchDetailConsole_carMenu table>tbody tr");
+            seletedBatchCar = cars.length;  
+            let inputs = document.querySelectorAll(".bdc_input");
+            let inputs_i = 0;
+            inputs[inputs_i++].value = seletedBatchNum;
+            inputs[inputs_i++].value = seletedBatchDate;
+            inputs[inputs_i++].value = seletedBatchOil;
+            inputs[inputs_i++].value = seletedBatchWater;
+            inputs[inputs_i++].value = seletedBatchDensity;
+            console.log(document.querySelectorAll(".bdc_input").length);
+            document.querySelector("#SecondConsoleLayer").style.display = "block";
+            document.querySelector("#BatchDetailConsole").style.display = "block";
+        }
+    }
+}
+//绑定列表块批量清除事件
+function car_list_select_clear() {
+    //console.log("clear");
+    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+    //console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].className = "car_list_unchecked";
+
+    }
+}
+
+//设置列表序号
+function setCarListIndex() {
+    var rows = document.querySelectorAll("#col_right_page1_list>table>tbody tr");
+    // console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].children[0].innerHTML = index + 1;
+    }
+    //col_right_page1_list2
+    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+    // console.log(rows.length);
+    for (let index = 0; index < rows.length; index++) {
+        rows[index].children[0].innerHTML = index + 0;
+    }
+
+}
+
 // //右侧-搜索按钮绑定事件-历史批
 // (function handleSearchButton() {
 //     document.querySelector("#col_right_top_search>span").onclick = function () {
@@ -160,44 +239,3 @@ function saveSelectedCarList() {
 //         return false;
 //     }
 // }
-//绑定列表块点击事件(仅允许单选)
-function car_list_handleSimpleClick() {
-    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
-  //  console.log(rows[1].nodeName);
-    for (let index = 0; index < rows.length; index++) {
-        rows[index].onclick = function () {
-           car_list_select_clear();
-           this.className = "car_list_checked";
-            // selectedCarNum = this.children[2].innerHTML;
-            // selectedBatchNum = this.children[1].innerHTML;
-            //selectedCarIndex = index;
-
-        }
-    }
-}
-//绑定列表块批量清除事件
-function car_list_select_clear() {
-    //console.log("clear");
-    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
-    //console.log(rows.length);
-    for (let index = 0; index < rows.length; index++) {
-        rows[index].className = "car_list_unchecked";
-
-    }
-}
-
-//设置列表序号
-function setCarListIndex(){
-    var rows = document.querySelectorAll("#col_right_page1_list>table>tbody tr");
-   // console.log(rows.length);
-    for (let index = 0; index < rows.length; index++) {
-        rows[index].children[0].innerHTML = index + 1;
-    }  
-    //col_right_page1_list2
-    var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
-   // console.log(rows.length);
-    for (let index = 0; index < rows.length; index++) {
-        rows[index].children[0].innerHTML = index + 0;
-    }  
-
-}         

@@ -38,7 +38,6 @@ function groupSelectedCar() {
   document.querySelector("form input:nth-child(6)").value = selctedCarNumStr;
   //点击批量编组按钮，后台提交表单信息
     document.querySelector("form input:last-child").click();
-
 }
 //隐藏后台信息
 /*右侧-列表-隐藏每列最后两个*/
@@ -66,9 +65,9 @@ function setSelectedCarInfo() {
   for (let index = 0; index < rows.length; index++) {
     if (rows[index].className == "car_list_checked") {
       //从已选中的车辆行重获取信息(其他信息)
-      seletedSendBatchStr += rows[index].children[1].innerHTML += ";";
-      selctedCarNumStr += rows[index].children[2].innerHTML += ";";
-      seletedSendDateStr += rows[index].children[3].innerHTML += ";";
+      seletedSendBatchStr += rows[index].children[1].innerHTML + ";";
+      selctedCarNumStr += rows[index].children[2].innerHTML + ";";
+      seletedSendDateStr += rows[index].children[3].innerHTML + ";";
       //从已选中的车辆行重获取信息(id和状态)
       selctedStatusStr += rows[index].lastElementChild.innerHTML + ";";
       selctedIdStr += rows[index].lastElementChild.previousElementSibling.innerHTML + ";";
