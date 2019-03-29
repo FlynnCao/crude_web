@@ -9,7 +9,7 @@
 var selctedIdStr = ""; //所有选中的id
 var selctedStatusStr = ""; //所有选中的状态
 //默认函数启动区
-var showHidden = true;\
+var showHidden = true;
 hiddenBackStage();
 
 

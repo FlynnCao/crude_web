@@ -202,7 +202,7 @@ function setCarListIndex() {
     var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
     // console.log(rows.length);
     for (let index = 0; index < rows.length; index++) {
-        rows[index].children[0].innerHTML = index + 0;
+        rows[index].children[0].innerHTML = index + 1;
     }
 
 }

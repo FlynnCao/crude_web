@@ -13,7 +13,7 @@ var selectedBatchNum = ""; //被选中的批次号
 var selectedCarFatWeight = ""; ////被选中的车辆重车
 var selectedCarId = "" //////被选中的车辆的id
 var selectedCarStatus = "" //////被选中的车辆的状态
-
+var selectedCarEmptyWeight = ""; //被选中的轻车重量
 //绑定列表块点击事件(仅允许单选)
 function car_list_handleSimpleClick() {
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
@@ -24,9 +24,10 @@ function car_list_handleSimpleClick() {
             selectedCarNum = this.children[2].innerHTML;
             selectedBatchNum = this.children[1].innerHTML;
             selectedCarFatWeight = this.children[5].innerHTML;
+            selectedCarEmptyWeight = this.children[6].innerHTML;
             selectedCarStatus = this.lastElementChild.innerHTML;
             selectedCarId = this.lastElementChild.previousElementSibling.innerHTML;
-            selectedCarIndex = index;
+            selectedCarIndex = index;   
 
         }
     }
@@ -62,6 +63,7 @@ function overBalancePreLoading(commandNum) {
     document.querySelector("#obc_carNum").value = selectedCarNum;
     document.querySelector("#obc_batchNum").value = selectedBatchNum;
     document.querySelector("#obc_fullCar").value = selectedCarFatWeight;
+    document.querySelector("#obc_emptyCar").value = selectedCarEmptyWeight;
     document.querySelector("#obc_id").value = selectedCarId;
     document.querySelector("#obc_status").value = selectedCarStatus;
     

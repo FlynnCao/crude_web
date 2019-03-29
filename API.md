@@ -4,12 +4,14 @@
 #F3F6Fa 奶白色
 #BDC3CC 烟灰色
 #f0f1f4 水蓝灰
+#cad2eb 浅蓝灰
 #494949 砖黑色
 #465DD2 庄重蓝
 #38f 活力蓝
 #27941D 原野绿
 #99CC33 青草绿
 #B7D89F 水洗绿
+
 ```
 ## 网站垂直结构
 * 100 —— 二级菜单
@@ -71,5 +73,10 @@ glyphicon glyphicon-cd 光碟
 
 glyphicon glyphicon-eye-open 眼睛
 
+glyphicon glyphicon-cloud-download 下载
+
+glyphicon glyphicon-import 导入
+
+glyphicon glyphicon-export 导出
 
 ## 模块化JS分析

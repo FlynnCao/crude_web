@@ -34,6 +34,7 @@
     cursor: pointer;
 }
 
+
 /*报表-图表功能区*/
 #col_right_chart {
     width: 100%;
@@ -47,10 +48,10 @@
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    width: 800px;
+    width: 500px;
     margin-left: 20px;
     background: transparent;
 }
@@ -79,12 +80,13 @@
     background: transparent;
 }
 
-/*报表-右侧-时间列表*/
+/*报表-右侧-时间-分批列表*/
 .report_list {
     width: 100%;
-    height: 100%;
+    height: 650px;
     display: none;
     background: transparent;
+    overflow: auto;
 }
 
 /*报表-右侧-图表*/
@@ -96,58 +98,162 @@
 }
 
 /*测试-报表-右侧-图表-默认显示的模式图 */
-.report_list_chart:nth-child(2) {
+.report_list_chart:nth-child(1) {
     display: block;
 }
 
 /*测试-图表功能区默认填充的颜色*/
-#col_right_chart>ul li:nth-child(2) {
+#col_right_chart>ul li:nth-child(1) {
     color: #465DD2;
 
 }
 
-/*测试-柱状图*/
-#col_right_list_day_bar>ul{
-    overflow-x: auto;
-    overflow-y: hidden;
+/*统计-柱状图-盒子*/
+.report_list_chart>div {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
-    align-items: flex-end;
-    margin:0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    clear: both;
     width: 1000px;
-    height: 250px;
-    background: lightblue;
+    height: 300px;
+    margin: 10px auto;
+    margin-left: 20px;
+    border:1px solid #cad2eb;
+    background: transparent;
+    box-shadow: 0px 0px 3px 3px #ccc;
+
 
 }
-/*外部作为主体*/
-#col_right_list_day_bar>ul li{
+
+/*统计-柱状图-菜单*/
+.report_list_chart>div>menu {
+    /* float: left; */
+    float: left;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 100%;
+    background: transparent;
+}
+.bar_menu_button{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height:25%;
+    /* border:1px solid #cad2eb; */
+    border-bottom: 1px solid #cad2eb;
+    border-left:3px solid transparent;
+    box-sizing: border-box;
+    background: transparent;
+}
+.bar_menu_button>ul{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.5em;
+    height: 80%;
+    background: transparent;
+}
+.bar_menu_button>ul li{
+ width: 200px;
+ text-align: center;
+  background: transparent;
+}
+.bar_menu_button>ul li:nth-child(1){
+    font-weight: bold;
+    color:#999999;
+}
+.bar_menu_button>span{ 
+    display: block;
+    width: auto;
+    height: auto;
+    line-height: 75 px;
+    color:gray;
+    font-size:4em;
+    background: transparent;
+
+}
+
+/*统计-柱状图盒子*/
+.report_list_chart_bar {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    border-radius: 10px;
+    width: 650px;
+    height: 250px;
+    background: #ccc;
+    overflow-x: auto;
+}
+
+
+/*统计-柱状图*/
+.report_list_chart_bar>ul {
+    position: absolute;
+    left:0px;
+    bottom:35px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content: center;
+    border-bottom: 1px solid gray;
+    height: 220px;
+    background: transparent;
+    overflow:inherit;
+}
+
+.report_list_chart_bar>ul li {
     transition-duration: 0.5s;
-    float:left;
+    display: block;
     width: 30px;
     height: 0px;
     /* height: 200px; 最大长度*/
-    margin-left:10px;
-    background: lightsalmon;
+    color:white;
+    margin-left: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    background: #465DD2;
+
 }
-/*测试-柱状图*/
-#col_right_list_day_bar>ol{
+
+/*统计-柱状图-底注*/
+.report_list_chart_bar>ol {
+    position: absolute;
+    left:0px;
+    bottom: 0px;
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
-    align-items: flex-end;
-    margin:0 auto;
-    width: 1000px;
-    height: 50px;
-    background: lightgreen;
+    align-items:center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: auto;
+    background: transparent;
+    overflow:inherit;
+
+
 
 }
-/*外部作为主体*/
-#col_right_list_day_bar>ol li{
-    float:left;
+
+.report_list_chart_bar>ol li {
+    display: inline-block;
     width: 30px;
-    /* height: 200px; 最大长度*/
+    margin-left: 5px;
     text-align: center;
-    margin-left:10px;
     background: transparent;
 }
