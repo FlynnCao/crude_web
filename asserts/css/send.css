@@ -20,7 +20,7 @@ body {
     height: 100%;
 }
 
-/*新增发车*/
+/*新增发车-背景层*/
 #SecondConsoleLayer {
     display: none;
     z-index: 99;
@@ -30,10 +30,10 @@ body {
     width: 100%;
     height: 100%;
     background: black;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(10, 10, 10, 0.7);
 
 }
-
+/*新增发车-窗体*/
 #addBatchConsole {
     animation: zoomIn 0.5s;
     -webkit-animation: zoomIn 0.5s;
@@ -56,8 +56,6 @@ body {
     width: 30%;
     font-size: 1.1em;
 }
-
-
 
 /*发出批-提交的表单*/
 #addBatchConsole>form {

@@ -10,8 +10,7 @@
 //bindingAddBatchConfirm();
 //refreshBatchInfo();
 /*系统变量区 */
-//存储当前页和所有页
-var allPages = new Array(1, 2, 3);
+var allPages = new Array(1, 2, 3); //存储当前页和所有页
 var currentPage = 0;
 var firstIntoPage = true;
 var cars = new Array(); //存储车辆列表
@@ -22,21 +21,15 @@ var seletedBatchOil = ""; //选中批次的发出日期
 var seletedBatchWater = ""; //选中批次的水分
 var seletedBatchDensity = ""; //选中批次的密度
 var seletedBatchCar = ""; //选中批次的车数
+//当前批次信息
+var latestBatch = new Array();
 
-
-
-/*自动启动的函数区 */
+/*自启动函数区 */
 car_list_handleSimpleClick();
-
-//第一次启动时，载入发车页-今日批次
-if (firstIntoPage) {
-    switchPages(0);
-    switchSentBatches(1);
-    setCarListIndex();
-
-}
-/*默认自动启动的函数 */
-
+setCurrentBatchData();
+switchPages(0);
+switchSentBatches(0);
+setCarListIndex();
 
 
 //当前或者历史批次
@@ -174,7 +167,7 @@ function car_list_handleSimpleClick() {
             inputs[inputs_i++].value = seletedBatchOil;
             inputs[inputs_i++].value = seletedBatchWater;
             inputs[inputs_i++].value = seletedBatchDensity;
-            console.log(document.querySelectorAll(".bdc_input").length);
+          //  console.log(document.querySelectorAll(".bdc_input").length);
             document.querySelector("#SecondConsoleLayer").style.display = "block";
             document.querySelector("#BatchDetailConsole").style.display = "block";
         }
@@ -191,20 +184,42 @@ function car_list_select_clear() {
     }
 }
 
-//设置列表序号
+//设置列表2的序号
 function setCarListIndex() {
-    var rows = document.querySelectorAll("#col_right_page1_list>table>tbody tr");
-    // console.log(rows.length);
-    for (let index = 0; index < rows.length; index++) {
-        rows[index].children[0].innerHTML = index + 1;
-    }
-    //col_right_page1_list2
     var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
     // console.log(rows.length);
     for (let index = 0; index < rows.length; index++) {
         rows[index].children[0].innerHTML = index + 1;
     }
 
+}
+
+//添加最新批信息
+function setCurrentBatchData(){
+    //从列表2中获取源数据
+    var source = document.querySelector("#col_right_page1_list2>table>tbody tr:nth-child(1)");
+    for (let index = 0; index < source.children.length; index++) {
+        var el = source.children[index].innerHTML;
+        latestBatch.push(el);
+    }
+    // latestBatch.forEach(element => {
+    //     console.log(element);
+    // });
+    //创建元素，将源数据中的内容输入目标表单中
+    var tr = document.createElement("tr");
+    for (let index = 0; index < latestBatch.length; index++) {
+        let td = document.createElement("td");
+        td.innerHTML = latestBatch[index];
+        tr.appendChild(td);
+    }
+    var des = document.querySelector("#col_right_page1_list>table>tbody");
+    des.appendChild(tr);
+    //将源数据中的部分内容输入状态区中
+    var spans = document.querySelectorAll("#col_right_page1_stat>ul li span:last-child");
+    spans[0].innerHTML = latestBatch[5];
+    spans[1].innerHTML = latestBatch[2];
+    spans[2].innerHTML = latestBatch[3];
+    spans[3 ].innerHTML = latestBatch[4];
 }
 
 // //右侧-搜索按钮绑定事件-历史批

@@ -2,12 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统</title>
+    <title>油罐车跟踪管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
     <link href="asserts/css/reset.css" rel="stylesheet" />
     <link href="asserts/css/master.css" rel="stylesheet" />
+    <link href="asserts/css/analyse.css" rel="stylesheet" />
+
 
 </head>
 
@@ -18,36 +20,222 @@
         </p>
         <div id="col_left">
             <div onclick="hiddenBackStage()">
-                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class=""">原油计量管理系统</span>
-                </div>
-                <ul>
-                    <li onclick=" refreshWebPage()">
-                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span>分析</span>
-                    </li>
-
-                    </ul>
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class=""></span>
             </div>
-            <div id="col_right">
-                <div id="col_right_top">
-                    <div id="col_right_top_search">
-                        <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " />
-                    </div>
-                    <div id="col_right_top_profile">
-                        <ul>
-                            <li>小马</li>
-                            <li>分析员</li>
-                        </ul>
-                        &nbsp;&nbsp;&nbsp;
-                        <img src="res/img/avatar0.jpg" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
-                    </div>
-
-                </div>
+            <ul>
+                <li onclick="switchPages(0)">
+                    <span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span>车号匹配</span>
+                </li>
+                <li onclick="switchPages(1)">
+                    <span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;<span>批次分析</span>
+                </li>
+            </ul>
 
 
 
-            </div>
         </div>
+        <div id="col_right">
+            <div id="col_right_top">
+            
+                    <div id="col_right_top_search">
+                            <form action="">
+                                <div>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <input type="text" placeholder="检索 " />
+                                    <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+        
+                                </div>
+<!--         
+                                <select>
+                                    <option value="batchNum">进厂批号</option>
+                                    <option value="carNum">油车号</option>
+                                    <option value="sentDate">发出时间</option>
+                                    <option value="sentDate">进厂时间</option>
+                                </select> -->
+        
+                            </form>
+        
+                        </div>
+                    
+                <div id="col_right_top_profile">
+                    <ul>
+                        <li>小贾</li>
+                        <li>分析员</li>
+                    </ul>
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="res/img/avatar0.jpg" />
+                    <ol>
+                        <li class="glyphicon glyphicon-off"></li>
+                        <li>退出</li>
+                    </ol>
+
+                </div>
+            </div>
+            <div id="col_right_func">
+                <div>
+                    <button id="send_func_group" onclick="groupSelectedCar()"
+                        class="glyphicon glyphicon-ok-sign">车号匹配</button>
+                    <button id="send_func_select_all" onclick="car_list_select(true)"
+                        class="glyphicon glyphicon-check">全选</button>
+                    <button id="send_func_cancel" onclick="car_list_select(false)"
+                        class="glyphicon glyphicon-ban-circle">取消</button>
+
+                </div>
+                <p>
+                    已选中&nbsp;<span id="car_selected_num">0</span>/<span id="car_list_total_num">99</span>
+                </p>
+
+            </div>
+            <div id="col_right_list1" class="analyse_page">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>发出批号</th>
+                            <th>进厂批号</th>
+                            <th>进厂车号</th>
+                            <th>车辆状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>201903052255</td>
+                            <td>201903052255</td>
+                            <td>6003001</td>
+                            <td>未匹配</td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div id="col_right_list2" class="analyse_page">
+                    <h3>历史批</h3>
+                    <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>发出油量批号</th>
+                                    <th>发出时间</th>                              
+                                    <th>总油量</th>
+                                    <th>水分</th>
+                                    <th>密度</th>
+                                    <th>进厂总油量</th>
+                                    <th>亏损量</th>
+                                    <th>亏损率</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>20081554512</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2008/07/05 22:36:11</td>
+                                    <td>520</td>
+                                    <td>20</td>
+                                    <td>2.3%</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>20081554512</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2012/03/04 22:36:11</td>
+                                    <td>520</td>
+                                    <td>20</td>
+                                    <td>2.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>201307053388</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2013/07/05 22:36:11</td>
+                                    <td>520</td>
+                                    <td>20</td>
+                                    <td>2.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>201509073428</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2015/09/07 22:36:11</td>
+                                    <td>520</td>
+                                    <td>20</td>
+                                    <td>2.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>20190314223554</td>
+                                    <td>540</td>
+                                    <td>0.11</td>
+                                    <td>0.8012</td>
+                                    <td>2019/03/14 22:36:11</td>
+                                    <td>520</td>
+                                    <td>20</td>
+                                    <td>2.3%</td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+            </div>
+
+
+        </div>
+    </div>
+    <script type="text/javascript" src="asserts/js/master_css.js"></script>
+    <script type="text/javascript" src="asserts/js/master.js"></script>
+    <script type="text/javascript" src="asserts/js/analyse.js">
+
+    </script>
+
 </body>
 
 </html>

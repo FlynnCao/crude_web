@@ -20,6 +20,7 @@ body {
     width: 100%;
     height: 100%;
 }
+
 /*左侧栏目*/
 #col_left {
     float: left;
@@ -37,7 +38,8 @@ body {
     align-items: center;
     margin: 230px auto;
     width: 150px;
-    height: 0px; /*请查看master_css.js*/
+    height: 0px;
+    /*请查看master_css.js*/
     background: transparent;
 
 
@@ -58,6 +60,7 @@ body {
     background: white;
     cursor: pointer;
 }
+
 /*左侧-标题*/
 
 #col_left>div {
@@ -72,16 +75,18 @@ body {
     color: white;
     background: #cccccc;
     background: rgba(125, 125, 125, 0.3);
-    
 
- 
+
+
 
 }
-#col_left>div:hover{
+
+#col_left>div:hover {
     transition-duration: 0.3s;
     cursor: pointer;
     box-shadow: 0px 0px 10px 3px white;
 }
+
 /*右侧栏目*/
 #col_right {
     float: left;
@@ -100,42 +105,89 @@ body {
     width: 100%;
     height: 79px;
     border-bottom: 1px dotted transparent;
-    background:transparent;
+    background: transparent;
 }
 
 /*右侧-搜索栏*/
 #col_right_top_search {
+    width: auto;
+    height: auto;
+
+}
+#col_right_top_search>form{
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:space-between;
     align-items: center;
     width: 600px;
     height: 60px;
     border-radius: 10px;
     margin-left: 20px;
     font-size: 1.5em;
-    background: #eeeeee;
-
-}
-
-#col_right_top_search>span {
-    display: inline-block;
-
-
-
-}
-
-#col_right_top_search>input {
-    display: inline-block;
-    font-size: 1.3em;
-    width: 550px;
-    height: 1.5em;
-    margin-left: 10px;
-    border: 0;
-
     background: transparent;
 }
+#col_right_top_search>form>div{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 450px;
+    height: 60px;
+    border-radius: 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    background: #eeeeee;
+}
+#col_right_top_search form span {
+    display: inline-block;
+}
+
+#col_right_top_search div input {
+    display: inline-block;
+    font-size: 1.1em;
+    width: 350px;
+    height: 1.1em;
+    margin-left: 10px;
+    border: 0;
+    background: transparent;
+}
+#col_right_top_search div span:first-child {
+    margin-left:10px;
+}
+
+#col_right_top_search>form>div span:first-child:hover{
+    cursor: pointer;
+}
+#col_right_top_search>form>div span:last-child{
+    transition-duration: 0.3s;
+    color:#cccccc;
+}
+#col_right_top_search>form>div span:last-child:hover{
+    color:black;
+}
+#col_right_top_search select {
+    transition-duration: 0.3s;
+    display: flex;
+    display: -webkit-flex;
+    font-size: 1em;
+    width: auto;
+    height: 60px;
+    border:1px solid #cccccc;
+    border-radius: 15px;
+    margin-left: 10px;
+    color:gray;
+    background: transparent;
+}
+#col_right_top_search select:hover{
+    border:1px solid #aaaaaa;
+}
+#col_right_top_search option{
+    background:white;
+}
+
+
 
 
 /*右侧-个人信息栏*/
@@ -170,7 +222,6 @@ body {
     font-weight: bold;
 }
 
-#col_right_top_profile>ul li:nth-child(2) {}
 
 /*个人信息-头像*/
 #col_right_top_profile>img {
@@ -181,17 +232,43 @@ body {
 
 
 }
+
 /*个人信息-退出按钮*/
-#col_right_top_profile>span{
-    font-size: 1.5em;
+/* #col_right_top_profile span {
+    display: inline-block;
+    width: auto;
+    height:50px;
+    margin-left:10px;
+    line-height: 50px;
+    font-size: 1.3em;
+    background: transparent;
+
+} */
+/*个人信息-注销*/
+#col_right_top_profile>ol{ 
+    width: 50px;
+    height: 50px;
+    margin-left:10px;
+    background: transparent;
     
 }
-#col_right_top_profile>span:hover{
-    transition-duration: 0.3s;
-    cursor: pointer;
+#col_right_top_profile>ol:hover{
+    transition-duration: 0.1s;
     color:red;
-
+    cursor: pointer;
 }
+#col_right_top_profile>ol li{
+    line-height: 50px;
+    display:inline-block;
+    font-size: 1.1em;
+    height:auto;
+    width: auto;
+}
+#col_right_top_profile>ol li:first-child{
+    font-size: 1em;
+}
+
+
 /*右侧-功能区外层-除发车外可用*/
 #col_right_func {
     display: flex;
@@ -205,6 +282,7 @@ body {
     background: transparent;
 
 }
+
 /*右侧-功能区外层-按钮*/
 #col_right_func>div {
     display: flex;
@@ -212,7 +290,8 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 0px; /*请查看master_css.js*/
+    width: 0px;
+    /*请查看master_css.js*/
     height: 100%;
     margin-left: 10px;
     background: transparent;
@@ -227,6 +306,7 @@ body {
     border-radius: 15px;
     color: white;
 }
+
 /*左侧-功能区-车数选择*/
 #col_right_func>p {
     width: 200px;
@@ -239,11 +319,13 @@ body {
     background: transparent;
 
 }
+
 #col_right_func>p span:first-child {
     font-weight: bold;
 
     color: #465DD2;
 }
+
 #col_right_func>p span:nth-child(2) {
     font-weight: bold;
 
@@ -252,8 +334,8 @@ body {
 }
 
 /*右侧-列表*/
-#col_right_list{
-    margin-left:15px;
+#col_right_list {
+    margin-left: 15px;
 
 }
 

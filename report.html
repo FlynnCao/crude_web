@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统</title>
+    <title>油罐车跟踪管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet">
@@ -35,16 +35,35 @@
         </div>
         <div id="col_right">
             <div id="col_right_top">
-                <div id="col_right_top_search">
-                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
+                    <div id="col_right_top_search">
+                            <form action="">
+                                <div>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <input type="text" placeholder="检索 " />
+                                    <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+        
+                                </div>
+        
+                                <!-- <select>
+                                    <option value="batchNum">批号</option>
+                                    <option value="carNum">油车号</option>
+                                    <option value="sentDate">发出时间</option>
+                                </select>
+         -->
+                            </form>
+        
+                        </div>
                 <div id="col_right_top_profile">
                     <ul>
-                        <li>小方</li>
-                        <li>报表员</li>
+                        <li>小贾</li>
+                        <li>分析员</li>
                     </ul>
                     &nbsp;&nbsp;&nbsp;
                     <img src="res/img/avatar0.jpg" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+                    <ol>
+                        <li class="glyphicon glyphicon-off"></li>
+                        <li>退出</li>
+                    </ol>
 
                 </div>
             </div>
@@ -76,7 +95,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>编号</th>
+                                    <th>序号</th>
                                     <th>日期</th>
                                     <th>发出油量</th>
                                     <th>发出车数</th>
@@ -176,250 +195,6 @@
                                     <th>35</th>
                                     <th>0</th>
                                 </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-
-                                <tr>
-                                    <th>1</th>
-                                    <th>09</th>
-                                    <th>20.5</th>
-                                    <th>17</th>
-                                    <th>70</th>
-                                    <th>35</th>
-                                    <th>0</th>
-                                </tr>
-                                <tr>
-                                        <th>1</th>
-                                        <th>09</th>
-                                        <th>20.5</th>
-                                        <th>17</th>
-                                        <th>70</th>
-                                        <th>35</th>
-                                        <th>0</th>
-                                    </tr>
-    
-                                    <tr>
-                                        <th>1</th>
-                                        <th>09</th>
-                                        <th>20.5</th>
-                                        <th>17</th>
-                                        <th>70</th>
-                                        <th>35</th>
-                                        <th>0</th>
-                                    </tr>
-    
-                                    <tr>
-                                        <th>1</th>
-                                        <th>09</th>
-                                        <th>20.5</th>
-                                        <th>17</th>
-                                        <th>70</th>
-                                        <th>35</th>
-                                        <th>0</th>
-                                    </tr>
-                                    <tr>
-                                            <th>1</th>
-                                            <th>09</th>
-                                            <th>20.5</th>
-                                            <th>17</th>
-                                            <th>70</th>
-                                            <th>35</th>
-                                            <th>0</th>
-                                        </tr>
-        
-                                        <tr>
-                                            <th>1</th>
-                                            <th>09</th>
-                                            <th>20.5</th>
-                                            <th>17</th>
-                                            <th>70</th>
-                                            <th>35</th>
-                                            <th>0</th>
-                                        </tr>
-        
-                                        <tr>
-                                            <th>1</th>
-                                            <th>09</th>
-                                            <th>20.5</th>
-                                            <th>17</th>
-                                            <th>70</th>
-                                            <th>35</th>
-                                            <th>0</th>
-                                        </tr>
-                                        <tr>
-                                                <th>1</th>
-                                                <th>09</th>
-                                                <th>20.5</th>
-                                                <th>17</th>
-                                                <th>70</th>
-                                                <th>35</th>
-                                                <th>0</th>
-                                            </tr>
-            
-                                            <tr>
-                                                <th>1</th>
-                                                <th>09</th>
-                                                <th>20.5</th>
-                                                <th>17</th>
-                                                <th>70</th>
-                                                <th>35</th>
-                                                <th>0</th>
-                                            </tr>
-            
-                                            <tr>
-                                                    <th>1</th>
-                                                    <th>09</th>
-                                                    <th>20.5</th>
-                                                    <th>17</th>
-                                                    <th>70</th>
-                                                    <th>35</th>
-                                                    <th>0</th>
-                                                </tr>
-                
-                                                <tr>
-                                                    <th>1</th>
-                                                    <th>09</th>
-                                                    <th>20.5</th>
-                                                    <th>17</th>
-                                                    <th>70</th>
-                                                    <th>35</th>
-                                                    <th>0</th>
-                                                </tr>
-            
-                                                <tr>
-                                                        <th>1</th>
-                                                        <th>09</th>
-                                                        <th>20.5</th>
-                                                        <th>17</th>
-                                                        <th>70</th>
-                                                        <th>35</th>
-                                                        <th>0</th>
-                                                    </tr>
-                    
-                                                    <tr>
-                                                        <th>1</th>
-                                                        <th>09</th>
-                                                        <th>20.5</th>
-                                                        <th>17</th>
-                                                        <th>70</th>
-                                                        <th>35</th>
-                                                        <th>0</th>
-                                                    </tr>
-                                                    <tr>
-                                                            <th>1</th>
-                                                            <th>09</th>
-                                                            <th>20.5</th>
-                                                            <th>17</th>
-                                                            <th>70</th>
-                                                            <th>35</th>
-                                                            <th>0</th>
-                                                        </tr>
-                    
-                                                        <tr>
-                                                                <th>1</th>
-                                                                <th>09</th>
-                                                                <th>20.5</th>
-                                                                <th>17</th>
-                                                                <th>70</th>
-                                                                <th>35</th>
-                                                                <th>0</th>
-                                                            </tr>
-                            
-                                                            <tr>
-                                                                <th>1</th>
-                                                                <th>09</th>
-                                                                <th>20.5</th>
-                                                                <th>17</th>
-                                                                <th>70</th>
-                                                                <th>35</th>
-                                                                <th>0</th>
-                                                            </tr>
-                        
-                                                            <tr>
-                                                                    <th>1</th>
-                                                                    <th>09</th>
-                                                                    <th>20.5</th>
-                                                                    <th>17</th>
-                                                                    <th>70</th>
-                                                                    <th>35</th>
-                                                                    <th>0</th>
-                                                                </tr>
-                            
-                                                                <tr>
-                                                                        <th>1</th>
-                                                                        <th>09</th>
-                                                                        <th>20.5</th>
-                                                                        <th>17</th>
-                                                                        <th>70</th>
-                                                                        <th>35</th>
-                                                                        <th>0</th>
-                                                                    </tr>
-                                    
-                                                                    <tr>
-                                                                        <th>1</th>
-                                                                        <th>09</th>
-                                                                        <th>20.5</th>
-                                                                        <th>17</th>
-                                                                        <th>70</th>
-                                                                        <th>35</th>
-                                                                        <th>0</th>
-                                                                    </tr>
-                                        
-                        
-            
-
-                    
-
-
-
-
-
-
                             </tbody>
                         </table>
                     </div>
@@ -476,7 +251,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>编号</th>
+                                    <th>序号</th>
                                     <th>月份</th>
                                     <th>发出油量</th>
                                     <th>发出车数</th>
@@ -528,51 +303,51 @@
                     </div>
                     <div id="col_right_list_mouth_bar" class="report_list_chart">
 
-                            <div>
-                                <menu>
-                                    <div class="bar_menu_button">
-                                        <ul onclick="report_showBarChart(2)">
-                                            <li>发出油量</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-export "></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(3)">
-                                        <ul>
-                                            <li>发出车数</li>
-                                            <li class="bar_sendOilSum">9999999999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-send"></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(3)">
-                                        <ul>
-                                            <li>进厂油量</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-import"></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(4)">
-                                        <ul>
-                                            <li>进厂车数</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-plane"></span>
-                                    </div>
-                                </menu>
-                                <div class="report_list_chart_bar">
-                                    <ul>
+                        <div>
+                            <menu>
+                                <div class="bar_menu_button">
+                                    <ul onclick="report_showBarChart(2)">
+                                        <li>发出油量</li>
+                                        <li class="bar_sendOilSum">9999</li>
                                     </ul>
-                                    <ol>
-    
-                                    </ol>
+                                    <span class="glyphicon glyphicon-export "></span>
                                 </div>
-    
-    
+                                <div class="bar_menu_button" onclick="report_showBarChart(3)">
+                                    <ul>
+                                        <li>发出车数</li>
+                                        <li class="bar_sendOilSum">9999999999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-send"></span>
+                                </div>
+                                <div class="bar_menu_button" onclick="report_showBarChart(3)">
+                                    <ul>
+                                        <li>进厂油量</li>
+                                        <li class="bar_sendOilSum">9999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-import"></span>
+                                </div>
+                                <div class="bar_menu_button" onclick="report_showBarChart(4)">
+                                    <ul>
+                                        <li>进厂车数</li>
+                                        <li class="bar_sendOilSum">9999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-plane"></span>
+                                </div>
+                            </menu>
+                            <div class="report_list_chart_bar">
+                                <ul>
+                                </ul>
+                                <ol>
+
+                                </ol>
                             </div>
-    
-    
+
+
                         </div>
-    
+
+
+                    </div>
+
 
 
                 </div>
@@ -581,7 +356,7 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>编号</th>
+                                    <th>序号</th>
                                     <th>年份</th>
                                     <th>发出油量</th>
                                     <th>发出车数</th>
@@ -633,51 +408,51 @@
                     </div>
                     <div id="col_right_list_year_bar" class="report_list_chart">
 
-                            <div>
-                                <menu>
-                                    <div class="bar_menu_button">
-                                        <ul onclick="report_showBarChart(2)">
-                                            <li>发出油量</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-export "></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(3)">
-                                        <ul>
-                                            <li>发出车数</li>
-                                            <li class="bar_sendOilSum">9999999999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-send"></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(3)">
-                                        <ul>
-                                            <li>进厂油量</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-import"></span>
-                                    </div>
-                                    <div class="bar_menu_button" onclick="report_showBarChart(4)">
-                                        <ul>
-                                            <li>进厂车数</li>
-                                            <li class="bar_sendOilSum">9999</li>
-                                        </ul>
-                                        <span class="glyphicon glyphicon-plane"></span>
-                                    </div>
-                                </menu>
-                                <div class="report_list_chart_bar">
-                                    <ul>
+                        <div>
+                            <menu>
+                                <div class="bar_menu_button">
+                                    <ul onclick="report_showBarChart(2)">
+                                        <li>发出油量</li>
+                                        <li class="bar_sendOilSum">9999</li>
                                     </ul>
-                                    <ol>
-    
-                                    </ol>
+                                    <span class="glyphicon glyphicon-export "></span>
                                 </div>
-    
-    
+                                <div class="bar_menu_button" onclick="report_showBarChart(3)">
+                                    <ul>
+                                        <li>发出车数</li>
+                                        <li class="bar_sendOilSum">9999999999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-send"></span>
+                                </div>
+                                <div class="bar_menu_button" onclick="report_showBarChart(3)">
+                                    <ul>
+                                        <li>进厂油量</li>
+                                        <li class="bar_sendOilSum">9999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-import"></span>
+                                </div>
+                                <div class="bar_menu_button" onclick="report_showBarChart(4)">
+                                    <ul>
+                                        <li>进厂车数</li>
+                                        <li class="bar_sendOilSum">9999</li>
+                                    </ul>
+                                    <span class="glyphicon glyphicon-plane"></span>
+                                </div>
+                            </menu>
+                            <div class="report_list_chart_bar">
+                                <ul>
+                                </ul>
+                                <ol>
+
+                                </ol>
                             </div>
-    
-    
+
+
                         </div>
-    
+
+
+                    </div>
+
 
 
                 </div>

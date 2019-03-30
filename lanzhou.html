@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统-兰州</title>
+    <title>油罐车跟踪管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
@@ -26,10 +26,10 @@
             <input type="text" value="" id="lz_form_car" name="car">
             <input type="submit" id="lz_form_submit">
         </form>
-    
+
         <div id="col_left">
-            <div  onclick="hiddenBackStage()">
-                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class=""">原油计量管理系统</span>
+            <div onclick="hiddenBackStage()">
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
             </div>
             <ul>
                 <li onclick="refreshWebPage()">
@@ -41,17 +41,36 @@
         <div id="col_right">
             <div id="col_right_top">
                 <div id="col_right_top_search">
-                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
-                    <div id="col_right_top_profile">
-                            <ul>
-                                <li>小陈</li>
-                                <li>管理员滴滴滴滴</li>
-                            </ul>
-                            &nbsp;&nbsp;&nbsp;
-                            <img src="res/img/avatar0.jpg" />
-                            &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
-        
+                    <form action="">
+                        <div>
+                            <span class="glyphicon glyphicon-search"></span>
+                            <input type="text" placeholder="检索 " />
+                            <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+
                         </div>
+
+                        <select>
+                            <option value="batchNum">发出批号</option>
+                            <option value="carNum">油车号</option>
+                            <option value="sentDate">发出时间</option>
+                        </select>
+
+                    </form>
+
+                </div>
+                <div id="col_right_top_profile">
+                    <ul>
+                        <li>小方</li>
+                        <li>兰州编组</li>
+                    </ul>
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="res/img/avatar0.jpg" />
+                    <ol>
+                        <li class="glyphicon glyphicon-off"></li>
+                        <li>退出</li>
+                    </ol>
+
+                </div>
 
             </div>
             <div id="col_right_func">
@@ -72,7 +91,7 @@
                     <thead>
                         <tr>
                             <th>序号</th>
-                            <th>发出编号</th>
+                            <th>发出批号</th>
                             <th>车牌号</th>
                             <th>发出时间</th>
                             <th>id</th>
@@ -126,7 +145,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td>201507083322    </td>
+                            <td>201507083322 </td>
                             <td>7003005</td>
                             <td>2015/07/08 05:15</td>
                             <td>35</td>
@@ -141,10 +160,11 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="asserts/js/master.js"> </script>
-        <script type="text/javascript" src="asserts/js/master_css.js"> </script>
-        <script type="text/javascript" src="asserts/js/lanzhou.js"> </script>
+
     </div>
+    <script type="text/javascript" src="asserts/js/master_css.js"> </script>
+    <script type="text/javascript" src="asserts/js/master.js"> </script>
+    <script type="text/javascript" src="asserts/js/lanzhou.js"> </script>
 </body>
 
 </html>

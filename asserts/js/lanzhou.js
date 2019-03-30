@@ -15,6 +15,7 @@ var selctedIdStr = ""; //车辆id
 //默认函数启动区
 var showHidden = true;
 hiddenBackStage();
+//bindingSearchButtonSubmit();
 //车辆编组
 function groupSelectedCar() {
   /**
@@ -77,7 +78,17 @@ function setSelectedCarInfo() {
   }
 
 }
+// function bindingSearchButtonSubmit(){
+//   document.querySelector("#col_right_top_search>form>div>span").onclick = function(){
+//     document.querySelector("#col_right_top_search>form").submit();
 
+//   }
+//   document.querySelector("#col_right_top_search>form>div span:last-child").onclick = function () { 
+//     document.querySelector("#col_right_top_search>form").reset();
+//    }
+// }
+
+//搜索-
 ////绑定列表块点击事件
 // function car_list_handleClick() {
 

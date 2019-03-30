@@ -22,3 +22,6 @@ li {
     list-style: none;
     margin: 0;
 }
+select,input:focus{
+    outline: 0;
+}

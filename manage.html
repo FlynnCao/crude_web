@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>油罐车跟踪管理系统</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="asserts/css/reset.css" rel="stylesheet" />
+    <link href="asserts/css/master.css" rel="stylesheet" />
+    <link href="asserts/css/manage.css" rel="stylesheet" />
+    <link href="asserts/css/animation.css" rel="stylesheet" />
+
+
+
+
+</head>
+
+<body>
+    <div id="app">
+        <!--隐藏的表单-->
+        <form id="deleteUserForm">
+            <input type="text" name="id">
+            <input type="submit">
+        </form>
+        <!--配置-->
+        <p style="display: none" id="crude_setting">
+            <span class="crude_setting_carListMutiSelct">0</span>
+        </p>
+        <!--二级菜单-->
+        <div id="SecondConsoleLayer">
+        </div>
+        <div class="setUserConsole" id="addUserConsole">
+            <form action="">
+                <h3>添加用户</h3>
+                <p><span class="glyphicon glyphicon-user"></span><span>&nbsp;用户名</span><br>
+                    <input type="text" name="name" placeholder="" class="">
+                </p>
+
+                <p><span class="glyphicon glyphicon-lock"></span><span>&nbsp;密码</span><br>
+                    <input type="text" name="password" placeholder="" class=""><br>
+                </p>
+                <p><span class="glyphicon glyphicon-filter"></span><span>&nbsp;角色</span><br>
+                    <input type="text" name="role" placeholder="" class=""><br>
+                </p>
+
+                <div>
+                    <input type="submit" onclick="showUserControl(false)" value="确定">
+                    <input type="button" onclick="showUserControl(false)" value="取消">
+                </div>
+            </form>
+        </div>
+        <div class="setUserConsole" id="updateUserConsole">
+            <form action="">
+                <h3>修改用户</h3>
+                <menu>
+                    <input name="id" id="uuc_id" type="hidden">
+                </menu>
+                <p><span class="glyphicon glyphicon-user"></span><span>&nbsp;用户名</span><br>
+                    <input type="text" name="name" placeholder="" class="" id="uuc_name">
+                </p>
+
+                <p><span class="glyphicon glyphicon-lock"></span><span>&nbsp;密码</span><br>
+                    <input type="text" name="password" placeholder="" class="uuc_password"><br>
+                </p>
+                <p><span class="glyphicon glyphicon-filter"></span><span>&nbsp;角色</span><br>
+                    <input type="text" name="role" placeholder="" class="uuc_role"><br>
+                </p>
+                <div>
+                    <input type="submit" onclick="showUserControl(false)" value="确定">
+                    <input type="button" onclick="showUserControl(false)" value="取消">
+                </div>
+            </form>
+        </div>
+        <!--左侧-->
+        <div id="col_left">
+            <!--标题-->
+            <div>
+                <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class="">原油计量管理系统</span>
+            </div>
+            <!--导航-->
+            <ul>
+                <li onclick="refreshWebPage()">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span>用户 </span>
+                </li>
+            </ul>
+        </div>
+        <!--右侧-->
+        <div id="col_right">
+            <!--顶部-->
+            <div id="col_right_top">
+                <!--搜索区-->
+                <div id="col_right_top_search">
+                    <form action="">
+                        <div>
+                            <span class="glyphicon glyphicon-search"></span>
+                            <input type="text" placeholder="检索 " />
+                            <!-- <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span> -->
+
+                        </div>
+
+                      
+                    </form>
+
+                </div>
+                <!--个人信息-->
+                <div id="col_right_top_profile">
+                        <ul>
+                            <li>小贾</li>
+                            <li>分析员</li>
+                        </ul>
+                        &nbsp;&nbsp;&nbsp;
+                        <img src="res/img/avatar0.jpg" />
+                        <ol>
+                            <li class="glyphicon glyphicon-off"></li>
+                            <li>退出</li>
+                        </ol>
+    
+                    </div>
+
+
+            </div>
+            <!--功能按钮区-->
+            <div id="col_right_func">
+                <div>
+                    <button id="" onclick="showUserControl(true, 0)"
+                        class="glyphicon glyphicon-plus-sign">新增</button>
+                    <button id="" onclick="showUserControl(true, 1)"
+                        class="glyphicon glyphicon-edit">修改</button>
+                    <button id="" onclick="deleteUserData()"
+                        class="glyphicon glyphicon-remove-circle">删除</button>
+                    <button id="" onclick="list_select_clear()"
+                        class="glyphicon glyphicon-ban-circle">取消</button>
+                </div>
+            </div>
+            <!--人员列表-->
+            <div id="col_right_list">
+                <table class="table table-hover">
+                    <thead>
+                        <th>序号</th>
+                        <th>用户名</th>
+                        <th>密码</th>
+                        <th>角色</th>
+                        <th>id</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>FC</td>
+                            <td>123456</td>
+                            <td>发出人员</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>FC</td>
+                            <td>123456</td>
+                            <td>发出人员</td>
+                            <td>11</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>FC</td>
+                            <td>123456</td>
+                            <td>发出人员</td>
+                            <td>12</td>
+
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>FC</td>
+                            <td>123456</td>
+                            <td>发出人员</td>
+                            <td>13</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="asserts/js/master_css.js">
+    </script>
+    <script type="text/javascript" src="asserts/js/master.js">
+    </script>
+    <script type="text/javascript" src="asserts/js/manage.js">
+    </script>
+</body>
+
+</html>

@@ -6,8 +6,8 @@
  * @desc [报表页面的逻辑]
  */
 //切换日期页面 @pageNUm:点击的按钮标号
-var currentPage = 0;
-var currentPattern = 0;
+var currentPage = 0; //当前报表
+var currentPattern = 0; //当前模式
 switchReportDate(0); //默认定位到日报
 report_setCarListIndex(); //自动生成列表序号
 handleChartMenuClick(); //控制柱状图菜单的点击

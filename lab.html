@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>原油计量系统</title>
+    <title>油罐车跟踪管理系统</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="widtd=device-widtd, initial-scale=1">
     <link href="asserts/css/bootstrap.min.css" rel="stylesheet" />
@@ -61,18 +61,39 @@
         <div id="col_right">
 
             <div id="col_right_top">
-                <div id="col_right_top_search">
-                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="Search " /></div>
-                <div id="col_right_top_profile">
-                    <ul>
-                        <li>小陈</li>
-                        <li>管理员滴滴滴滴</li>
-                    </ul>
-                    &nbsp;&nbsp;&nbsp;
-                    <img src="res/img/avatar0.jpg" />
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-off" onclick="alert('退出!')"></span>
+                    <div id="col_right_top_search">
+                            <form action="">
+                                <div>
+                                    <span class="glyphicon glyphicon-search"></span>
+                                    <input type="text" placeholder="检索 " />
+                                    <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+        
+                                </div>
+        
+                                <select>
+                                    <option value="batchNum">进厂批号</option>
+                                    <option value="carNum">油车号</option>
+                                    <option value="sentDate">发出时间</option>
+                                    <option value="sentDate">进厂时间</option>
 
-                </div>
+                                </select>
+        
+                            </form>
+        
+                        </div>
+                    <div id="col_right_top_profile">
+                            <ul>
+                                <li>小贾</li>
+                                <li>分析员</li>
+                            </ul>
+                            &nbsp;&nbsp;&nbsp;
+                            <img src="res/img/avatar0.jpg" />
+                            <ol>
+                                <li class="glyphicon glyphicon-off"></li>
+                                <li>退出</li>
+                            </ol>
+
+                        </div>
             </div>
             <div id="col_right_func">
                 <div>
@@ -98,9 +119,7 @@
                             <th>发出时间</th>
                             <th>id</th>
                             <th>状态</th>
-
                         </tr>
-
                     </thead>
                     <tbody>
                         <tr>

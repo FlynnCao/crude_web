@@ -12,7 +12,7 @@ adjustTitleName(); //网站标题调整
 
 //网站标题调整
 function adjustTitleName(){
-    document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "原油计量系统";
+    document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "油罐车跟踪管理系统";
 }
 
 //导航栏调整
