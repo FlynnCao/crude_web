@@ -31,20 +31,7 @@
         <input type="button" value="确认" id="loginButton">
     </form>
 
-    <script type="text/javascript">
-        $("#loginButton").click(function () {
-            $.ajax({
-                type: "POST",
-                url: "http://129.28.142.39:8080/Crude/admin/login",
-                data: $("#loginBox").serialize(),
-                dataType: "jsonp",
-                success: function (response) {
-                    alert('success');
-                },
-
-            });
-        })
-    </script>
+    
 
 </body>
 

@@ -14,7 +14,7 @@ var crudeSet = document.querySelector("#crude_setting");
 /**
  * 函数自动运行区
  */
-handleSearchButtonClick(); //绑定搜索
+//handleSearchButtonClick(); //绑定搜索
 //============================================================================
 /**
  * 车辆列表多选
@@ -57,7 +57,11 @@ function car_list_handleMutiClick() {
 function checkForTotalCars() {
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
     totalForSelectedCar = rows.length;
-    document.querySelector("#car_list_total_num").innerHTML = totalForSelectedCar;
+    var carNum = document.querySelector("#car_list_total_num");
+  //  console.log(carNum.nodeValue);
+    if(carNum != null){
+        carNum.innerHTML = totalForSelectedCar;
+    }
 }
 //刷新车辆选择数
 function refreshSelectedCarNum() {
@@ -95,17 +99,22 @@ function car_list_select(flag) {
 //设置车辆列表的序号
 function setCarListIndex(){
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
-    console.log(rows.length);
+  //  console.log(rows.length);
     for (let index = 0; index < rows.length; index++) {
         rows[index].children[0].innerHTML = index + 1;
     }  
 }         
 
-function handleSearchButtonClick(){
-    var form = document.querySelector("#col_right_top_search>form");
-    var search = form.querySelector("div span:first-child");
-    search.onclick = function(){
-        form.submit();
-    }
+// function handleSearchButtonClick(){
+//     var sear = document.querySelector("#col_right_top_search>form");
+//     var s = x.querySelector("div span:first-child");
+//     var input = x.querySelector("div input");
+//     console.log(s.nodeName);
+//     s.onclick = function(){
+//         x.submit();
+//         console.log(input.value);
+//     }
 
-}
+
+
+// }

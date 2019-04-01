@@ -32,15 +32,15 @@ function groupSelectedCar() {
   console.log("车号:" + selctedCarNumStr);
   console.log("发出批次:" + seletedSendBatchStr);
   console.log("发出日期:" + seletedSendDateStr);
-  document.querySelector("form input:nth-child(2)").value = selctedIdStr;
-  document.querySelector("form input:nth-child(3)").value = selctedStatusStr;
-  document.querySelector("form input:nth-child(4)").value = seletedSendBatchStr;
-  document.querySelector("form input:nth-child(5)").value = seletedSendDateStr;
-  document.querySelector("form input:nth-child(6)").value = selctedCarNumStr;
+  document.querySelector("#lz_form_id").value = selctedIdStr;
+  document.querySelector("#lz_form_status").value = selctedStatusStr;
+  document.querySelector("#lz_form_batch").value = seletedSendBatchStr;
+  document.querySelector("#lz_form_date").value = seletedSendDateStr;
+  document.querySelector("#lz_form_car").value = selctedCarNumStr;
   //点击批量编组按钮，后台提交表单信息
   var flag = window.confirm("确认将所选车辆编组吗？");
   if (flag == true) {
-    document.querySelector("form input:last-child").click();
+    document.querySelector("#lz_form_submit").click();
     alert("编组成功！");
   }
 }

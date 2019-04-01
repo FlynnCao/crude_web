@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-21 08:49:10
- * @modify date 2019-04-01 09:02:57
+ * @modify date 2019-04-01 22:41:32
  * @desc [进厂使用的页面逻辑]
  */
 //car_list_handleSimpleClick(); //绑定列表块点击事件
@@ -31,16 +31,16 @@ function groupSelectedCar() {
   console.log("车号:" + selctedCarNumStr);
   console.log("发出批次:" + seletedSendBatchStr);
   console.log("发出日期:" + seletedSendDateStr);
-  document.querySelector("form input:nth-child(2)").value = selctedIdStr;
-  document.querySelector("form input:nth-child(3)").value = selctedStatusStr;
-  document.querySelector("form input:nth-child(4)").value = seletedSendBatchStr;
-  document.querySelector("form input:nth-child(5)").value = seletedSendDateStr;
-  document.querySelector("form input:nth-child(6)").value = selctedCarNumStr;
+  document.querySelector("#enter_form_id").value = selctedIdStr;
+  document.querySelector("#enter_form_status").value = selctedStatusStr;
+  document.querySelector("#enter_form_batch").value = seletedSendBatchStr;
+  document.querySelector("#enter_form_date").value = seletedSendDateStr;
+  document.querySelector("#enter_form_car").value = selctedCarNumStr;
   //点击批量编组按钮，后台提交表单信息
   //点击批量编组按钮，后台提交表单信息
   var flag = window.confirm("确认将所选车辆编组吗？");
   if (flag == true) {
-    document.querySelector("form input:last-child").click();
+    document.querySelector("#enter_form_submit").click();
     alert("编组成功！");
   }
 
@@ -72,9 +72,9 @@ function setSelectedCarInfo() {
   for (let index = 0; index < rows.length; index++) {
     if (rows[index].className == "car_list_checked") {
       //从已选中的车辆行重获取信息(其他信息)
-      seletedSendBatchStr += rows[index].children[1].innerHTML = ";";
-      selctedCarNumStr += rows[index].children[2].innerHTML = ";";
-      seletedSendDateStr += rows[index].children[3].innerHTML = ";";
+      seletedSendBatchStr += rows[index].children[1].innerHTML + ";";
+      selctedCarNumStr += rows[index].children[2].innerHTML + ";";
+      seletedSendDateStr += rows[index].children[3].innerHTML + ";";
       //从已选中的车辆行重获取信息(id和状态)
       selctedStatusStr += rows[index].lastElementChild.innerHTML + ";";
       selctedIdStr += rows[index].lastElementChild.previousElementSibling.innerHTML + ";";

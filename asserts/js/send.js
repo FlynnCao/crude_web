@@ -28,7 +28,7 @@ var latestBatch = new Array();
 car_list_handleSimpleClick(); //列表单选控制
 setCurrentBatchData(); //设置当前批的信息
 switchPages(0); //默认切换到发出也米娜
-switchSentBatches(0); //默认选择当前批
+switchSentBatches(1); //默认选择当前批
 setCarListIndex(); //设置车辆列表下标
 addAlertMessage(); //添加提示信息
 
