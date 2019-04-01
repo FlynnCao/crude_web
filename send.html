@@ -11,7 +11,6 @@
     <link href="asserts/css/animation.css" rel="stylesheet" />
     <link href="asserts/css/send.css" rel="stylesheet" />
     <!-- <script src="asserts/js/vue.min.js" type="text/javascript"></script> -->
-    <script src="asserts/js/vue.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -254,7 +253,20 @@
         <div id="col_right">
             <div id="col_right_top">
                 <div id="col_right_top_search">
-                    <span class="glyphicon glyphicon-search"></span> <input type="text" placeholder="检索" />
+                    <form action="">
+                        <div>
+                            <span class="glyphicon glyphicon-search"></span>
+                            <input type="text" placeholder="检索 " />
+                            <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+                        </div>
+                        <select>
+                            <option value="batchNum">发出批号</option>
+                            <option value="carNum">油车号</option>
+                            <option value="sentDate">发出时间</option>
+                        </select>
+
+                    </form>
+
                 </div>
                 <div id="col_right_top_profile">
                     <ul>

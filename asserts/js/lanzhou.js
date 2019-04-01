@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-20 21:06:26
- * @modify date 2019-03-27 13:07:35
+ * @modify date 2019-04-01 09:03:01
  * @desc [兰州编组的逻辑]
  */
 /*默认运行的函数 */
@@ -38,7 +38,11 @@ function groupSelectedCar() {
   document.querySelector("form input:nth-child(5)").value = seletedSendDateStr;
   document.querySelector("form input:nth-child(6)").value = selctedCarNumStr;
   //点击批量编组按钮，后台提交表单信息
+  var flag = window.confirm("确认将所选车辆编组吗？");
+  if (flag == true) {
     document.querySelector("form input:last-child").click();
+    alert("编组成功！");
+  }
 }
 //隐藏后台信息
 /*右侧-列表-隐藏每列最后两个*/

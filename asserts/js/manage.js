@@ -14,6 +14,7 @@ var selectedUserId = "";
  * 自启动函数列表
  */
 list_handleSimpleClick(); //列表单选绑定
+addAlertMessage(); //添加提示信息
 /**
  * 函数方法区
  */
@@ -57,7 +58,9 @@ function showUserControl(flag, which) {
         layer.style.display = "block";
         consoles[num].style.display = "block";
         if (num == 1) {
-            preUpdateUser();
+            if (selectedUserData.length != 0) {
+                preUpdateUser();
+            }
         }
     } else {
         //为假，将二级窗口和浮层隐藏
@@ -87,10 +90,22 @@ function deleteUserData() {
         //确认删除，追加id数据并提交隐藏的表单
         document.querySelector("#deleteUserForm input:first-child").value = selectedUserId;
         document.querySelector("#deleteUserForm").submit();
+        alert("删除成功！");
 
     } else {
         //取消删除，清除选择
         list_select_clear();
     }
 
+}
+
+function addAlertMessage() {
+    document.querySelector("#addUserConsole>form input[type='submit']").onclick = function () {
+        alert("添加成功！");
+
+    }
+    document.querySelector("#updateUserConsole>form input[type='submit']").onclick = function () {
+        alert("修改成功！");
+
+    }
 }

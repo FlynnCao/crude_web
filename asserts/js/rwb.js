@@ -3,10 +3,11 @@
  * @email [ppstream123@126.com]
  * @create date 2019-03-21 15:11:04
  * 
- * @modify date 2019-03-23 09:17:00
+ * @modify date 2019-04-01 09:15:01
  * @desc [轨道衡相关逻辑]
  */
 car_list_handleSimpleClick(); //绑定列表块点击事件
+addAlertMessage(); //添加提示信息
 var selectedCarNum = ""; //被选中的车辆号码
 var selectedCarIndex = 0; //被选中的车辆行索引
 var selectedBatchNum = ""; //被选中的批次号
@@ -14,6 +15,8 @@ var selectedCarFatWeight = ""; ////被选中的车辆重车
 var selectedCarId = "" //////被选中的车辆的id
 var selectedCarStatus = "" //////被选中的车辆的状态
 var selectedCarEmptyWeight = ""; //被选中的轻车重量
+var currentOverbalanceStatus = 0; //轻车/重车
+
 //绑定列表块点击事件(仅允许单选)
 function car_list_handleSimpleClick() {
     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
@@ -27,7 +30,7 @@ function car_list_handleSimpleClick() {
             selectedCarEmptyWeight = this.children[6].innerHTML;
             selectedCarStatus = this.lastElementChild.innerHTML;
             selectedCarId = this.lastElementChild.previousElementSibling.innerHTML;
-            selectedCarIndex = index;   
+            selectedCarIndex = index;
 
         }
     }
@@ -58,15 +61,15 @@ function showOverBalanceConsole(isShow, commandNum) {
 
 function overBalancePreLoading(commandNum) {
     //获取当前单车的批号和车牌号并赋值入框内
-    console.log(selectedCarId);
-    console.log(selectedCarStatus);
+  //  console.log(selectedCarId);
+   // console.log(selectedCarStatus);
     document.querySelector("#obc_carNum").value = selectedCarNum;
     document.querySelector("#obc_batchNum").value = selectedBatchNum;
     document.querySelector("#obc_fullCar").value = selectedCarFatWeight;
     document.querySelector("#obc_emptyCar").value = selectedCarEmptyWeight;
     document.querySelector("#obc_id").value = selectedCarId;
     document.querySelector("#obc_status").value = selectedCarStatus;
-    
+
     var inputs = document.querySelectorAll("#overBalanceConsole>form p input");
     for (let index = 0; index < inputs.length; index++) {
         inputs[index].style.background = "#ccc";
@@ -81,16 +84,48 @@ function overBalancePreLoading(commandNum) {
             if (selectedCarFatWeight == "") {
                 document.querySelector("#obc_fullCar").readOnly = false;
                 document.querySelector("#obc_fullCar").style.background = "#eeeeee";
+                currentOverbalanceStatus = 1; //测量重车
+                console.log(currentOverbalanceStatus);
+
             } else {
                 document.querySelector("#obc_emptyCar").readOnly = false;
                 document.querySelector("#obc_emptyCar").style.background = "#eeeeee";
+                currentOverbalanceStatus = 2; //测量轻车
+                console.log(currentOverbalanceStatus);
+
             }
             break;
         case 2:
             document.querySelector("#obc_carNum").readOnly = false;
             document.querySelector("#obc_carNum").style.background = "#eeeeee";
+            currentOverbalanceStatus = 3; //更改车号 
+            console.log(currentOverbalanceStatus);
+
         default:
             break;
+    }
+
+}
+//添加提示信息
+function addAlertMessage() {
+    var ok = document.querySelector("#overBalanceConsole>form>div input:first-child");
+    var str = "";
+    ok.onclick = function () {
+        //根据当前轨道衡状态更改提示信息
+        switch (currentOverbalanceStatus) {
+            case 1:
+                str = "重车过衡";
+                break;
+            case 2:
+                str = "轻车过衡";
+                break;
+            case 3:
+                str = "变更车号";
+                break;
+            default:
+                break;
+        }
+        alert(str + "成功！"); //输出提示消息
     }
 
 }

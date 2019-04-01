@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email ppstream123@126.com
  * @create date 2019-03-18 20:54:56
- * @modify date 2019-03-19 08:10:35
+ * @modify date 2019-04-01 09:02:59
  * @desc 主要页面的相关逻辑
  */
 /*默认调用区 */
@@ -25,12 +25,12 @@ var seletedBatchCar = ""; //选中批次的车数
 var latestBatch = new Array();
 
 /*自启动函数区 */
-car_list_handleSimpleClick();
-setCurrentBatchData();
-switchPages(0);
-switchSentBatches(0);
-setCarListIndex();
-
+car_list_handleSimpleClick(); //列表单选控制
+setCurrentBatchData(); //设置当前批的信息
+switchPages(0); //默认切换到发出也米娜
+switchSentBatches(0); //默认选择当前批
+setCarListIndex(); //设置车辆列表下标
+addAlertMessage(); //添加提示信息
 
 //当前或者历史批次
 var currentBatch = 0;
@@ -95,6 +95,7 @@ function showAddBatchConsole(flag) {
     } else {
         document.querySelector("#addBatchConsole").style.display = "none";
         document.querySelector("#SecondConsoleLayer").style.display = "none";
+        
 
     }
 }
@@ -222,6 +223,13 @@ function setCurrentBatchData(){
     spans[3 ].innerHTML = latestBatch[4];
 }
 
+function addAlertMessage(){
+    var ok = document.querySelector("#addBatchConsole>form>div input:first-child");
+     ok.onclick = function(){
+         alert("发出成功!");
+     }
+     
+}
 // //右侧-搜索按钮绑定事件-历史批
 // (function handleSearchButton() {
 //     document.querySelector("#col_right_top_search>span").onclick = function () {

@@ -11,7 +11,7 @@ var selctedStatusStr = ""; //所有选中的状态
 //默认函数启动区
 var showHidden = true;
 hiddenBackStage();
-
+addAlertMessage();
 
 
 //控制二级窗口的显隐 @param:true(显示)，false(隐藏)
@@ -63,7 +63,14 @@ function setSelectedCarInfo() {
         }
     }
 }
+function addAlertMessage(){
+    var ok = document.querySelector("#assay_car_console input[type='submit']");
+    ok.onclick = function(){
+          alert("化验成功！");
+    
+    }
 
+}
 
 // //绑定列表块点击事件(仅允许单选) (弃用)
 // function car_list_handleSimpleClick() {
