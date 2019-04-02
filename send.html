@@ -45,7 +45,8 @@
                     <input type="text" name="density" value="5" placeholder="" class="bdc_input">
                 </p>
                 <div>
-                    <input type="button" name="button" value="收起" onclick="showBatchDetailConsole(false);">
+                    <input type="button" name="button" value="收起" onclick="showBatchDetailConsole(false);car_list_select_clear();
+                    ">
                 </div>
             </form>
 
@@ -285,125 +286,90 @@
             <div id="col_right_page1" class="crude_page">
                 <div id="col_right_page1_func">
                     <ul>
-                        <li onclick="switchSentBatches(0)">
-                            最新批
+                        <li>
+                            所有批
                         </li>
-                        <li onclick="switchSentBatches(1)">
-                            历史批
-                        </li>
-                        <button id="addSendCarBatch" onclick="showAddBatchConsole(true)"
-                            class="glyphicon glyphicon-plus">新增批次</button>
+                        <button id="addSendCarBatch" class="glyphicon glyphicon-plus"
+                            onclick="showAddBatchConsole(true)">新增批次</button>
                     </ul>
 
                 </div>
-
-                <div id="col_right_page1_current" class="crude_sent_batch">
-                    <div id="col_right_page1_stat">
-                        <ul>
-                            <li class="glyphicon glyphicon-ok"><span>车数</span><span id="current_batch_num">0</span></li>
-                            <li class="glyphicon glyphicon-adjust"><span>油量</span><span id="current_batch_oil">0</span>
-                            </li>
-                            <li class="glyphicon glyphicon-tint"><span>水分</span><span
-                                    id="current_batch_water">0</span></li>
-                            <li class="glyphicon glyphicon-equalizer "><span>密度</span><span
-                                    id="current_batch_density">0</span></li>
-                        </ul>
-                    </div>
-                    <hr />
-                    <div id="col_right_page1_list">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>发出油量批号</th>
-                                    <th>总油量</th>
-                                    <th>水分</th>
-                                    <th>密度</th>
-                                    <th>车数</th>
-                                    <th>发出时间</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <!-- <td>1</td>
-                                    <td> </td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
-                                    <td>2008/07/05 22:36:11</td> -->
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div id="col_right_page1_stat">
+                    <ul>
+                        <li class="glyphicon glyphicon-ok"><span>车数</span><span id="current_batch_num">0</span></li>
+                        <li class="glyphicon glyphicon-adjust"><span>油量</span><span id="current_batch_oil">0</span>
+                        </li>
+                        <li class="glyphicon glyphicon-tint"><span>水分</span><span id="current_batch_water">0</span></li>
+                        <li class="glyphicon glyphicon-equalizer "><span>密度</span><span
+                                id="current_batch_density">0</span></li>
+                    </ul>
                 </div>
-                <div id="col_right_page1_history">
-                    <div id="col_right_page1_list2" class="crude_sent_batch">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>发出油量批号</th>
-                                    <th>总油量</th>
-                                    <th>水分</th>
-                                    <th>密度</th>
-                                    <th>车数</th>
-                                    <th>发出时间</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>20031554668</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
-                                    <td>2008/07/05 22:36:11</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>20081554512</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
+                <div id="col_right_page1_list" class="crude_sent_batch">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>发出油量批号</th>
+                                <th>总油量</th>
+                                <th>水分</th>
+                                <th>密度</th>
+                                <th>车数</th>
+                                <th>发出时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>20031554668</td>
+                                <td>250</td>
+                                <td>0.10</td>
+                                <td>0.8012</td>
+                                <th>5</th>
+                                <td>2002/03/05 22:36:11</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>20081554512</td>
+                                <td>540</td>
+                                <td>0.11</td>
+                                <td>0.8012</td>
+                                <th>3</th>
 
-                                    <td>2012/03/04 22:36:11</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>201307053388</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
+                                <td>2012/03/04 22:36:11</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>201307053388</td>
+                                <td>540</td>
+                                <td>0.11</td>
+                                <td>0.8012</td>
+                                <th>3</th>
 
-                                    <td>2013/07/05 22:36:11</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>201509073428</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
+                                <td>2013/07/05 22:36:11</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>201307053388</td>
+                                <td>540</td>
+                                <td>0.11</td>
+                                <td>0.8012</td>
+                                <th>3</th>
 
-                                    <td>2015/09/07 22:36:11</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>20190314223554</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <th>3</th>
+                                <td>2013/07/05 22:36:11</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>201307053388</td>
+                                <td>540</td>
+                                <td>0.11</td>
+                                <td>0.8012</td>
+                                <th>3</th>
 
-                                    <td>2019/03/14 22:36:11</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                                <td>2013/07/05 22:36:11</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div id="col_right_page2" class="crude_page">
@@ -462,11 +428,12 @@
                 </div>
 
             </div>
-            <!-- <div id="col_right_page3" class="crude_page">统计数据</div> -->
+
+
         </div>
     </div>
     <script src="asserts/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <!-- <script src="asserts/js/master.js" type="text/javascript"></script> -->
+   <script src="asserts/js/master.js" type="text/javascript"></script> 
     <script src="asserts/js/master_css.js" type="text/javascript"></script>
     <script src="asserts/js/send.js" type="text/javascript"></script>
 

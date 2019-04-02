@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-23 11:00:19
- * @modify date 2019-03-29 15:06:01
+ * @modify date 2019-04-02 16:22:13
  * @desc [报表页面的逻辑]
  */
 //切换日期页面 @pageNUm:点击的按钮标号
@@ -11,8 +11,8 @@ var currentPattern = 0; //当前模式
 switchReportDate(0); //默认定位到日报
 report_setCarListIndex(); //自动生成列表序号
 handleChartMenuClick(); //控制柱状图菜单的点击
-setChartBarTotalStatus();
-
+setChartBarTotalStatus(); //设置柱状图批次状态
+handleSearchEvent(); //绑定键盘回车搜索
 
 
 
@@ -45,7 +45,7 @@ function switchReportDatePattern(patternNum) {
     //点选柱状图时，由列表创建新的列表块
     if (currentPattern == 1) {
         preLoadingBarList();
-    //    console.log("pre");
+        //    console.log("pre");
 
     }
     var pages = document.querySelectorAll(".report_list");
@@ -141,7 +141,7 @@ function report_setCarListIndex() {
 function handleChartMenuClick() {
     var pages = document.querySelectorAll("#col_right_list .report_list");
     var buttons = document.querySelectorAll(".bar_menu_button");
-    console.log("button" + buttons.length);
+   // console.log("button" + buttons.length);
     for (let index = 0; index < buttons.length; index++) {
         buttons[index].addEventListener('click', function () {
             for (let index = 0; index < buttons.length; index++) {
@@ -170,18 +170,80 @@ function setChartBarTotalStatus() {
         totalGetCar += Number(rows[index].children[5].innerHTML);
 
     }
-   // console.log(totalSentOil);
-   // console.log(totalSentCar);
-   // console.log(totalGetOil);
-   // console.log(totalGetCar);
+    // console.log(totalSentOil);
+    // console.log(totalSentCar);
+    // console.log(totalGetOil);
+    // console.log(totalGetCar);
 
     //提交数据
     divs = page.querySelectorAll(".bar_menu_button");
-  //  console.log(divs.length);
-    divs[0].querySelector("ul li:nth-child(2)").innerHTML =  totalSentOil;      
-    divs[1].querySelector("ul li:nth-child(2)").innerHTML =  totalSentCar;       
-    divs[2].querySelector("ul li:nth-child(2)").innerHTML =  totalGetOil;       
-    divs[3].querySelector("ul li:nth-child(2)").innerHTML =  totalGetCar;       
+    //  console.log(divs.length);
+    divs[0].querySelector("ul li:nth-child(2)").innerHTML = totalSentOil;
+    divs[1].querySelector("ul li:nth-child(2)").innerHTML = totalSentCar;
+    divs[2].querySelector("ul li:nth-child(2)").innerHTML = totalGetOil;
+    divs[3].querySelector("ul li:nth-child(2)").innerHTML = totalGetCar;
 
 
+}
+//键盘回车绑定事件-开始搜索
+function handleSearchEvent() {
+    var search = document.querySelector("#col_right_top_search");
+    search.onkeydown = function (e) {
+        var keyNum;
+        var keyChar;
+        keyNum = window.event ? e.keyCode : e.which;
+        console.log(keyNum);
+        //keyChar = String.fromCharCode(keyNum);
+        if (keyNum == 13) {
+            //当按下回车键时
+          //  console.log("bingoooo!");
+            var info = document.querySelector("#col_right_top_search input").value;
+         //   console.log(info);
+            //获取当前页的当前行
+            var pages = document.querySelectorAll("#col_right_list .report_list");
+            var page = pages[currentPage]; //当前报表   
+            var rows = page.querySelectorAll(".report_list_chart>table>tbody tr");
+            for (let index = 0; index < rows.length; index++) {
+                    var text = rows[index].children[1].innerHTML;
+                    if (search_pairngString(info, text)) {
+                        rows[index].style.display = "table-row";
+                    } else {
+                        rows[index].style.display = "none";
+
+                    }
+                
+
+            }
+
+
+        }
+
+    }
+
+    var historyList = document.querySelector("#col_right_page1_list2");
+    //undefined 空的变量 null 空的对象
+    if (historyList != null) {
+        // console.log("list exist!");
+        // var batchNums = document.querySelectorAll("#col_right_page1_list2>table>tbody tr>td:nth-child(2)");
+        var rows = document.querySelectorAll("#col_right_page1_list2>table>tbody tr");
+        for (let index = 0; index < rows.length; index++) {
+            var num = rows[index].children[1].innerHTML; //获取每一行行对应的发出批号
+            var date = rows[index].children[5].innerHTML; //获取每一行行对应的日期
+            if (search_pairngString(info, num) || search_pairngString(info, date)) {
+                rows[index].style.display = "table-row";
+            } else {
+                rows[index].style.display = "none";
+
+            }
+        }
+    }
+
+}
+//搜索-字符串匹配
+function search_pairngString(obj, str) {
+    if (str.indexOf(obj) >= 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

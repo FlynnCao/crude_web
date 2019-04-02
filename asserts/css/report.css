@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-23 11:01:03
- * @modify date 2019-03-30 09:33:40
+ * @modify date 2019-04-02 16:38:49
  * @desc [报表页面的样式]
  */
 /*报表-展示的日期*/
@@ -256,4 +256,60 @@
     margin-left: 5px;
     text-align: center;
     background: transparent;
+}
+
+
+/*右侧-搜索栏*/
+#col_right_top_search{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 20px;
+    font-size: 1.5em;
+    background: transparent;
+}
+#col_right_top_search div{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 450px;
+    height: 60px;
+    border-radius: 20px;
+    border-radius: 15px;
+    font-size: 1.1em;
+    background: #eeeeee;
+}
+#col_right_top_search  span {
+    display: inline-block;
+}
+
+#col_right_top_search div input {
+    display: inline-block;
+    font-size: 1.1em;
+    width: 350px;
+    height: 1.1em;
+    margin-left: 10px;
+    border: 0;
+    background: transparent;
+}
+#col_right_top_search div span:first-child {
+    margin-left:10px;
+}
+
+#col_right_top_search div span:first-child:hover{
+    cursor: pointer;
+}
+#col_right_top_search div span:last-child{
+    transition-duration: 0.3s;
+    color:#cccccc;
+}
+#col_right_top_search div span:last-child:hover{
+    color:black;
 }
