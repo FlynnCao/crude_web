@@ -136,19 +136,13 @@
     background: #38f;
 }
 
+
+
 #col_right_func>div button:nth-child(2) {
-    background: #27941D;
-}
-
-#col_right_func>div button:nth-child(2):hover {
-    background: #99CC33;
-}
-
-#col_right_func>div button:nth-child(3) {
     background: gray;
 }
 
-#col_right_func>div button:nth-child(3):hover {
+#col_right_func>div button:nth-child(2):hover {
     background: #aaaaaa;
 }
 /*右侧-列表*/

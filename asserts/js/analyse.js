@@ -11,11 +11,24 @@
 //------------------------------------------------------------------------
 var hasSelectedCar = 0; //已经选中的车号
 var totalForSelectedCar = 0; //所有车辆数
+var showHidden = true;
 checkForTotalCars(); //获取车辆总数
 car_list_handleMutiClick();
 analyse_setCarListIndex();
 switchPages(0); //默认打开页面1
 car_list_handleSimpleClick(); //单选事件绑定
+hiddenBackStage(); //隐藏后台
+/**
+ * 变量区
+ */
+
+var canChangeCarNum = false; //允许修改车号标志
+var selectedCarNum = ""; //被选中的车辆号码
+var selectedBatchNum = ""; //被选中的批次号
+var selectedCarFullWeight = ""; ////被选中的车辆重车
+var selectedCarEmptyWeight = ""; ////被选中的车辆空车
+var selectedCarWater = ""; //被选中的轻车重量
+var selectedCarDensity = ""; //被选中的轻车重量
 /**
  * 函数区
  */
@@ -50,7 +63,7 @@ function checkForTotalCars() {
 //刷新车辆选择数
 function refreshSelectedCarNum() {
     var num = hasSelectedCar;
- //   console.log("selected" + num);
+    //   console.log("selected" + num);
     document.querySelector("#car_selected_num").innerHTML = num;
 }
 
@@ -90,6 +103,7 @@ function analyse_setCarListIndex() {
 }
 //C主要页面切换模块
 var currentPage = 0;
+
 function switchPages(pageNum) {
     currentPage = pageNum;
     var pages = document.querySelectorAll(".analyse_page");
@@ -99,10 +113,10 @@ function switchPages(pageNum) {
         if (index == currentPage) {
             pages[index].style.display = "block";
             blocks[index].style.color = "#465DD2";
-            if(currentPage == 1){
+            if (currentPage == 1) {
                 //隐藏功能区并显示批次列表
                 document.querySelector("#col_right_func").style.display = "none";
-            }else{
+            } else {
                 document.querySelector("#col_right_func").style.display = "flex";
 
             }
@@ -142,4 +156,116 @@ function car_list_select_clear() {
     for (let index = 0; index < rows.length; index++) {
         rows[index].className = "car_list_unchecked";
     }
+}
+
+//允许用户在列中修改车号
+function changeCarNumInRow() {
+    if (canChangeCarNum == false) {
+        //开启功能
+        console.log("开启变更车号");
+        var rows = document.querySelectorAll("#col_right_list1>table>tbody tr");
+        if (rows.length != 0) {
+            for (let index = 0; index < rows.length; index++) {
+                let num = rows[index].children[3]; //选择每行的第三个子元素-车号
+                var currentNum = num.innerHTML;
+                num.innerHTML = "";
+                var input = document.createElement("input");
+                input.className = "alterCarNumInput";
+                input.value = currentNum;
+                input.onkeydown = function (e) {
+                    var keyNum;
+                    keyNum = window.event ? e.keyCode : e.which;
+                    //  console.log(keyNum);
+                    //var keyChar = String.fromCharCode(keyNum);
+                    if (keyNum == 13) {
+                        //当用户按下回车时，清空当前元素的子节点
+                        rs_removeAllChild(num);
+                        num.innerHTML = this.value
+                    }
+                }
+                num.appendChild(input);
+            }
+        } else {
+            console.log("行中没有数据！");
+        }
+        canChangeCarNum = true;
+    } else {
+        //关闭功能
+        console.log("关闭变更车号");
+        var rows = document.querySelectorAll("#col_right_list1>table>tbody tr");
+        if (rows.length != 0) {
+            for (let index = 0; index < rows.length; index++) {
+                let num = rows[index].children[3]; //选择每行的第三个子元素-车号
+                if (num.firstElementChild != null) {
+                    //若当前元素有子节点时，清空子节点并赋值车号到本元素
+                    let newCarNum = num.firstElementChild.value;
+                    rs_removeAllChild(num);
+                    num.innerHTML = newCarNum;
+                }
+            }
+        } else {
+            console.log("行内没有数据")
+        }
+        canChangeCarNum = false;
+    }
+}
+
+//提交车号信息
+function updateCarComparing() {
+    setSelectedCarInfo();
+    var form = document.querySelector("#app>form");
+    if (form != null) {
+        console.log("车号:" + selectedCarNum);
+        console.log("发出批次:" + selectedBatchNum);
+        console.log("重车:" + selectedCarFullWeight);
+        console.log("空车:" + selectedCarEmptyWeight);
+        console.log("水分:" + selectedCarWater);
+        console.log("密度:" + selectedCarDensity);
+        document.querySelector("#analyse_car").value = selectedCarNum;
+        document.querySelector("#analyse_batch").value = selectedBatchNum;
+        document.querySelector("#analyse_fullcar").value = selectedCarFullWeight;
+        document.querySelector("#analyse_emptycar").value = selectedCarEmptyWeight;
+        document.querySelector("#analyse_water").value = selectedCarWater;
+        document.querySelector("#analyse_density").value = selectedCarDensity;
+        var flag = window.confirm("确认提交车号匹配信息吗？");
+        if (flag == true) {
+            document.querySelector("#analyse_form_submit").click();
+            alert("提交成功！");
+        }
+
+    }
+
+}
+
+function setSelectedCarInfo() {
+    var rows = document.querySelectorAll("#col_right_list1>table>tbody tr");
+    console.log(rows.length);
+    if (rows.length != 0) {
+        for (let index = 0; index < rows.length; index++) {
+            if (rows[index].className == "car_list_checked") {
+                //从已选中的车辆行重获取信息(其他信息)
+                selectedBatchNum += rows[index].children[1].innerHTML + ";";
+                selectedCarNum += rows[index].children[3].innerHTML + ";";
+                selectedCarFullWeight += rows[index].children[5].innerHTML + ";";
+                selectedCarEmptyWeight += rows[index].children[6].innerHTML + ";";
+                selectedCarWater += rows[index].children[7].innerHTML + ";";
+                selectedCarDensity += rows[index].children[8].innerHTML + ";";
+                console.log(1);
+            }
+        }
+    }
+
+}
+
+function hiddenBackStage() {
+    if (showHidden == true) {
+
+        document.querySelector("#app>form").style.display = "none";
+        showHidden = false;
+    } else {
+
+        document.querySelector("#app>form").style.display = "block";
+        showHidden = true;
+    }
+
 }

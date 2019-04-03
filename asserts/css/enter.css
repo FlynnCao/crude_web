@@ -15,19 +15,27 @@
     background: #38f;
 }
 
+
 #col_right_func>div button:nth-child(2) {
-    background: #27941D;
+    background: #E3170D;
 }
 
 #col_right_func>div button:nth-child(2):hover {
-    background: #99CC33;
+    background: #FF0000;
 }
-
 #col_right_func>div button:nth-child(3) {
-    background: gray;
+    background: #27941D;
 }
 
 #col_right_func>div button:nth-child(3):hover {
+    background: #99CC33;
+}
+
+#col_right_func>div button:nth-child(4) {
+    background: gray;
+}
+
+#col_right_func>div button:nth-child(4):hover {
     background: #aaaaaa;
 }
 /*右侧-列表*/
@@ -36,4 +44,9 @@
     height:750px;
     margin-left: 10px;
     overflow: auto;
+}
+/*变更车号输入框样式*/
+.alterCarNumInput{
+    transition-duration: 0.5s;
+    height: 100%;
 }

@@ -18,6 +18,16 @@
         <p style="display: none" id="crude_setting">
             <span class="crude_setting_carListMutiSelct">0</span>
         </p>
+        <form action="">
+            <input type="text" value="updateentergroup" name="action">
+            <input type="text" value="" id="analyse_car" name="car">
+            <input type="text" value="" id="analyse_batch" name="batch">
+            <input type="text" value="" id="analyse_fullcar" name="fullcar">
+            <input type="text" value="" id="analyse_emptycar" name="emptycar">
+            <input type="text" value="" id="analyse_water" name="water">
+            <input type="text" value="" id="analyse_density" name="density">
+            <input type="submit" id="analyse_form_submit">
+        </form>
         <div id="col_left">
             <div onclick="hiddenBackStage()">
                 <span class="glyphicon glyphicon-globe"></span>&nbsp;<span class=""></span>
@@ -36,27 +46,26 @@
         </div>
         <div id="col_right">
             <div id="col_right_top">
-            
-                    <div id="col_right_top_search">
-                            <form action="">
-                                <div>
-                                    <span class="glyphicon glyphicon-search"></span>
-                                    <input type="text" placeholder="检索 " />
-                                    <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
-        
-                                </div>
-<!--         
+                <div id="col_right_top_search">
+                    <form action="">
+                        <div>
+                            <span class="glyphicon glyphicon-search"></span>
+                            <input type="text" placeholder="检索 " />
+                            <span class="glyphicon glyphicon-remove-circle" onclick="emptySearchText()"></span>
+
+                        </div>
+                        <!--         
                                 <select>
                                     <option value="batchNum">进厂批号</option>
                                     <option value="carNum">油车号</option>
                                     <option value="sentDate">发出时间</option>
                                     <option value="sentDate">进厂时间</option>
                                 </select> -->
-        
-                            </form>
-        
-                        </div>
-                    
+
+                    </form>
+
+                </div>
+
                 <div id="col_right_top_profile">
                     <ul>
                         <li>小贾</li>
@@ -73,12 +82,10 @@
             </div>
             <div id="col_right_func">
                 <div>
-                    <button id="send_func_group" onclick="groupSelectedCar()"
-                        class="glyphicon glyphicon-ok-sign">车号匹配</button>
-                    <button id="send_func_select_all" onclick="car_list_select(true)"
-                        class="glyphicon glyphicon-check">全选</button>
-                    <button id="send_func_cancel" onclick="car_list_select(false)"
-                        class="glyphicon glyphicon-ban-circle">取消</button>
+                    <button id="" onclick="updateCarComparing()" class="glyphicon glyphicon-ok-sign">提交</button>
+                    <button id="" onclick="changeCarNumInRow() " class="glyphicon glyphicon-ok-sign">车号匹配</button>
+                    <button id="" onclick="car_list_select(true)" class="glyphicon glyphicon-check">全选</button>
+                    <button id="" onclick="car_list_select(false)" class="glyphicon glyphicon-ban-circle">取消</button>
 
                 </div>
                 <p>
@@ -95,6 +102,11 @@
                             <th>进厂批号</th>
                             <th>进厂车号</th>
                             <th>车辆状态</th>
+                            <th>重车</th>
+                            <th>空车</th>
+                            <th>水分</th>
+                            <th>密度</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -104,6 +116,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>100</td>
+                            <td>20</td>
+                            <td>0.10</td>
+                            <td>0.83</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -111,6 +127,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>90</td>
+                            <td>13</td>
+                            <td>0.09</td>
+                            <td>0.85</td>
                         </tr>
                         <tr>
                             <td></td>
@@ -118,6 +138,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>110</td>
+                            <td>25</td>
+                            <td>0.12</td>
+                            <td>0.85</td>
 
                         </tr>
                         <tr>
@@ -126,6 +150,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>100</td>
+                            <td>20</td>
+                            <td>0.10</td>
+                            <td>0.85</td>
 
                         </tr>
                         <tr>
@@ -134,6 +162,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>100</td>
+                            <td>20</td>
+                            <td>0.10</td>
+                            <td>0.85</td>
 
                         </tr>
                         <tr>
@@ -142,6 +174,10 @@
                             <td>201903052255</td>
                             <td>6003001</td>
                             <td>未匹配</td>
+                            <td>100</td>
+                            <td>20</td>
+                            <td>0.10</td>
+                            <td>0.85</td>
 
                         </tr>
 
@@ -150,81 +186,81 @@
                 </table>
             </div>
             <div id="col_right_list2" class="analyse_page">
-                    <h3>历史批</h3>
-                    <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>发出油量批号</th>
-                                    <th>发出时间</th>                              
-                                    <th>总油量</th>
-                                    <th>水分</th>
-                                    <th>密度</th>
-                                    <th>进厂总油量</th>
-                                    <th>亏损量</th>
-                                    <th>亏损率</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td>20081554512</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <td>2008/07/05 22:36:11</td>
-                                    <td>520</td>
-                                    <td>20</td>
-                                    <td>2.3%</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>20081554512</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <td>2012/03/04 22:36:11</td>
-                                    <td>520</td>
-                                    <td>20</td>
-                                    <td>2.3%</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>201307053388</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <td>2013/07/05 22:36:11</td>
-                                    <td>520</td>
-                                    <td>20</td>
-                                    <td>2.3%</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>201509073428</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <td>2015/09/07 22:36:11</td>
-                                    <td>520</td>
-                                    <td>20</td>
-                                    <td>2.3%</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>20190314223554</td>
-                                    <td>540</td>
-                                    <td>0.11</td>
-                                    <td>0.8012</td>
-                                    <td>2019/03/14 22:36:11</td>
-                                    <td>520</td>
-                                    <td>20</td>
-                                    <td>2.3%</td>
-                                </tr>
+                <h3>历史批</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>发出油量批号</th>
+                            <th>发出时间</th>
+                            <th>总油量</th>
+                            <th>水分</th>
+                            <th>密度</th>
+                            <th>进厂总油量</th>
+                            <th>亏损量</th>
+                            <th>亏损率</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>20081554512</td>
+                            <td>540</td>
+                            <td>0.11</td>
+                            <td>0.8012</td>
+                            <td>2008/07/05 22:36:11</td>
+                            <td>520</td>
+                            <td>20</td>
+                            <td>2.3%</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>20081554512</td>
+                            <td>540</td>
+                            <td>0.11</td>
+                            <td>0.8012</td>
+                            <td>2012/03/04 22:36:11</td>
+                            <td>520</td>
+                            <td>20</td>
+                            <td>2.3%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>201307053388</td>
+                            <td>540</td>
+                            <td>0.11</td>
+                            <td>0.8012</td>
+                            <td>2013/07/05 22:36:11</td>
+                            <td>520</td>
+                            <td>20</td>
+                            <td>2.3%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>201509073428</td>
+                            <td>540</td>
+                            <td>0.11</td>
+                            <td>0.8012</td>
+                            <td>2015/09/07 22:36:11</td>
+                            <td>520</td>
+                            <td>20</td>
+                            <td>2.3%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>20190314223554</td>
+                            <td>540</td>
+                            <td>0.11</td>
+                            <td>0.8012</td>
+                            <td>2019/03/14 22:36:11</td>
+                            <td>520</td>
+                            <td>20</td>
+                            <td>2.3%</td>
+                        </tr>
 
 
-                            </tbody>
-                        </table>
+                    </tbody>
+                </table>
             </div>
 
 
@@ -232,9 +268,9 @@
     </div>
     <script type="text/javascript" src="asserts/js/master_css.js"></script>
     <script type="text/javascript" src="asserts/js/master.js"></script>
-    <script type="text/javascript" src="asserts/js/analyse.js">
+    <script type="text/javascript" src="asserts/js/analyse.js"></script>
+    <script type="text/javascript" src="asserts/js/util.js"></script>
 
-    </script>
 
 </body>
 

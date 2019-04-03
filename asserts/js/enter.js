@@ -12,8 +12,9 @@ var seletedSendBatchStr = ""; //发出批次号
 var seletedSendDateStr = ""; //发出批次日期
 var selctedStatusStr = ""; //车辆状态
 var selctedIdStr = ""; //车辆id
-//默认函数启动区
 var showHidden = true;
+var canChangeCarNum = false; //允许修改车号标志
+//默认函数启动区
 hiddenBackStage();
 //车辆编组
 function groupSelectedCar() {
@@ -81,8 +82,59 @@ function setSelectedCarInfo() {
 
     }
   }
-
 }
+//允许用户在列中修改车号
+function changeCarNumInRow() {
+  if (canChangeCarNum == false) {
+    //开启功能
+    console.log("开启变更车号");
+    var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
+    if (rows.length != 0) {
+      for (let index = 0; index < rows.length; index++) {
+        let num = rows[index].children[2]; //选择每行的第三个子元素-车号
+        var currentNum = num.innerHTML;
+        num.innerHTML = "";
+        var input = document.createElement("input");
+        input.className = "alterCarNumInput";
+        input.value = currentNum;
+        input.onkeydown = function (e) {
+          var keyNum;
+          keyNum = window.event ? e.keyCode : e.which;
+          //  console.log(keyNum);
+          //var keyChar = String.fromCharCode(keyNum);
+          if (keyNum == 13) {
+            //当用户按下回车时，清空当前元素的子节点
+             rs_removeAllChild(num);
+             num.innerHTML = this.value
+          }
+        }
+        num.appendChild(input);
+      }
+    } else {
+      console.log("行中没有数据！");
+    }
+    canChangeCarNum = true;
+  } else {
+    //关闭功能
+    console.log("关闭变更车号");
+    var rows = document.querySelectorAll("#col_right_list>table>tbody tr");
+    if(rows.length != 0){
+        for (let index = 0; index < rows.length; index++) {
+          let num = rows[index].children[2]; //选择每行的第三个子元素-车号
+          if(num.firstElementChild != null){
+            //若当前元素有子节点时，清空子节点并赋值车号到本元素
+            let newCarNum = num.firstElementChild.value;
+            rs_removeAllChild(num);
+            num.innerHTML = newCarNum;
+          }       
+        }
+    }else{
+      console.log("行内没有数据")
+    }
+    canChangeCarNum = false;
+  }
+}
+
 // //绑定列表块点击事件(仅允许单选)
 // function car_list_handleSimpleClick() {
 //     var rows = document.querySelectorAll("#col_right_list>table>tbody tr");

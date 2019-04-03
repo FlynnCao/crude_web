@@ -22,20 +22,26 @@
 #col_right_func>div button:first-child:hover {
     background: #38f;
 }
-
 #col_right_func>div button:nth-child(2) {
-    background: #27941D;
+    background: #E3170D;
 }
 
 #col_right_func>div button:nth-child(2):hover {
-    background: #99CC33;
+    background: #FF0000;
 }
-
 #col_right_func>div button:nth-child(3) {
-    background: gray;
+    background: #27941D;
 }
 
 #col_right_func>div button:nth-child(3):hover {
+    background: #99CC33;
+}
+
+#col_right_func>div button:nth-child(4) {
+    background: gray;
+}
+
+#col_right_func>div button:nth-child(4):hover {
     background: #aaaaaa;
 }
 
@@ -54,3 +60,7 @@
     cursor: pointer;
 }
 
+/*列表-隐藏额外信息*/
+#col_right_list1>table tr>td:last-child,th:last-child,td:nth-last-child(2),th:nth-last-child(2),td:nth-last-child(3),th:nth-last-child(3),td:nth-last-child(4),th:nth-last-child(4){
+    display: none; 
+} 
