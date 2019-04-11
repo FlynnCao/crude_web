@@ -34,7 +34,7 @@
 
 }
 #overBalanceConsole>h2{
-    display: block;
+    display: inline-block;
     margin-left:20px;
 }
 #overBalanceConsole>form{

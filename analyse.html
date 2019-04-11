@@ -20,8 +20,10 @@
         </p>
         <form action="">
             <input type="text" value="updateentergroup" name="action">
-            <input type="text" value="" id="analyse_car" name="car">
-            <input type="text" value="" id="analyse_batch" name="batch">
+            <input type="text" value="" id="analyse_sentcar" name="sentcar">
+            <input type="text" value="" id="analyse_entercar" name="entercar">
+            <input type="text" value="" id="analyse_sentbatch" name="sentbatch">
+            <input type="text" value="" id="analyse_enterbatch" name="enterbatch">
             <input type="text" value="" id="analyse_fullcar" name="fullcar">
             <input type="text" value="" id="analyse_emptycar" name="emptycar">
             <input type="text" value="" id="analyse_water" name="water">
@@ -82,15 +84,19 @@
             </div>
             <div id="col_right_func">
                 <div>
-                    <button id="" onclick="updateCarComparing()" class="glyphicon glyphicon-ok-sign">提交</button>
-                    <button id="" onclick="changeCarNumInRow() " class="glyphicon glyphicon-ok-sign">车号匹配</button>
-                    <button id="" onclick="car_list_select(true)" class="glyphicon glyphicon-check">全选</button>
-                    <button id="" onclick="car_list_select(false)" class="glyphicon glyphicon-ban-circle">取消</button>
-
+                    <button id="" onclick="updateCarComparing()" class="glyphicon glyphicon-ok-sign">确认匹配</button>
+                    <!-- <button id="" onclick="changeCarNumInRow() " class="glyphicon glyphicon-ok-sign">车号匹配</button> -->
+                    <!-- <button id="" onclick="car_list_select(true)" class="glyphicon glyphicon-check">全选</button> -->
+                    <button id="" onclick="car_list_select_clear()" class="glyphicon glyphicon-ban-circle">取消</button>
+                    <select id="func_car_select">
+                        <option value="60503001">60503001</option>
+                        <option value="60503002">60500002</option>
+                        <option value="60503003">60500003</option>
+                    </select>    
                 </div>
-                <p>
+                <!-- <p>
                     已选中&nbsp;<span id="car_selected_num">0</span>/<span id="car_list_total_num">99</span>
-                </p>
+                </p> -->
 
             </div>
             <div id="col_right_list1" class="analyse_page">
@@ -100,85 +106,51 @@
                             <th>序号</th>
                             <th>发出批号</th>
                             <th>进厂批号</th>
+                            <th>发出车号</th>
                             <th>进厂车号</th>
                             <th>车辆状态</th>
                             <th>重车</th>
                             <th>空车</th>
                             <th>水分</th>
                             <th>密度</th>
-
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td></td>
                             <td>201903052255</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
+                            <td>201903150005</td>
+                            <td>6063001</td>
+                            <td>6666666</td>
                             <td>未匹配</td>
                             <td>100</td>
                             <td>20</td>
                             <td>0.10</td>
                             <td>0.83</td>
                         </tr>
+                        
                         <tr>
                             <td></td>
                             <td>201903052255</td>
                             <td>201903052255</td>
                             <td>6003001</td>
-                            <td>未匹配</td>
-                            <td>90</td>
-                            <td>13</td>
-                            <td>0.09</td>
-                            <td>0.85</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>201903052255</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>未匹配</td>
-                            <td>110</td>
-                            <td>25</td>
-                            <td>0.12</td>
-                            <td>0.85</td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>201903052255</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
+                            <td>6666666</td>
                             <td>未匹配</td>
                             <td>100</td>
                             <td>20</td>
                             <td>0.10</td>
-                            <td>0.85</td>
-
-                        </tr>
-                        <tr>
+                            <td>0.83</td>
+                        </tr>  <tr>
                             <td></td>
                             <td>201903052255</td>
                             <td>201903052255</td>
                             <td>6003001</td>
+                            <td>6666666</td>
                             <td>未匹配</td>
                             <td>100</td>
                             <td>20</td>
                             <td>0.10</td>
-                            <td>0.85</td>
-
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>201903052255</td>
-                            <td>201903052255</td>
-                            <td>6003001</td>
-                            <td>未匹配</td>
-                            <td>100</td>
-                            <td>20</td>
-                            <td>0.10</td>
-                            <td>0.85</td>
-
+                            <td>0.83</td>
                         </tr>
 
                     </tbody>

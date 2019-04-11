@@ -2,9 +2,14 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-30 09:11:13
- * @modify date 2019-03-30 09:11:13
+ * @modify date 2019-04-11 13:24:18
  * @desc [分析页的专属样式]
  */
+ /*功能区*/
+ #col_right_func>div{
+     width: 400px!important; /*导致master_css.js失效*/
+     background: transparent;
+ }
  #col_right_func>div button {
     margin-left: 10px;
     font-size: 1.2em;
@@ -22,27 +27,35 @@
 #col_right_func>div button:first-child:hover {
     background: #38f;
 }
-#col_right_func>div button:nth-child(2) {
+/* #col_right_func>div button:nth-child(2) {
     background: #E3170D;
 }
 
 #col_right_func>div button:nth-child(2):hover {
     background: #FF0000;
-}
-#col_right_func>div button:nth-child(3) {
+} */
+/* #col_right_func>div button:nth-child(2) {
     background: #27941D;
 }
 
-#col_right_func>div button:nth-child(3):hover {
+#col_right_func>div button:nth-child(2):hover {
     background: #99CC33;
-}
+} */
 
-#col_right_func>div button:nth-child(4) {
+#col_right_func>div button:nth-child(2) {
     background: gray;
 }
 
-#col_right_func>div button:nth-child(4):hover {
+#col_right_func>div button:nth-child(2):hover {
     background: #aaaaaa;
+}
+/*功能区-下拉选择*/
+#col_right_func>div>select{
+    width: auto;
+    height: 50px;
+    margin-left:10px;
+    border:1px solid #cccc;
+    border-radius: 15px;
 }
 
  
@@ -61,6 +74,13 @@
 }
 
 /*列表-隐藏额外信息*/
-#col_right_list1>table tr>td:last-child,th:last-child,td:nth-last-child(2),th:nth-last-child(2),td:nth-last-child(3),th:nth-last-child(3),td:nth-last-child(4),th:nth-last-child(4){
+/* #col_right_list1>table tr>td:last-child,th:last-child,td:nth-last-child(2),th:nth-last-child(2),td:nth-last-child(3),th:nth-last-child(3),td:nth-last-child(4),th:nth-last-child(4){
     display: none; 
-} 
+}  */
+/*刷新按钮*/
+.refreshButton{
+    display: inline-block;
+    color:#38f;
+    background: red;
+
+}

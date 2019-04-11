@@ -33,6 +33,9 @@ switchPages(0); //默认切换到  发出 页
 setCarListIndex(); //设置车辆列表下标
 addAlertMessage(); //添加提示信息
 setBatchStatus(); //设置最新批信息
+
+//addEmptyInputButton();
+//addEmptyInputButton();
 //当前或者历史批次
 var currentBatch = 0;
 /*功能函数区 */
@@ -209,6 +212,27 @@ function setBatchStatus() {
     }
 
 }
+// //测试-添加输入框清空按钮
+// function addEmptyInputButton(){
+//     //获取控件资源
+//     var con = document.querySelector("#addBatchConsole");  
+//     var title = con.querySelector("h2"); 
+//     var title2 = con.querySelector("h3");
+//     var trueTitle = title == null ? title2 : title;    
+//     var form =  con.querySelector("form");
+//     var refresh = document.createElement("span");
+//     //设置新元素和兄弟元素的属性
+//     trueTitle.style.display = "inline-block";
+//     refresh.style.display = "inline-block";
+//     refresh.className = "glyphicon glyphicon-refresh";
+//     refresh.style.fontSize = "1.3em";
+//     refresh.style.marginLeft = "10px";
+//     $(refresh).insertAfter(trueTitle);
+//     refresh.onclick = function(){
+//         form.reset();
+//     } 
+// }
+
 // //右侧-搜索按钮绑定事件-历史批
 // (function handleSearchButton() {
 //     document.querySelector("#col_right_top_search>span").onclick = function () {

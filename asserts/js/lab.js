@@ -12,6 +12,8 @@ var selctedStatusStr = ""; //所有选中的状态
 var showHidden = true;
 hiddenBackStage();
 addAlertMessage();
+addEmptyInputButton();
+
 
 
 //控制二级窗口的显隐 @param:true(显示)，false(隐藏)
@@ -70,6 +72,25 @@ function addAlertMessage(){
     
     }
 
+}
+//测试-添加输入框清空按钮
+function addEmptyInputButton(){
+    //获取控件资源
+    var con = document.querySelector("#assay_car_console");  
+    var title = con.querySelector("h2"); 
+    var title2 = con.querySelector("h3");
+    var trueTitle = title == null ? title2 : title;    
+    var form =  con.querySelector("form");
+    var refresh = document.createElement("span");
+    //设置新元素和兄弟元素的属性
+    trueTitle.style.display = "inline-block";
+    refresh.className = "glyphicon glyphicon-refresh";
+    refresh.style.fontSize = "1.3em";
+    refresh.style.marginLeft = "10px";
+    $(refresh).insertAfter(trueTitle);
+    refresh.onclick = function(){
+        form.reset();
+    } 
 }
 
 // //绑定列表块点击事件(仅允许单选) (弃用)

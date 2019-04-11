@@ -119,6 +119,7 @@ function emptySearchText() {
         console.log("no such search bar");
     }
 }
+
 // function handleSearchButtonClick(){
 //     var sear = document.querySelector("#col_right_top_search>form");
 //     var s = x.querySelector("div span:first-child");
