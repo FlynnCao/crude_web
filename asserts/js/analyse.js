@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-30 09:51:40
- * @modify date 2019-04-09 16:50:23
+ * @modify date 2019-04-11 13:40:13
  * @desc [分析页面的逻辑]
  */
 /**
@@ -238,7 +238,7 @@ function updateCarComparing() {
         document.querySelector("#analyse_density").value = selectedCarDensity;
         var flag = window.confirm("确认提交车号匹配信息吗？");
         if (flag == true) {
-          //  document.querySelector("#analyse_form_submit").click();
+            document.querySelector("#analyse_form_submit").click();
             alert("提交成功！");
 
 
