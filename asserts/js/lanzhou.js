@@ -76,8 +76,6 @@ function setSelectedCarInfo() {
       //从已选中的车辆行重获取信息(id和状态)
       selctedStatusStr += rows[index].lastElementChild.innerHTML + ";";
       selctedIdStr += rows[index].lastElementChild.previousElementSibling.innerHTML + ";";
-
-
     }
   }
 

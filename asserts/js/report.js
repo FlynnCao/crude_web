@@ -94,7 +94,6 @@ function report_showBarChart(row_index) {
     var page = pages[currentPage]; //当前报表   
     var rows = page.querySelectorAll(".report_list_chart>table>tbody tr");
     //console.log(rows.length);
-
     var amounts = new Array();
     var dates = new Array();
     for (let index = 0; index < rows.length; index++) {
@@ -122,6 +121,7 @@ function report_showBarChart(row_index) {
             bars[index].innerHTML = amounts[index];
         }
         tips[index].innerHTML = dates[index];
+
     }
 }
 
@@ -170,17 +170,18 @@ function setChartBarTotalStatus() {
         totalGetCar += Number(rows[index].children[5].innerHTML);
 
     }
-    // console.log(totalSentOil);
-    // console.log(totalSentCar);
-    // console.log(totalGetOil);
-    // console.log(totalGetCar);
+
+     console.log(totalSentOil);
+     console.log(totalSentCar);
+     console.log(totalGetOil);
+     console.log(totalGetCar);
 
     //提交数据
     divs = page.querySelectorAll(".bar_menu_button");
     //  console.log(divs.length);
-    divs[0].querySelector("ul li:nth-child(2)").innerHTML = totalSentOil;
+    divs[0].querySelector("ul li:nth-child(2)").innerHTML = totalSentOil.toFixed(4);
     divs[1].querySelector("ul li:nth-child(2)").innerHTML = totalSentCar;
-    divs[2].querySelector("ul li:nth-child(2)").innerHTML = totalGetOil;
+    divs[2].querySelector("ul li:nth-child(2)").innerHTML = totalGetOil.toFixed(4);
     divs[3].querySelector("ul li:nth-child(2)").innerHTML = totalGetCar;
 
 
@@ -247,3 +248,4 @@ function search_pairngString(obj, str) {
         return false;
     }
 }
+
