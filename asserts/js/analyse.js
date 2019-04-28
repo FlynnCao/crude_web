@@ -20,6 +20,8 @@ switchPages(0); //默认打开页面1
 car_list_handleSimpleClick(); //单选事件绑定
 hiddenBackStage(); //隐藏后台
 hiddenRowInfo(6, 9); //隐藏指定列的信息
+adjustListHeight();
+
 /**
  * 变量区
  */
@@ -301,3 +303,22 @@ function hiddenRowInfo(fromIndex, endIndex){
     }
    
 }
+
+function adjustListHeight() {
+    var list = document.getElementById("col_right_list1");
+    var list2 = document.getElementById("col_right_list2");
+
+    var box = document.getElementById("col_right");
+    if (list != null) {
+        // 79 70 100。
+        console.log("box" + box.style.width);
+        console.log("box" + box.offsetHeight);     
+        list.style.height = (box.offsetHeight - 79 - 70) + "px"
+    }
+    if (list2 != null) {
+        // 79 70 100。
+        console.log("box" + box.style.width);
+        console.log("box" + box.offsetHeight);     
+        list2.style.height = (box.offsetHeight - 90) + "px"
+    }
+  };

@@ -10,6 +10,7 @@ adjustLeftNav(); //导航栏调整
 adjustFuncButton(); //功能区调整
 adjustTitleName(); //网站标题调整
 alterSearchPlaceHolder(); //修改搜索框提示
+adjustListHeight(); //调整列表高度
 //网站标题调整
 function adjustTitleName(){
     document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "油罐车跟踪管理系统";
@@ -45,3 +46,14 @@ function alterSearchPlaceHolder(){
         console.log("search not found");
     }
 }
+
+function adjustListHeight() {
+    var list = document.getElementById("col_right_list");
+    var box = document.getElementById("col_right");
+    if (list != null) {
+        // 79 70 100。
+        console.log("box" + box.style.width);
+        console.log("box" + box.offsetHeight);     
+        list.style.height = (box.offsetHeight - 79 - 70) + "px"
+    }
+  };

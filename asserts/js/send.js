@@ -33,7 +33,7 @@ switchPages(0); //默认切换到  发出 页
 setCarListIndex(); //设置车辆列表下标
 addAlertMessage(); //添加提示信息
 setBatchStatus(); //设置最新批信息
-
+adjustListHeight();//调整列表高度
 //addEmptyInputButton();
 //addEmptyInputButton();
 //当前或者历史批次
@@ -265,3 +265,18 @@ function setBatchStatus() {
 //         return false;
 //     }
 // }
+//动态调整列表的高度（防止溢出）
+function adjustListHeight() {
+    var list = document.getElementById("col_right_page1_list");
+    var list2 = document.getElementById("available_car_list");
+    var box = document.getElementById("col_right");
+    if (list != null) {
+        // 79 70 100。
+        console.log("box" + box.style.width);
+        console.log("box" + box.offsetHeight);     
+        list.style.height = (box.offsetHeight - 79 - 70 - 100) + "px"
+    }
+    if(list2 != null){
+        list2.style.height = (box.offsetHeight - 150) + "px"
+    }
+}

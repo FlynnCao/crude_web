@@ -2,7 +2,7 @@
  * @author RainSilver
  * @email [ppstream123@126.com]
  * @create date 2019-03-23 11:00:19
- * @modify date 2019-04-02 16:22:13
+ * @modify date 2019-04-27 21:52:11
  * @desc [报表页面的逻辑]
  */
 //切换日期页面 @pageNUm:点击的按钮标号
@@ -13,6 +13,7 @@ report_setCarListIndex(); //自动生成列表序号
 handleChartMenuClick(); //控制柱状图菜单的点击
 setChartBarTotalStatus(); //设置柱状图批次状态
 handleSearchEvent(); //绑定键盘回车搜索
+adjustListHeight(); //调整列表大小
 
 
 
@@ -249,3 +250,29 @@ function search_pairngString(obj, str) {
     }
 }
 
+
+function adjustListHeight() {
+    
+    //1、获取所有列表
+    //2、获取右侧栏的实际高度
+    //3、循环列表数组，减去功能区和搜索栏高度，为每一个列表设置剩余的高度
+    var lists = document.querySelectorAll(".report_list");
+    var onlyList = document.querySelector("#col_right_list");
+
+    var box = document.getElementById("col_right");
+    console.log(lists.length);
+    console.log(box.offsetHeight);
+    // if(lists != null){
+    //    for (let index = 0; index < lists.length; index++) {
+
+    //     lists[index].style.height = (box.offsetHeight - 300) + "px";
+    //     lists[index].style.background = "lightgreen";
+
+
+    //    }
+       
+    // } 
+    onlyList.style.height = (box.offsetHeight - 79 -70 -100) + "px";
+
+    
+  };

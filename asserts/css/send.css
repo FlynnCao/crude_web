@@ -538,7 +538,7 @@ body {
 #col_right_page1_list {
     margin-left: 10px;
     width: 100%;
-    height: 600px;
+    height: 1px;
     font-size: 1.1em;
     overflow: auto;
     background:transparent;
