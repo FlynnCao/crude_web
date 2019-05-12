@@ -13,7 +13,7 @@ alterSearchPlaceHolder(); //修改搜索框提示
 adjustListHeight(); //调整列表高度
 //网站标题调整
 function adjustTitleName(){
-    document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "油罐车跟踪管理系统";
+    document.querySelector("#col_left>div span:nth-child(2)").innerHTML = "油田计量系统";
 }
 
 //导航栏调整
